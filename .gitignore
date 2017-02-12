@@ -1,0 +1,13 @@
+secrets.yaml
+tts/
+*.token
+*.pem
+*.db
+*.log
+.HA_VERSION
+.uuid
+.fuse_hidden*
+fitbit.conf
+nest.conf
+google_calendars.yaml
+known_devices.yaml

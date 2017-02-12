@@ -1,0 +1,17 @@
+sensor.fixed_ups_battery_voltage:
+  icon: mdi:power-plug
+
+sensor.hallway_thermostat_humidity:
+  icon: mdi:water-percent
+
+sensor.speedtest_upload:
+  icon: mdi:upload
+
+sensor.speedtest_download:
+  icon: mdi:download
+
+sensor.Alarm_Status:
+  icon: mdi:security
+
+binary_sensor.ups_online_status:
+  icon: mdi:flash

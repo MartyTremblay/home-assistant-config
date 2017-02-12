@@ -1,0 +1,83 @@
+default_view:
+  view: yes
+  entities:
+    - group.family
+    - group.weather
+    - group.hallway
+    - group.network
+    - group.alarm
+    - group.power
+    - media_player.picoreplayer1
+    - media_player.samsung_tv_remote
+    - media_player.roku_1
+    - sensor.google_travel_time__driving
+
+monitors_view:
+  name: Cameras
+  view: yes
+  entities:
+    - group.cameras
+
+links_view:
+  name: Weblinks
+  view: yes
+  entities:
+    - group.links
+
+#health_view:
+#  name: Health
+#  view: yes
+#  entities:
+#    - group.viktoria_fitbit
+
+network:
+  name: Network
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+
+family:
+  entities:
+    - input_boolean.martyhome
+    - input_boolean.viktoriahome
+
+alarm:
+  entities:
+    - sensor.Alarm_Status
+    - input_select.alarm_mode
+    #- alarm_control_panel
+
+cameras:
+  name: Cameras
+  entities:
+    - weblink.zoneminder
+    - switch.camfrontwindow_state
+    - sensor.camfrontwindow_status
+    - sensor.camfrontwindow_events
+    - switch.cambackwindow_state
+    - sensor.cambackwindow_status
+    - sensor.cambackwindow_events
+    - camera.cam_front_jpg
+
+weather:
+  entities:
+    - sensor.time_date
+    - climate.hallway
+    - sensor.hallway_thermostat_humidity
+    - sensor.hallway_thermostat_hvac_state
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_minutely_summary
+
+power:
+  entities:
+    - binary_sensor.ups_online_status
+    - sensor.ups_battery
+    - sensor.fixed_ups_battery_voltage
+    - sensor.ups_time_left
+
+#viktoria_fitbit:
+#  name: Viktoria's goals
+#  entities:
+#    - sensor.tracker_activitycalories
+#    - sensor.tracker_calories
+#    - sensor.tracker_steps
