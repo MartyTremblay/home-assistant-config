@@ -1,0 +1,26 @@
+# Datetime HASS Module
+#
+# Provides Date and Time
+
+sensor:
+
+  # Date and time
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      #- 'date_time'
+      #- 'time_date'
+      #- 'time_utc'
+      #- 'beat'
+
+  # Moon tracking
+  - platform: moon
+
+
+# logbook:
+#   exclude:
+#     domains:
+#       - sensor.date
+#       - sun
+#       - weblink

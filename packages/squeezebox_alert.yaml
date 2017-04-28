@@ -1,0 +1,35 @@
+automation:
+  - alias: "Play kitchen alert on gate opened"
+    trigger:
+      - platform: state
+        entity_id: sensor.gate
+        to: 'open'
+    action:
+      - service: shell_command.play_gate_opened_alert_in_kitchen
+
+  - alias: "Play bedroom alert on gate opened"
+    trigger:
+      - platform: state
+        entity_id: sensor.gate
+        to: 'open'
+    action:
+      - service: shell_command.play_gate_opened_alert_in_bedroom
+
+  - alias: "Play kitchen alert on basement door opened"
+    trigger:
+      - platform: state
+        entity_id: sensor.basement_door
+        to: 'open'
+    action:
+      - service: shell_command.play_basement_door_opened_alert_in_kitchen
+
+  - alias: "Play bedroom alert on basement door opened"
+    trigger:
+      - platform: state
+        entity_id: sensor.basement_door
+        to: 'open'
+    action:
+      - service: shell_command.play_basement_door_opened_alert_in_bedroom
+
+shell_command:
+  play_gate_opened_alert_in_kitchen:          bash /config/scripts/squeezebox_alert.sh "e8:4e:06:10:93:f6" "//music//8832402b724980c0a982d07fc739dfce3ab6bb70_en_-_google.mp3" 65

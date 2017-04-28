@@ -1,0 +1,23 @@
+# Weather HASS Module
+#
+# Provides Sun, Moon, Weather, Date & Time
+
+sensor:
+
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - precip_type
+      - precip_intensity
+      - temperature
+  #    - dew_point
+  #    - wind_speed
+  #    - wind_bearing
+  #    - cloud_cover
+      - humidity
+  #    - nearest_storm_distance
+      - minutely_summary
+  #    - pressure
+  #    - visibility
+  #    - ozone

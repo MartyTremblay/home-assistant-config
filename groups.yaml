@@ -1,0 +1,5 @@
+links_view:
+  entities:
+  - group.links_view
+  name: Weblinks
+  view: true

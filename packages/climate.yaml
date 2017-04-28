@@ -1,0 +1,57 @@
+# Datetime HASS Module
+#
+# Provides Climate info
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
+climate:
+  platform: nest
+
+sensor:
+  - platform: nest
+    monitored_conditions:
+      - 'temperature'
+      - 'target'
+      - 'humidity'
+      - 'operation_mode'
+
+binary_sensor:
+  - platform: nest
+    monitored_conditions:
+      - 'fan'
+      - 'hvac_ac_state'
+      - 'hvac_heater_state'
+      - 'hvac_aux_heater_state'
+      - 'hvac_heat_x2_state'
+      - 'hvac_heat_x3_state'
+      - 'hvac_alt_heat_state'
+      - 'hvac_alt_heat_x2_state'
+      - 'hvac_emer_heat_state'
+      - 'online'
+
+automation:
+  - alias: Nest is back online
+    trigger:
+      platform: state
+      entity_id: binary_sensor.hallway_thermostat_online
+      from: 'off'
+      to: 'on'
+    action:
+      service: notify.pushbullet_notify
+      data:
+        message: "Nest is back Online!"
+        title: "Nest is back Online!"
+
+  - alias: Nest is not online
+    trigger:
+      platform: state
+      entity_id: binary_sensor.hallway_thermostat_online
+      from: 'on'
+      to: 'off'
+    action:
+      service: notify.pushbullet_notify
+      data:
+        message: "Nest is not Online!"
+        title: "Nest is not Online!"

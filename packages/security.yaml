@@ -1,0 +1,173 @@
+alarmdecoder:
+  device:
+    type: socket
+    host: 192.168.101.17
+    port: 10000
+  panel_display: on
+  zones:
+    03:
+      name: 'Motion Garage'
+      type: 'moving'
+    10:
+      name: 'Back Door'
+      type: 'opening'
+    11:
+      name: 'Garage Door'
+      type: 'opening'
+    12:
+      name: 'Motion Hallway'
+      type: 'moving'
+
+input_select:
+  alarm_mode:
+    name: Alarm mode
+    options:
+     - automatic
+     - standby
+    initial: automatic
+    icon: mdi:security-home
+
+#alarm_control_panel:
+#  platform: mqtt
+#  name: Alarm
+#  state_topic: "home/alarm"
+#  command_topic: "home/alarm/set"
+
+#panel_iframe:
+#  monit:
+#    title: 'Keypad'
+#    icon: 'mdi:security-home'
+#    url: 'https://192.168.101.17/keypad/'
+
+#sensor:
+#  - platform: mqtt
+#    name: "Alarm Status"
+#    state_topic: "home/alarm"
+
+#binary_sensor:
+#  - platform: mqtt
+#    state_topic: "home/alarm/rf"
+#    name: "Windows contact"
+#    qos: 0
+#    payload_on: "04"
+#    payload_off: "0"
+#    device_class: motion
+#    value_template: '{{ value.x }}'
+
+automation:
+  # Automation Logic
+  - alias: Arm the AWAY alarm
+    trigger:
+      platform: state
+      entity_id: group.family
+      from: 'on'
+      to: 'off'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.alarm_mode
+          state: 'automatic'
+    action:
+      - service: alarm_control_panel.alarm_arm_away
+        data:
+          entity_id: alarm_control_panel.alarm_panel
+          code: !secret alarm_pin
+      - service: mqtt.publish
+        data:
+          topic: home/alarm/set
+          payload: 'ARM_AWAY'
+          qos: 1
+      - service: switch.turn_on
+        entity_id: group.cameras
+
+  - alias: Disarm the AWAY alarm
+    trigger:
+      platform: state
+      entity_id: group.family
+      from: 'off'
+      to: 'on'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.alarm_mode
+          state: 'automatic'
+    action:
+      - service: alarm_control_panel.alarm_disarm
+        data:
+          entity_id: alarm_control_panel.alarm_panel
+          code: !secret alarm_pin
+      - service: mqtt.publish
+        data:
+          topic: home/alarm/set
+          payload: 'DISARM'
+          qos: 1
+      - service: switch.turn_off
+        entity_id: group.cameras
+
+  - alias: Arm the alarm HOME at 11:00pm
+    trigger:
+      platform: time
+      after: '23:00:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.alarm_mode
+          state: 'automatic'
+        - condition: state
+          entity_id: group.family
+          state: 'on'
+    action:
+      - service: alarm_control_panel.alarm_arm_home
+        data:
+          entity_id: alarm_control_panel.alarm_panel
+          code: !secret alarm_pin
+      - service: mqtt.publish
+        data:
+          topic: home/alarm/set
+          payload: 'ARM_HOME'
+          qos: 1
+      - service: switch.turn_on
+        entity_id: group.cameras
+
+  - alias: Disarm the alarm HOME at 6:00am
+    trigger:
+      platform: time
+      after: '06:00:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: input_select.alarm_mode
+          state: 'automatic'
+        - condition: state
+          entity_id: group.family
+          state: 'on'
+    action:
+      - service: alarm_control_panel.alarm_disarm
+        data:
+          entity_id: alarm_control_panel.alarm_panel
+          code: !secret alarm_pin
+      - service: mqtt.publish
+        data:
+          topic: home/alarm/set
+          payload: 'DISARM'
+          qos: 1
+      - service: switch.turn_off
+        entity_id: group.cameras
+
+  - alias: Alert when door is opened for too long
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.back_door, binary_sensor.garage_door
+        from: 'closed'
+        to: 'open'
+        for:
+          minutes: 1
+    action:
+      service: notify.pushbullet_notify
+      data:
+        message: "A door has been left opened"
+        title: "A door has been left opened"

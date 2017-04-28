@@ -1,0 +1,16 @@
+mqtt:
+  broker: m13.cloudmqtt.com
+  port: 26491
+  protocol: 3.1
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+    qos: 1
+    retain: true
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+    qos: 1
+    retain: true

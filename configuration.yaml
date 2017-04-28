@@ -12,34 +12,67 @@ homeassistant:
   time_zone: !secret homeassistant_time_zone
   customize: !include customize.yaml
 
+  # Packages
+  packages:
+    homeassistant: !include packages/homeassistant.yaml
+    ipaddress: !include packages/ipaddress.yaml
+    datetime: !include packages/datetime.yaml
+    mqtt: !include packages/mqtt.yaml
+    presence: !include packages/presence.yaml
+    geo: !include packages/geo.yaml
+    security: !include packages/security.yaml
+    climate: !include packages/climate.yaml
+    power: !include packages/power.yaml
+#    cameras: !include packages/cameras.yaml
+    weather: !include packages/weather.yaml
+    workingdays: !include packages/workingdays.yaml
+    calendars: !include packages/calendars.yaml
+    mediaplayer: !include packages/mediaplayer.yaml
+    squeezebox_alert: !include packages/squeezebox_alert.yaml
+    kids: !include packages/kids.yaml
+
+http:
+  #base_url: 192.168.101.12:8123
+  api_password: !secret http_api_password
+#  ssl_certificate: /config/fullchain.pem
+#  ssl_key: /config/privkey.pem
+  #use_x_forwarded_for: True
+  #trusted_networks:
+  #  - 127.0.0.1
+  #  - ::1
+  #  - 192.168.101.0/24
+
 # Enables the frontend
 frontend:
+# Enables the configration UI
+config:
+# Enable sun tracking
+sun:
 
-#http:
-  # Uncomment this to add a password (recommended!)
-  # api_password: PASSWORD
-http:
-  base_url: 192.168.101.12:8123
-  api_password: !secret http_api_password
-  #ssl_certificate: /config/fullchain.pem
-  #ssl_key: /config/privkey.pem
-  use_x_forwarded_for: True
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 192.168.101.0/24
-
-# Checks for available updates
-updater:
+zone 1:
+  name: Home
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  radius: 300
+  icon: mdi:home
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
 
 # Enables support for tracking state changes over time.
 history:
+  include:
+    domains:
+      - sensor
+      - switch
+      - media_player
+  exclude:
+    entities:
+     - sensor.last_boot
+     - sensor.date
 
 # Enables notifications
 notify:
@@ -47,14 +80,8 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet_api_key
 
-# ZoneMinder CCTV
-zoneminder:
-  host: 192.168.101.12
-
-switch:
-  - platform: zoneminder
-    command_on: Modect
-    command_off: Monitor
+recorder:
+  purge_days: 21
 
 weblink:
   entities:
@@ -65,185 +92,33 @@ weblink:
     - name: Logitech Squeezebox Server
       url: http://192.168.101.12:9000
     - name: ZoneMinder
-      url: http://192.168.101.12/zm
+      url: http://192.168.101.12:8083/zm
     - name: Alarm Keypad
       url: https://192.168.101.17/keypad/
 
-mqtt:
-  broker: m13.cloudmqtt.com
-  port: 26491
-  protocol: 3.1
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-    qos: 1
-    retain: true
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
-    qos: 1
-    retain: true
-
 # View all events in a logbook
-#logbook:
+logbook:
 
-# Track the sun
-sun:
-
-apcupsd:
-  host: 192.168.101.12
-  port: 3551
-
-# Weather Prediction
+#  - platform: torque
+#    email: !secret torque_email
 sensor:
-  - platform: yr
-
-  - platform: torque
-    email: !secret torque_email
-
-  - platform: google_travel_time
-    api_key: !secret google_travel_time_api_key
-    origin: !secret google_travel_time_origin
-    destination: !secret google_travel_time_destination
-
-  - platform: nest
-    monitored_conditions:
-      - 'temperature'
-      - 'target'
-      - 'humidity'
-      - 'operation_mode'
-
-  - platform: zoneminder
-    include_archived: true
-
-  - platform: apcupsd
-    resources:
-      - bcharge
-      - timeleft
-      - battv
-
-  - platform: plex
-    host: 192.168.101.12
-
-  - platform: time_date
-    display_options:
-      - 'time'
-      - 'date'
-
-  - platform: speedtest
-    minute: 30
-    hour:
-      - 0
-      - 6
-      - 12
-      - 18
-    monitored_conditions:
-      - download
-      - upload
-
-  - platform: darksky
-    api_key: !secret darksky_api_key
-
-    monitored_conditions:
-  #    - summary
-  #    - precip_type
-      - precip_intensity
-      - temperature
-  #    - dew_point
-  #    - wind_speed
-  #    - wind_bearing
-  #    - cloud_cover
-      - humidity
-  #    - nearest_storm_distance
-      - minutely_summary
-  #    - pressure
-  #    - visibility
-  #    - ozone
-  - platform: mqtt
-    name: "Alarm Status"
-    state_topic: "home/alarm"
-
   - platform: template
     sensors:
-      fixed_ups_battery_voltage:
-        friendly_name: 'Mains Voltage'
-        value_template: '{{ float(states("sensor.ups_battery_voltage")) / 10 }}'
-        unit_of_measurement: V
-
-panel_iframe:
-  monit:
-    title: 'Monit'
-    icon: 'mdi:security-home'
-    url: 'https://192.168.101.17/keypad/'
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-
-climate:
-  platform: nest
-
-binary_sensor:
-  - platform: nest
-    monitored_conditions:
-      - 'fan'
-      - 'hvac_ac_state'
-      - 'hvac_heater_state'
-      - 'hvac_aux_heater_state'
-      - 'hvac_heat_x2_state'
-      - 'hvac_heat_x3_state'
-      - 'hvac_alt_heat_state'
-      - 'hvac_alt_heat_x2_state'
-      - 'hvac_emer_heat_state'
-      - 'online'
-
-  - platform: mqtt
-    state_topic: "home/alarm/rf"
-    name: "Windows contact"
-    qos: 0
-    payload_on: "04"
-    payload_off: "0"
-    sensor_class: opening
-    value_template: '{{ value.x }}'
-
-  - platform: apcupsd
-
-alarm_control_panel:
-  platform: mqtt
-  name: Alarm
-  state_topic: "home/alarm"
-  command_topic: "home/alarm/set"
-
-device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 200
-    waypoints: True
-
-  - platform: unifi
-    host: 192.168.101.12
-    port: 8443
-    username: !secret unifi_username
-    password: !secret unifi_password
+      marty_battery:
+        value_template: '{{ states.device_tracker.martyszuk1_z1.attributes.battery }}'
+        friendly_name: Marty's Phone Battery
+        unit_of_measurement: '%'
 
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
 
-media_player:
-  - platform: samsungtv
-    host: 192.168.101.150
-
-  - platform: roku
-    host: 192.168.101.135
-
-  - platform: plex
-    host: 192.168.101.12
-
 tts:
   - platform: google
     language: 'en'
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
   #- platform: yandextts
     #api_key: !secret yandextts_api_key
     #codec: wav
@@ -254,28 +129,24 @@ tts:
   #platform: voicerss
   #api_key: !secret voicerss_api_key
 
-input_boolean:
-  martyhome:
-    name: Marty Home
-    initial: on
-    icon: mdi:cellphone-android
-  viktoriahome:
-    name: Viktoria Home
-    initial: on
-    icon: mdi:cellphone-iphone
+#input_select:
 
-input_select:
-  alarm_mode:
-    name: Alarm mode
-    options:
-     - automatic
-     - standby
-    initial: automatic
-    icon: mdi:security-home
+#  music_playlist:
+#    name: Playlist
+#    options:
+#    - Dinámica
+#    - Más reproducidas
+#    - Más valoradas
+#    - Modernas (>2000)
+#    - Modernas (>2006)
+#    - Mazinger
+#    initial: Dinámica
+#    icon: mdi:library-music
 
 group: !include group.yaml
 
 #zwave:
+#  usb_path: /dev/zwave
 
 automation: !include automation.yaml
 
@@ -283,8 +154,3 @@ automation: !include automation.yaml
 #  default: warn
 #  logs:
 #     homeassistant.components.mqtt: debug
-
-#logbook:
-#  exclude:
-#    domains:
-#      - sun

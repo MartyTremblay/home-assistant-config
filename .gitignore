@@ -11,3 +11,10 @@ fitbit.conf
 nest.conf
 google_calendars.yaml
 known_devices.yaml
+OZW_Log.txt
+
+pyozw.sqlite
+
+plex.conf
+
+upsmychoice_cookies.pickle

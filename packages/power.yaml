@@ -1,0 +1,45 @@
+apcupsd:
+  host: 192.168.101.12
+  port: 3551
+
+sensor:
+  - platform: template
+    sensors:
+      fixed_ups_battery_voltage:
+        friendly_name: 'Mains Voltage'
+        value_template: '{{ float(states("sensor.ups_battery_voltage")) / 10 }}'
+        unit_of_measurement: V
+
+  - platform: apcupsd
+    resources:
+      - bcharge
+      - timeleft
+      - battv
+
+binary_sensor:
+  - platform: apcupsd
+
+automation:
+  - alias: Mains power is back online
+    trigger:
+      platform: state
+      entity_id: binary_sensor.ups_online_status
+      from: 'off'
+      to: 'on'
+    action:
+      service: notify.pushbullet_notify
+      data:
+        message: "Mains Power is back Online!"
+        title: "Mains Power is back Online!"
+
+  - alias: Mains power is down
+    trigger:
+      platform: state
+      entity_id: binary_sensor.ups_online_status
+      from: 'on'
+      to: 'off'
+    action:
+      service: notify.pushbullet_notify
+      data:
+        message: "Mains Power is Down!"
+        title: "Mains Power is Down!"
