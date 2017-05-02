@@ -5,9 +5,14 @@ alarmdecoder:
     port: 10000
   panel_display: on
   zones:
+    02:
+      name: 'Sump Pump'
     03:
       name: 'Motion Garage'
       type: 'moving'
+    09:
+      name: 'Smoke Alarm 2nd'
+      type: 'smoke'
     10:
       name: 'Back Door'
       type: 'opening'
@@ -18,6 +23,11 @@ alarmdecoder:
       name: 'Motion Hallway'
       type: 'moving'
 
+homeassistant:
+  customize:
+    binary_sensor.sump_pump:
+      icon: mdi:cup-water
+
 input_select:
   alarm_mode:
     name: Alarm mode
@@ -26,33 +36,11 @@ input_select:
      - standby
     initial: automatic
     icon: mdi:security-home
-
-#alarm_control_panel:
-#  platform: mqtt
-#  name: Alarm
-#  state_topic: "home/alarm"
-#  command_topic: "home/alarm/set"
-
-#panel_iframe:
-#  monit:
-#    title: 'Keypad'
-#    icon: 'mdi:security-home'
-#    url: 'https://192.168.101.17/keypad/'
-
-#sensor:
-#  - platform: mqtt
-#    name: "Alarm Status"
-#    state_topic: "home/alarm"
-
-#binary_sensor:
-#  - platform: mqtt
-#    state_topic: "home/alarm/rf"
-#    name: "Windows contact"
-#    qos: 0
-#    payload_on: "04"
-#    payload_off: "0"
-#    device_class: motion
-#    value_template: '{{ value.x }}'
+    
+sensor:
+  - platform: mqtt
+    name: "Incoming Call"
+    state_topic: "home/sip"
 
 automation:
   # Automation Logic
@@ -73,11 +61,6 @@ automation:
         data:
           entity_id: alarm_control_panel.alarm_panel
           code: !secret alarm_pin
-      - service: mqtt.publish
-        data:
-          topic: home/alarm/set
-          payload: 'ARM_AWAY'
-          qos: 1
       - service: switch.turn_on
         entity_id: group.cameras
 
@@ -98,11 +81,6 @@ automation:
         data:
           entity_id: alarm_control_panel.alarm_panel
           code: !secret alarm_pin
-      - service: mqtt.publish
-        data:
-          topic: home/alarm/set
-          payload: 'DISARM'
-          qos: 1
       - service: switch.turn_off
         entity_id: group.cameras
 
@@ -124,11 +102,6 @@ automation:
         data:
           entity_id: alarm_control_panel.alarm_panel
           code: !secret alarm_pin
-      - service: mqtt.publish
-        data:
-          topic: home/alarm/set
-          payload: 'ARM_HOME'
-          qos: 1
       - service: switch.turn_on
         entity_id: group.cameras
 
@@ -150,11 +123,6 @@ automation:
         data:
           entity_id: alarm_control_panel.alarm_panel
           code: !secret alarm_pin
-      - service: mqtt.publish
-        data:
-          topic: home/alarm/set
-          payload: 'DISARM'
-          qos: 1
       - service: switch.turn_off
         entity_id: group.cameras
 

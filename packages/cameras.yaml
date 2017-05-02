@@ -1,26 +1,28 @@
 # ZoneMinder CCTV
-#zoneminder:
-#  host: 192.168.101.12:8083
+zoneminder:
+  host: 192.168.101.12:8083
 
-#switch:
-#  - platform: zoneminder
-#    command_on: Modect
-#    command_off: Monitor
+switch:
+  - platform: zoneminder
+    command_on: Modect
+    command_off: Monitor
 
 camera:
-  - platform: mjpeg
-    mjpeg_url: http://192.168.101.58:8080/live
-#  - platform: zoneminder
+  - platform: zoneminder
 
+android_ip_webcam:
+  name: cam-back-window2
+  host: 192.168.101.88
+  sensors:
+    - battery_level
+    - battery_temp
+    - battery_voltage
+  switches:
+    - night_vision
 
-#sensor:
-#  - platform: zoneminder
-#    include_archived: true
-
-#android_ip_webcam:
-  # This should be the ip of your phone
-#  - host: 192.168.101.88
-#    name: cam-back-window2
+sensor:
+  - platform: zoneminder
+    include_archived: true
 
 automation:
   - alias: 'Set night_vision off when sun rises'
@@ -31,7 +33,6 @@ automation:
     action:
       - service: switch.turn_off
         entity_id: switch.cambackwindow2_night_vision
-
   - alias: 'Set night_vision on when sun sets'
     trigger:
         platform: sun

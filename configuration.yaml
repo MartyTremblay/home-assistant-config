@@ -23,7 +23,7 @@ homeassistant:
     security: !include packages/security.yaml
     climate: !include packages/climate.yaml
     power: !include packages/power.yaml
-#    cameras: !include packages/cameras.yaml
+    cameras: !include packages/cameras.yaml
     weather: !include packages/weather.yaml
     workingdays: !include packages/workingdays.yaml
     calendars: !include packages/calendars.yaml
@@ -108,6 +108,9 @@ sensor:
         value_template: '{{ states.device_tracker.martyszuk1_z1.attributes.battery }}'
         friendly_name: Marty's Phone Battery
         unit_of_measurement: '%'
+  - platform: ups
+    username: retro_hunter
+    password: !secret ups_password
 
 google:
   client_id: !secret google_client_id

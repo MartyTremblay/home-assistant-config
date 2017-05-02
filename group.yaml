@@ -29,6 +29,7 @@ links_view:
   view: yes
   entities:
     - group.links_view
+    - sensor.ups
 
 #health_view:
 #  name: Health
@@ -67,7 +68,6 @@ cameras:
     - switch.cambackwindow_state
     - sensor.cambackwindow_status
     - sensor.cambackwindow_events
-    - camera.cam_front_jpg
 
 climate:
   name: Climate
@@ -93,6 +93,8 @@ sensors:
       - binary_sensor.garage_door
       - binary_sensor.motion_garage
       - binary_sensor.motion_hallway
+      - binary_sensor.sump_pump
+      - binary_sensor.smoke_alarm_2nd
 
 
 #viktoria_fitbit:

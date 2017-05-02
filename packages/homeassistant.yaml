@@ -3,7 +3,6 @@
 # Home Assistant general information
 
 sensor:
-
   - platform: template
     sensors:
       ha_last_restart:
@@ -17,15 +16,14 @@ sensor:
           {% endif %}
 
 automation:
-
-- alias: HASS Startup
-  trigger:
-    platform: event
-    event_type: homeassistant_start
-  action:
-    - service: persistent_notification.create
-      data:
-        notification_id: hass_startup_notification
-        title: "Home Assistant Startup"
-        message: >
-          Home Assistant started: {{ as_timestamp(now()) | timestamp_custom("%b %d %X") }}
+  - alias: HASS Startup
+    trigger:
+      platform: event
+      event_type: homeassistant_start
+    action:
+      - service: persistent_notification.create
+        data:
+          notification_id: hass_startup_notification
+          title: "Home Assistant Startup"
+          message: >
+            Home Assistant started: {{ as_timestamp(now()) | timestamp_custom("%b %d %X") }}
