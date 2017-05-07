@@ -18,7 +18,7 @@ homeassistant:
     ipaddress: !include packages/ipaddress.yaml
     datetime: !include packages/datetime.yaml
     mqtt: !include packages/mqtt.yaml
-    sip_call: !include packages/caller_id.yaml
+    sip_call: !include packages/sip_call.yaml
     presence: !include packages/presence.yaml
     geo: !include packages/geo.yaml
     security: !include packages/security.yaml

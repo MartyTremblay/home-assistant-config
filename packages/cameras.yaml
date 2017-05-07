@@ -28,7 +28,7 @@ automation:
     trigger:
         platform: sun
         event: sunrise
-        offset: '-00:30:00'
+        offset: '-00:15:00'
     action:
       - service: switch.turn_off
         entity_id: switch.cambackwindow2_night_vision

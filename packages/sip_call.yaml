@@ -1,21 +1,40 @@
 sensor:
   - platform: mqtt
-    name: "Incoming Call"
+    name: "SIP Call Verb"
     state_topic: "home/sip"
+    value_template: '{{ value_json.verb }}'
+  - platform: mqtt
+    name: "SIP Call Caller"
+    state_topic: "home/sip"
+    value_template: '{{ value_json.caller }}'
 
-homeassistant:
-  customize:
-    sensor.incoming_call:
-      icon: mdi:phone-clasic
+  - platform: template
+    sensors:
+      call_status:
+        friendly_name: 'Call Status'
+        value_template: >
+          {% if is_state("sensor.sip_call_verb", "incoming") %}
+            {{ states("sensor.sip_call_caller") }}
+          {% else %}
+          {% endif %}
+        icon_template: >
+          {% if is_state("sensor.sip_call_verb", "incoming") %}
+            mdi:phone-incoming
+          {% elif is_state("sensor.sip_call_verb", "answered") %}
+            mdi:phone-in-talk
+          {% else %}
+            mdi:phone
+          {% endif %}
 
 automation:
-  - alias: Incoming Call
+  - alias: SIP Call
     trigger:
       - platform: state
-        entity_id: sensor.incoming_call
+        entity_id: sensor.sip_call_verb
+        to: 'incoming'
     action:
       - service: script.notify
         data_template:
-          notify_text: "Incoming call from: '{{ states.sensor.incoming_call.state }}'"
+          notify_text: "Incoming call from: "
           notify_mobile: True
           is_warning: False

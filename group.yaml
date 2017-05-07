@@ -11,6 +11,7 @@ default_view:
     - media_player.picoreplayer2
     - media_player.livingroom_tv
     - media_player.roku_1
+    - group.sip_call
     #- sensor.google_travel_time__driving
     - camera.camfrontwindow
 
@@ -79,6 +80,11 @@ power:
     - sensor.ups_battery
     - sensor.fixed_ups_battery_voltage
     - sensor.ups_time_left
+
+sip_call:
+  name: Home Phone
+  entities:
+    - sensor.call_status
 
 sensors:
     name: Sensors
