@@ -1,4 +1,3 @@
-# ZoneMinder CCTV
 zoneminder:
   host: 192.168.101.12:8083
 
@@ -29,7 +28,7 @@ automation:
     trigger:
         platform: sun
         event: sunrise
-        offset: '+00:00:00'
+        offset: '-00:30:00'
     action:
       - service: switch.turn_off
         entity_id: switch.cambackwindow2_night_vision
@@ -37,7 +36,7 @@ automation:
     trigger:
         platform: sun
         event: sunset
-        offset: '+00:00:00'
+        offset: '+00:30:00'
     action:
         - service: switch.turn_on
           entity_id: switch.cambackwindow2_night_vision

@@ -1,0 +1,21 @@
+sensor:
+  - platform: mqtt
+    name: "Incoming Call"
+    state_topic: "home/sip"
+
+homeassistant:
+  customize:
+    sensor.incoming_call:
+      icon: mdi:phone-clasic
+
+automation:
+  - alias: Incoming Call
+    trigger:
+      - platform: state
+        entity_id: sensor.incoming_call
+    action:
+      - service: script.notify
+        data_template:
+          notify_text: "Incoming call from: '{{ states.sensor.incoming_call.state }}'"
+          notify_mobile: True
+          is_warning: False

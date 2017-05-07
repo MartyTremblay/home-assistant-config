@@ -36,11 +36,6 @@ input_select:
      - standby
     initial: automatic
     icon: mdi:security-home
-    
-sensor:
-  - platform: mqtt
-    name: "Incoming Call"
-    state_topic: "home/sip"
 
 automation:
   # Automation Logic
@@ -136,6 +131,6 @@ automation:
           minutes: 1
     action:
       service: notify.pushbullet_notify
-      data:
-        message: "A door has been left opened"
+      data_template:
         title: "A door has been left opened"
+        message: "Back door is {{ states.binary_sensor.furnace.back_door }} and Garage door is {{ states.binary_sensor.furnace.garage_door }}"

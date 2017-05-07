@@ -29,13 +29,7 @@ links_view:
   view: yes
   entities:
     - group.links_view
-    - sensor.ups
-
-#health_view:
-#  name: Health
-#  view: yes
-#  entities:
-#    - group.viktoria_fitbit
+    - sensor.ups_deliveries
 
 network:
   name: Network
@@ -95,11 +89,3 @@ sensors:
       - binary_sensor.motion_hallway
       - binary_sensor.sump_pump
       - binary_sensor.smoke_alarm_2nd
-
-
-#viktoria_fitbit:
-#  name: Viktoria's goals
-#  entities:
-#    - sensor.tracker_activitycalories
-#    - sensor.tracker_calories
-#    - sensor.tracker_steps

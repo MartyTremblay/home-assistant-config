@@ -18,6 +18,7 @@ homeassistant:
     ipaddress: !include packages/ipaddress.yaml
     datetime: !include packages/datetime.yaml
     mqtt: !include packages/mqtt.yaml
+    sip_call: !include packages/caller_id.yaml
     presence: !include packages/presence.yaml
     geo: !include packages/geo.yaml
     security: !include packages/security.yaml
@@ -109,6 +110,7 @@ sensor:
         friendly_name: Marty's Phone Battery
         unit_of_measurement: '%'
   - platform: ups
+    name: ups_deliveries
     username: retro_hunter
     password: !secret ups_password
 
@@ -152,8 +154,3 @@ group: !include group.yaml
 #  usb_path: /dev/zwave
 
 automation: !include automation.yaml
-
-#logger:
-#  default: warn
-#  logs:
-#     homeassistant.components.mqtt: debug
