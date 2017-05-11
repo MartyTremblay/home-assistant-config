@@ -1,3 +1,5 @@
+# Subscribe to a MQTT channel using https://github.com/MartyTremblay/sip2mqtt
+
 sensor:
   - platform: mqtt
     name: "SIP Call Verb"
@@ -33,8 +35,10 @@ automation:
         entity_id: sensor.sip_call_verb
         to: 'incoming'
     action:
-      - service: script.notify
+      - service: tts.google_say
         data_template:
-          notify_text: "Incoming call from: "
-          notify_mobile: True
-          is_warning: False
+          message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
+      - service: notify.pushbullet_notify
+        data_template:
+          title: "Incoming call from: {{states('sensor.sip_call_caller')}}"
+          message: "Incoming call from: {{states('sensor.sip_call_caller')}}"

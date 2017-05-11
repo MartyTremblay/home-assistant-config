@@ -3,3 +3,19 @@ links_view:
   - group.links_view
   name: Weblinks
   view: true
+default_view:
+  entities:
+  - group.sip_call
+  - group.family
+  - group.climate
+  - group.network
+  - group.alarm
+  - group.power
+  - group.sensors
+  - media_player.picoreplayer1
+  - media_player.picoreplayer2
+  - media_player.livingroom_tv
+  - media_player.roku_1
+  - camera.camfrontwindow
+  name: default_view
+  view: true

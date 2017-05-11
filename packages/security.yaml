@@ -7,6 +7,7 @@ alarmdecoder:
   zones:
     02:
       name: 'Sump Pump'
+      type: 'safety'
     03:
       name: 'Motion Garage'
       type: 'moving'
@@ -17,7 +18,7 @@ alarmdecoder:
       name: 'Back Door'
       type: 'opening'
     11:
-      name: 'Garage Door'
+      name: 'Mudroom Door'
       type: 'opening'
     12:
       name: 'Motion Hallway'
@@ -124,7 +125,7 @@ automation:
   - alias: Alert when door is opened for too long
     trigger:
       - platform: state
-        entity_id: binary_sensor.back_door, binary_sensor.garage_door
+        entity_id: binary_sensor.back_door, binary_sensor.mudroom_door
         from: 'closed'
         to: 'open'
         for:
@@ -133,4 +134,15 @@ automation:
       service: notify.pushbullet_notify
       data_template:
         title: "A door has been left opened"
-        message: "Back door is {{ states.binary_sensor.furnace.back_door }} and Garage door is {{ states.binary_sensor.furnace.garage_door }}"
+        message: "Back door is {{states('binary_sensor.back_door')}} and Garage door is {{states('binary_sensor.garage_door')}}"
+
+  - alias: Alarm triggered
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.alarm_panel
+        to: 'triggered'
+    action:
+      service: notify.pushbullet_notify
+      data_template:
+        title: "Alarm has triggered!"
+        message: "Alarm has triggered: {{states('sensor.alarm_panel_display')}}"

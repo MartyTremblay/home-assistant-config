@@ -1,6 +1,7 @@
 default_view:
   view: yes
   entities:
+    - group.sip_call
     - group.family
     - group.climate
     - group.network
@@ -11,7 +12,6 @@ default_view:
     - media_player.picoreplayer2
     - media_player.livingroom_tv
     - media_player.roku_1
-    - group.sip_call
     #- sensor.google_travel_time__driving
     - camera.camfrontwindow
 
@@ -90,7 +90,7 @@ sensors:
     name: Sensors
     entities:
       - binary_sensor.back_door
-      - binary_sensor.garage_door
+      - binary_sensor.mudroom_door
       - binary_sensor.motion_garage
       - binary_sensor.motion_hallway
       - binary_sensor.sump_pump

@@ -80,6 +80,11 @@ notify:
   - name: pushbullet_notify
     platform: pushbullet
     api_key: !secret pushbullet_api_key
+  - name: group_notify
+    platform: group
+    services:
+      - service: pushbullet_notify
+      #- service: html5
 
 recorder:
   purge_days: 21
