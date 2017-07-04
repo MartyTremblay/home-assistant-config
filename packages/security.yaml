@@ -83,7 +83,7 @@ automation:
   - alias: Arm the alarm HOME at 11:00pm
     trigger:
       platform: time
-      after: '23:00:00'
+      at: '23:00:00'
     condition:
       condition: and
       conditions:
@@ -104,7 +104,7 @@ automation:
   - alias: Disarm the alarm HOME at 6:00am
     trigger:
       platform: time
-      after: '06:00:00'
+      at: '06:00:00'
     condition:
       condition: and
       conditions:

@@ -12,7 +12,6 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
     waypoints: True
-
   - platform: unifi
     host: 192.168.101.12
     port: 8443
@@ -30,12 +29,12 @@ automation:
     trigger:
       - platform: state
         entity_id: device_tracker.androidbf1392b7f2ba2bce
-        state: 'not_home'
+        to: 'not_home'
         for:
           minutes: 10
       - platform: state
         entity_id: device_tracker.martyszuk1_z1
-        state: 'not_home'
+        to: 'not_home'
     action:
       - service: homeassistant.turn_off
         entity_id: input_boolean.martyhome
@@ -55,7 +54,7 @@ automation:
     trigger:
       - platform: state
         entity_id: device_tracker.martyszuk1_z1, device_tracker.androidbf1392b7f2ba2bce
-        state: 'home'
+        to: 'home'
     action:
       - service: homeassistant.turn_on
         entity_id: input_boolean.martyhome
@@ -76,12 +75,12 @@ automation:
     trigger:
       - platform: state
         entity_id: device_tracker.viktoriasiphone
-        state: 'not_home'
+        to: 'not_home'
         for:
           minutes: 10
       - platform: state
         entity_id: device_tracker.viktoriaiphone_vt
-        state: 'not_home'
+        to: 'not_home'
     action:
       - service: homeassistant.turn_off
         entity_id: input_boolean.viktoriahome
@@ -101,7 +100,7 @@ automation:
     trigger:
       - platform: state
         entity_id: device_tracker.viktoriasiphone, device_tracker.viktoriaiphone_vt
-        state: 'home'
+        to: 'home'
     action:
       - service: homeassistant.turn_on
         entity_id: input_boolean.viktoriahome

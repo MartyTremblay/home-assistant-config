@@ -43,3 +43,14 @@ automation:
       data:
         message: "Mains Power is Down!"
         title: "Mains Power is Down!"
+
+  - alias: UPS battery power is low
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ups_time_left
+      below: 5
+    action:
+      service: notify.pushbullet_notify
+      data:
+        message: "UPS battery power is low!"
+        title: "UPS battery power is low!"

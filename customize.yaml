@@ -15,3 +15,13 @@ sensor.Alarm_Status:
 
 binary_sensor.ups_online_status:
   icon: mdi:flash
+
+binary_sensor.floorplan:
+  custom_ui_state_card: floorplan
+  floorplan_image: floorplan/floorplan.svg
+  entities:
+    - binary_sensor.fp_first_garage
+    - binary_sensor.fp_first_living_room
+    - binary_sensor.fp_first_kitchen
+    - binary_sensor.fp_first_family_room
+    - binary_sensor.fp_first_hallway

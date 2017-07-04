@@ -9,6 +9,18 @@ switch:
 camera:
   - platform: zoneminder
 
+image_processing:
+  - platform: seven_segments
+    digits: 2
+    #x_position: 40
+    #y_position: 20
+    height: 160
+    width: 128
+    threshold: 87
+    extra_arguments: "-d 2 -b black"
+    source:
+      - entity_id: camera.camdehumidifier
+
 android_ip_webcam:
   name: cam-back-window2
   host: 192.168.101.88
@@ -27,7 +39,7 @@ automation:
   - alias: 'Set night_vision off when sun rises'
     trigger:
         platform: sun
-        event: sunrise
+        event: 'sunrise'
         offset: '-00:15:00'
     action:
       - service: switch.turn_off
@@ -35,7 +47,7 @@ automation:
   - alias: 'Set night_vision on when sun sets'
     trigger:
         platform: sun
-        event: sunset
+        event: 'sunset'
         offset: '+00:30:00'
     action:
         - service: switch.turn_on

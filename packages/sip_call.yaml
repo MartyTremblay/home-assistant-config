@@ -35,10 +35,12 @@ automation:
         entity_id: sensor.sip_call_verb
         to: 'incoming'
     action:
-      - service: tts.google_say
-        data_template:
-          message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
+      #- service: tts.google_say
+      #  data_template:
+      #    message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
       - service: notify.pushbullet_notify
         data_template:
           title: "Incoming call from: {{states('sensor.sip_call_caller')}}"
           message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
+      - service: media_player.media_pause
+        entity_id: media_player.picoreplayer1

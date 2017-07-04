@@ -2,7 +2,7 @@ automation:
   - alias: Time for kids to leave for the bus
     trigger:
       platform: time
-      after: '08:12:00'
+      at: '08:12:00'
     condition:
       condition: time
       weekday:

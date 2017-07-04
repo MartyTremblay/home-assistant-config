@@ -1,6 +1,8 @@
 default_view:
   view: yes
   entities:
+    - automation.update_available_notification
+    - group.general
     - group.sip_call
     - group.family
     - group.climate
@@ -22,6 +24,7 @@ monitors_view:
     - group.cameras
     - camera.camfrontwindow
     - camera.cambackwindow2
+    - camera.camdehumidifier
     - group.monitors_view
     - switch.cambackwindow2_night_vision
 
@@ -31,6 +34,13 @@ links_view:
   entities:
     - group.links_view
     - sensor.ups_deliveries
+
+general:
+  name: General
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.moon
 
 network:
   name: Network
@@ -70,6 +80,7 @@ climate:
     - climate.hallway
     - sensor.hallway_thermostat_humidity
     - sensor.hallway_thermostat_hvac_state
+    - sensor.basement_humidity
     - sensor.dark_sky_temperature
     - sensor.dark_sky_minutely_summary
 

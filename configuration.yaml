@@ -26,11 +26,12 @@ homeassistant:
     power: !include packages/power.yaml
     cameras: !include packages/cameras.yaml
     weather: !include packages/weather.yaml
-    workingdays: !include packages/workingdays.yaml
-    calendars: !include packages/calendars.yaml
+    #workingdays: !include packages/workingdays.yaml
+    #calendars: !include packages/calendars.yaml
     mediaplayer: !include packages/mediaplayer.yaml
-    squeezebox_alert: !include packages/squeezebox_alert.yaml
+    #squeezebox_alert: !include packages/squeezebox_alert.yaml
     kids: !include packages/kids.yaml
+    #floorplan: !include packages/floorplan.yaml
 
 http:
   #base_url: 192.168.101.12:8123
@@ -64,16 +65,16 @@ zone 1:
 #conversation:
 
 # Enables support for tracking state changes over time.
-history:
-  include:
-    domains:
-      - sensor
-      - switch
-      - media_player
-  exclude:
-    entities:
-     - sensor.last_boot
-     - sensor.date
+# history:
+#   include:
+#     domains:
+#       - sensor
+#       - switch
+#       - media_player
+#   exclude:
+#     entities:
+#      - sensor.last_boot
+#      - sensor.date
 
 # Enables notifications
 notify:
@@ -103,7 +104,7 @@ weblink:
       url: https://192.168.101.17/keypad/
 
 # View all events in a logbook
-logbook:
+#logbook:
 
 #  - platform: torque
 #    email: !secret torque_email
@@ -114,10 +115,10 @@ sensor:
         value_template: '{{ states.device_tracker.martyszuk1_z1.attributes.battery }}'
         friendly_name: Marty's Phone Battery
         unit_of_measurement: '%'
-  - platform: ups
-    name: ups_deliveries
-    username: retro_hunter
-    password: !secret ups_password
+  # - platform: ups
+  #   name: ups_deliveries
+  #   username: retro_hunter
+  #   password: !secret ups_password
 
 google:
   client_id: !secret google_client_id
@@ -159,3 +160,18 @@ group: !include group.yaml
 #  usb_path: /dev/zwave
 
 automation: !include automation.yaml
+
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+#     config: !include packages/floorplan.yaml
+
+logger:
+  default: notset
+
+updater:
+
+zeroconf:
