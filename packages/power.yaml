@@ -1,20 +1,23 @@
 apcupsd:
-  host: 192.168.101.12
+  host: 192.168.101.13
   port: 3551
 
 sensor:
-  - platform: template
-    sensors:
-      fixed_ups_battery_voltage:
-        friendly_name: 'Mains Voltage'
-        value_template: '{{ float(states("sensor.ups_battery_voltage")) / 10 }}'
-        unit_of_measurement: V
-
   - platform: apcupsd
     resources:
+      - status
+      - linev
+      - loadpct
       - bcharge
       - timeleft
-      - battv
+#   - platform: template
+#     sensors:
+#       fixed_ups_battery_voltage:
+#         friendly_name: 'Mains Voltage'
+#         value_template: '{{ float(states("sensor.ups_battery_voltage")) / 10 }}'
+#         unit_of_measurement: V
+
+
 
 binary_sensor:
   - platform: apcupsd

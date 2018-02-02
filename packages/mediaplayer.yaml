@@ -1,6 +1,6 @@
 sensor:
   - platform: plex
-    host: 192.168.101.12
+    host: 192.168.101.13
 
 media_player:
   - platform: samsungtv
@@ -14,16 +14,16 @@ media_player:
 
   - platform: plex
     name: Plex Server
-    host: 192.168.101.12
+    host: 192.168.101.13
 
   - platform: squeezebox
     name: Logitech Media Server
-    host: 192.168.101.12
+    host: 192.168.101.13
     port: 9000
 
-  - platform: gstreamer
-    name: 'TTS'
-    pipeline: 'audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapcast_tts'
+  # - platform: gstreamer
+  #   name: 'TTS'
+  #   pipeline: 'audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapcast_tts'
 
 input_select:
   music_playlist:

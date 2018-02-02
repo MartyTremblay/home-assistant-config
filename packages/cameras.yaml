@@ -1,5 +1,5 @@
 zoneminder:
-  host: 192.168.101.12:8083
+  host: 192.168.101.13:8083
 
 switch:
   - platform: zoneminder
@@ -9,27 +9,27 @@ switch:
 camera:
   - platform: zoneminder
 
-image_processing:
-  - platform: seven_segments
-    digits: 2
-    #x_position: 40
-    #y_position: 20
-    height: 160
-    width: 128
-    threshold: 87
-    extra_arguments: "-d 2 -b black"
-    source:
-      - entity_id: camera.camdehumidifier
+# image_processing:
+#   - platform: seven_segments
+#     digits: 2
+#     #x_position: 40
+#     #y_position: 20
+#     height: 160
+#     width: 128
+#     threshold: 87
+#     extra_arguments: "-d 2 -b black"
+#     source:
+#       - entity_id: camera.camdehumidifier
 
-android_ip_webcam:
-  name: cam-back-window2
-  host: 192.168.101.88
-  sensors:
-    - battery_level
-    - battery_temp
-    - battery_voltage
-  switches:
-    - night_vision
+# android_ip_webcam:
+#   name: cam-back-window2
+#   host: 192.168.101.88
+#   sensors:
+#     - battery_level
+#     - battery_temp
+#     - battery_voltage
+#   switches:
+#     - night_vision
 
 sensor:
   - platform: zoneminder

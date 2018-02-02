@@ -7,22 +7,22 @@ alarmdecoder:
   zones:
     02:
       name: 'Sump Pump'
-      type: 'safety'
+      type: 'moisture'
     03:
       name: 'Motion Garage'
-      type: 'moving'
+      type: 'motion'
     09:
       name: 'Smoke Alarm 2nd'
       type: 'smoke'
     10:
       name: 'Back Door'
-      type: 'opening'
+      type: 'door'
     11:
       name: 'Mudroom Door'
-      type: 'opening'
+      type: 'door'
     12:
       name: 'Motion Hallway'
-      type: 'moving'
+      type: 'motion'
 
 homeassistant:
   customize:
@@ -126,15 +126,19 @@ automation:
     trigger:
       - platform: state
         entity_id: binary_sensor.back_door, binary_sensor.mudroom_door
-        from: 'closed'
-        to: 'open'
+        from: 'off'
+        to: 'on'
         for:
-          minutes: 1
+            minutes: 1
+            seconds: 00
     action:
-      service: notify.pushbullet_notify
+      service: notify.all
       data_template:
         title: "A door has been left opened"
-        message: "Back door is {{states('binary_sensor.back_door')}} and Garage door is {{states('binary_sensor.garage_door')}}"
+        message: "Back door is {{states('binary_sensor.back_door')}} and Garage door is {{states('binary_sensor.mudroom_door')}}"
+        data:
+            icon: "https://goo.gl/xeetdy"
+            vibration: "0,65,706,86,657,95,668,100"
 
   - alias: Alarm triggered
     trigger:
@@ -142,7 +146,10 @@ automation:
         entity_id: alarm_control_panel.alarm_panel
         to: 'triggered'
     action:
-      service: notify.pushbullet_notify
+      service: notify.all
       data_template:
         title: "Alarm has triggered!"
         message: "Alarm has triggered: {{states('sensor.alarm_panel_display')}}"
+        data:
+            icon: "https://goo.gl/xeetdy"
+            vibration: "0,65,706,86,657,95,668,100"

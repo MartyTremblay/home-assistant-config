@@ -12,12 +12,16 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
     waypoints: True
-  - platform: unifi
-    host: 192.168.101.12
-    port: 8443
+  # - platform: unifi
+  #   host: 192.168.101.13
+  #   port: 8443
+  #   username: !secret unifi_username
+  #   password: !secret unifi_password
+  #   verify_ssl: false
+  - platform: unifi_direct
+    host: 192.168.101.3
     username: !secret unifi_username
     password: !secret unifi_password
-    verify_ssl: false
 
 automation:
   # Presence Detection and Logic
@@ -28,7 +32,7 @@ automation:
       state: 'on'
     trigger:
       - platform: state
-        entity_id: device_tracker.androidbf1392b7f2ba2bce
+        entity_id: device_tracker.martyszuk1_wifi
         to: 'not_home'
         for:
           minutes: 10
@@ -53,7 +57,7 @@ automation:
       state: 'off'
     trigger:
       - platform: state
-        entity_id: device_tracker.martyszuk1_z1, device_tracker.androidbf1392b7f2ba2bce
+        entity_id: device_tracker.martyszuk1_z1, device_tracker.martyszuk1_wifi
         to: 'home'
     action:
       - service: homeassistant.turn_on
@@ -74,13 +78,15 @@ automation:
       state: 'on'
     trigger:
       - platform: state
-        entity_id: device_tracker.viktoriasiphone
+        entity_id: device_tracker.iphone
         to: 'not_home'
         for:
           minutes: 10
       - platform: state
-        entity_id: device_tracker.viktoriaiphone_vt
+        entity_id: device_tracker.iphone_2
         to: 'not_home'
+        for:
+          minutes: 10
     action:
       - service: homeassistant.turn_off
         entity_id: input_boolean.viktoriahome
@@ -99,7 +105,7 @@ automation:
       state: 'off'
     trigger:
       - platform: state
-        entity_id: device_tracker.viktoriasiphone, device_tracker.viktoriaiphone_vt
+        entity_id: device_tracker.iphone, device_tracker.iphone_2
         to: 'home'
     action:
       - service: homeassistant.turn_on

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #NOTE: Edit "user", "pass", ip and port below
-JSONRPC="http://192.168.101.12:9000/jsonrpc.js"
+JSONRPC="http://192.168.101.13:9000/jsonrpc.js"
 
 #Example command arguments
 #mac="00:04:20:01:02:03"

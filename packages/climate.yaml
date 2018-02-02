@@ -16,12 +16,12 @@ sensor:
       - 'target'
       - 'humidity'
       - 'operation_mode'
-  - platform: template
-    sensors:
-      basement_humidity:
-        value_template: '{{ states("image_processing.sevensegement_ocr_camdehumidifier") }}'
-        friendly_name: 'Basement Humidity'
-        unit_of_measurement: '%'
+  # - platform: template
+  #   sensors:
+  #     basement_humidity:
+  #       value_template: '{{ states("image_processing.sevensegement_ocr_camdehumidifier") }}'
+  #       friendly_name: 'Basement Humidity'
+  #       unit_of_measurement: '%'
 
 binary_sensor:
   - platform: nest
@@ -62,15 +62,15 @@ automation:
         message: "Nest is not Online!"
         title: "Nest is not Online!"
 
-  - alias: Basement Dehumidifier offline
-    trigger:
-      - platform: state
-        entity_id: image_processing.sevensegement_ocr_camdehumidifier
-        to: 'unknown'
-        for:
-          minutes: 1
-    action:
-      service: notify.pushbullet_notify
-      data_template:
-        title: "The basement dehumidifier is offline!"
-        message: "The basement dehumidifier is offline!"
+  # - alias: Basement Dehumidifier offline
+  #   trigger:
+  #     - platform: state
+  #       entity_id: image_processing.sevensegement_ocr_camdehumidifier
+  #       to: 'unknown'
+  #       for:
+  #         minutes: 1
+  #   action:
+  #     service: notify.pushbullet_notify
+  #     data_template:
+  #       title: "The basement dehumidifier is offline!"
+  #       message: "The basement dehumidifier is offline!"
