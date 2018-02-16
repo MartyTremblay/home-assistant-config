@@ -1,5 +1,6 @@
 default_view:
   view: yes
+  name: Main
   entities:
     #- automation.update_available_notification
     - group.general
@@ -16,19 +17,15 @@ default_view:
     - media_player.roku_1
     #- sensor.google_travel_time__driving
     - camera.camfrontwindow
-    - group.all_lights
 
+Master Bedroom:
+    light.bedroom_light_level
 
-Master Bedroom: light.bedroom_light_level
-Boys Bedroom: light.bedroom_light_level
-Nika's Bedroom: light.bedroom_light_level
 Rooms:
     view: yes
     name: Rooms
     entities:
       - group.master_bedroom
-      - group.boys_bedroom
-      - group.nikas_bedroom
 
 monitors_view:
   name: Cameras
@@ -72,10 +69,10 @@ alarm:
   name: Alarm
   entities:
     #- sensor.Alarm_Status
+    - input_select.alarm_mode
     - alarm_control_panel.alarm_panel
     - sensor.alarm_panel_display
-    - input_select.alarm_mode
-
+    
 cameras:
   name: Cameras
   entities:
@@ -113,8 +110,10 @@ sip_call:
 sensors:
     name: Sensors
     entities:
-      - binary_sensor.back_door
-      - binary_sensor.mudroom_door
+      - binary_sensor.door_front
+      - binary_sensor.door_back
+      - binary_sensor.door_mudroom
+      - binary_sensor.door_patio
       - binary_sensor.motion_garage
       - binary_sensor.motion_hallway
       - binary_sensor.sump_pump

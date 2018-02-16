@@ -55,16 +55,16 @@ sun:
 zwave:
   usb_path: /dev/ttyACM0
 
-emulated_hue:
-  off_maps_to_on_domains:
-    - script
-    - scene
-  expose_by_default: true
-  exposed_domains:
-    - light
-    - media_player
+# emulated_hue:
+#   off_maps_to_on_domains:
+#     - script
+#     - scene
+#   expose_by_default: true
+#   exposed_domains:
+#     - light
+#     - media_player
 
-alexa:
+#alexa:
   # flash_briefings:
   #   whoishome:
   #     - title: Who's at home?
@@ -205,6 +205,12 @@ logger:
 
 zeroconf:
 ios:
+cloud:
+  alexa:
+    filter:
+      exclude_domains:
+        - script
+        - automation
 
   # Example configuration.yaml entry
 intent_script:

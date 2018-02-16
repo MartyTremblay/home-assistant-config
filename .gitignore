@@ -30,3 +30,7 @@ options.xml
 zwcfg_0xf2305c42.xml
 
 zwscene.xml
+
+.cloud/production_auth.json
+
+entity_registry.yaml
