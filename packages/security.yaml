@@ -29,6 +29,9 @@ alarmdecoder:
     14:
       name: 'Door Patio'
       type: 'door'
+    15:
+      name: 'Motion Basement'
+      type: 'motion'
 
 homeassistant:
   customize:
@@ -54,11 +57,11 @@ switch:
         turn_on:
           service: alarm_control_panel.alarmdecoder_alarm_toggle_chime
           data:
-            code: !secret alarm_pin
+            code: !secret alarm_code
         turn_off:
           service: alarm_control_panel.alarmdecoder_alarm_toggle_chime
           data:
-            code: !secret alarm_pin
+            code: !secret alarm_code
         icon_template: >-
             {% if is_state_attr('alarm_control_panel.alarm_panel', 'chime', true) %}
               mdi:bell-ring
@@ -82,9 +85,9 @@ automation:
           state: 'automatic'
     action:
       - service: alarm_control_panel.alarm_arm_away
+        entity_id: alarm_control_panel.alarm_panel
         data:
-          entity_id: alarm_control_panel.alarm_panel
-          code: !secret alarm_pin
+          code: !secret alarm_code
       - service: switch.turn_on
         entity_id: group.cameras
 
@@ -102,9 +105,9 @@ automation:
           state: 'automatic'
     action:
       - service: alarm_control_panel.alarm_disarm
+        entity_id: alarm_control_panel.alarm_panel
         data:
-          entity_id: alarm_control_panel.alarm_panel
-          code: !secret alarm_pin
+          code: !secret alarm_code
       - service: switch.turn_off
         entity_id: group.cameras
 
@@ -123,9 +126,9 @@ automation:
           state: 'on'
     action:
       - service: alarm_control_panel.alarm_arm_home
+        entity_id: alarm_control_panel.alarm_panel
         data:
-          entity_id: alarm_control_panel.alarm_panel
-          code: !secret alarm_pin
+          code: !secret alarm_code
       - service: switch.turn_on
         entity_id: group.cameras
 
@@ -144,9 +147,9 @@ automation:
           state: 'on'
     action:
       - service: alarm_control_panel.alarm_disarm
+        entity_id: alarm_control_panel.alarm_panel
         data:
-          entity_id: alarm_control_panel.alarm_panel
-          code: !secret alarm_pin
+          code: !secret alarm_code
       - service: switch.turn_off
         entity_id: group.cameras
 

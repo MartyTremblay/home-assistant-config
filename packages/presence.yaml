@@ -39,6 +39,8 @@ automation:
       - platform: state
         entity_id: device_tracker.martyszuk1_z1
         to: 'not_home'
+        for:
+          minutes: 10
     action:
       - service: homeassistant.turn_off
         entity_id: input_boolean.martyhome

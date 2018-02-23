@@ -55,28 +55,6 @@ sun:
 zwave:
   usb_path: /dev/ttyACM0
 
-# emulated_hue:
-#   off_maps_to_on_domains:
-#     - script
-#     - scene
-#   expose_by_default: true
-#   exposed_domains:
-#     - light
-#     - media_player
-
-#alexa:
-  # flash_briefings:
-  #   whoishome:
-  #     - title: Who's at home?
-  #       text: >
-  #         {%- if is_state('device_tracker.paulus', 'home') and
-  #                is_state('device_tracker.anne_therese', 'home') -%}
-  #           You are both home, you silly
-  #         {%- else -%}
-  #           Anne Therese is at {{ states("device_tracker.anne_therese") }}
-  #           and Paulus is at {{ states("device_tracker.paulus") }}
-  #         {% endif %}
-
 zone 1:
   name: Home
   latitude: !secret homeassistant_latitude
@@ -86,9 +64,6 @@ zone 1:
 
 # Discover some devices automatically
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-#conversation:
 
 # Enables support for tracking state changes over time.
 history:
@@ -149,10 +124,14 @@ sensor:
         value_template: '{{ states.device_tracker.martyszuk1_z1.attributes.battery }}'
         friendly_name: Marty's Phone Battery
         unit_of_measurement: '%'
+
   - platform: ups
     name: ups_deliveries
     username: !secret ups_username
     password: !secret ups_password
+
+  - platform: pi_hole
+
 
 google:
   client_id: !secret google_client_id
@@ -174,50 +153,23 @@ tts:
   #platform: voicerss
   #api_key: !secret voicerss_api_key
 
-#input_select:
-
-#  music_playlist:
-#    name: Playlist
-#    options:
-#    - Dinámica
-#    - Más reproducidas
-#    - Más valoradas
-#    - Modernas (>2000)
-#    - Modernas (>2006)
-#    - Mazinger
-#    initial: Dinámica
-#    icon: mdi:library-music
-
 group: !include group.yaml
 
 automation: !include automation.yaml
-
-
-#panel_custom:
-#  - name: floorplan
-#    sidebar_title: Floorplan
-#    sidebar_icon: mdi:home
-#    url_path: floorplan
-#     config: !include packages/floorplan.yaml
 
 logger:
   default: notset
 
 zeroconf:
+
 ios:
+
 cloud:
   alexa:
     filter:
       exclude_domains:
         - script
         - automation
-
-  # Example configuration.yaml entry
-intent_script:
-  GetTemperature:  # Intent type
-    speech:
-      text: We have {{ states.sensor.temperature }} degrees
-    action:
-      service: notify.all
-      data_template:
-        message: Hello from an intent!
+    # entity_config:
+    #   sensor.dark_sky_temperature:
+    #     display_categories: TEMPERATURE_SENSOR

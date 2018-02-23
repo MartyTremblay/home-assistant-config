@@ -14,7 +14,7 @@ default_view:
     - media_player.picoreplayer1
     - media_player.picoreplayer2
     - media_player.livingroom_tv
-    - media_player.roku_1
+    #- media_player.roku_1
     #- sensor.google_travel_time__driving
     - camera.camfrontwindow
 
@@ -66,13 +66,14 @@ family:
     - input_boolean.viktoriahome
 
 alarm:
-  name: Alarm
+  name: Security
   entities:
     #- sensor.Alarm_Status
     - input_select.alarm_mode
     - alarm_control_panel.alarm_panel
     - sensor.alarm_panel_display
-    
+    - switch.alarm_chime
+
 cameras:
   name: Cameras
   entities:
@@ -116,5 +117,6 @@ sensors:
       - binary_sensor.door_patio
       - binary_sensor.motion_garage
       - binary_sensor.motion_hallway
+      - binary_sensor.motion_basement
       - binary_sensor.sump_pump
       - binary_sensor.smoke_alarm_2nd
