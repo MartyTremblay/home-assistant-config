@@ -12,6 +12,7 @@ homeassistant:
   time_zone: !secret homeassistant_time_zone
   customize: !include customize.yaml
 
+
   # Packages
   packages:
     homeassistant: !include packages/homeassistant.yaml
@@ -132,7 +133,6 @@ sensor:
 
   - platform: pi_hole
 
-
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
@@ -163,6 +163,8 @@ logger:
 zeroconf:
 
 ios:
+
+map:
 
 cloud:
   alexa:

@@ -11,21 +11,31 @@ default_view:
     - group.alarm
     - group.power
     - group.sensors
-    - media_player.picoreplayer1
-    - media_player.picoreplayer2
-    - media_player.livingroom_tv
+
     #- media_player.roku_1
     #- sensor.google_travel_time__driving
     - camera.camfrontwindow
 
 Master Bedroom:
-    light.bedroom_light_level
+  - light.bedroom_light_level
+  - media_player.master_bedroom_tv
+
+Kitchen:
+  entities:
+    - media_player.picoreplayer1
+
+Living Room:
+  entities:
+    - media_player.livingroom_tv
+    - media_player.picoreplayer2
 
 Rooms:
     view: yes
     name: Rooms
     entities:
+      - group.living_room
       - group.master_bedroom
+      - group.kitchen
 
 monitors_view:
   name: Cameras
