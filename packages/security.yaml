@@ -111,7 +111,7 @@ automation:
       - service: switch.turn_off
         entity_id: group.cameras
 
-  - alias: Arm the alarm HOME at 11:00pm
+  - alias: Arm the alarm HOME in evening
     trigger:
       platform: time
       at: '23:00:00'
@@ -132,7 +132,7 @@ automation:
       - service: switch.turn_on
         entity_id: group.cameras
 
-  - alias: Disarm the alarm HOME at 6:00am
+  - alias: Disarm the alarm HOME in morning
     trigger:
       platform: time
       at: '06:00:00'
