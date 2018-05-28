@@ -35,9 +35,6 @@ automation:
         entity_id: sensor.sip_call_verb
         to: 'incoming'
     action:
-      #- service: tts.google_say
-      #  data_template:
-      #    message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
       - service: notify.all
         data_template:
           title: "Incoming call from: {{states('sensor.sip_call_caller')}}"
