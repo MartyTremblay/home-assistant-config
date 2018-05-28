@@ -38,9 +38,12 @@ automation:
       #- service: tts.google_say
       #  data_template:
       #    message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
-      - service: notify.pushbullet_notify
+      - service: notify.all
         data_template:
           title: "Incoming call from: {{states('sensor.sip_call_caller')}}"
           message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
+          data:
+              icon: "https://goo.gl/xeetdy"
+              vibration: "0,65,706,86,657,95,668,100"
       - service: media_player.media_pause
-        entity_id: media_player.picoreplayer1
+        entity_id: media_player.spotify

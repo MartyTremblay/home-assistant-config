@@ -10,14 +10,6 @@ sensor:
       - loadpct
       - bcharge
       - timeleft
-#   - platform: template
-#     sensors:
-#       fixed_ups_battery_voltage:
-#         friendly_name: 'Mains Voltage'
-#         value_template: '{{ float(states("sensor.ups_battery_voltage")) / 10 }}'
-#         unit_of_measurement: V
-
-
 
 binary_sensor:
   - platform: apcupsd
@@ -30,10 +22,12 @@ automation:
       from: 'off'
       to: 'on'
     action:
-      service: notify.pushbullet_notify
-      data:
-        message: "Mains Power is back Online!"
+      service: notify.all
+      data_template:
         title: "Mains Power is back Online!"
+        message: "Mains Power is back Online!"
+        data:
+          icon: "https://goo.gl/xeetdy"
 
   - alias: Mains power is down
     trigger:
@@ -42,10 +36,13 @@ automation:
       from: 'on'
       to: 'off'
     action:
-      service: notify.pushbullet_notify
-      data:
-        message: "Mains Power is Down!"
+      service: notify.all
+      data_template:
         title: "Mains Power is Down!"
+        message: "Mains Power is Down!"
+        data:
+          icon: "https://goo.gl/xeetdy"
+
 
   - alias: UPS battery power is low
     trigger:
@@ -53,7 +50,9 @@ automation:
       entity_id: sensor.ups_time_left
       below: 5
     action:
-      service: notify.pushbullet_notify
-      data:
-        message: "UPS battery power is low!"
+      service: notify.all
+      data_template:
         title: "UPS battery power is low!"
+        message: "UPS battery power is low!"
+        data:
+          icon: "https://goo.gl/xeetdy"

@@ -1,8 +1,8 @@
 default_view:
   view: yes
+  icon: mdi:home-assistant
   name: Main
   entities:
-    #- automation.update_available_notification
     - group.general
     - group.sip_call
     - group.family
@@ -11,35 +11,37 @@ default_view:
     - group.alarm
     - group.power
     - group.sensors
-
-    #- media_player.roku_1
-    #- sensor.google_travel_time__driving
     - camera.camfrontwindow
+    - media_player.spotify
 
 Master Bedroom:
-  - light.bedroom_light_level
-  - media_player.master_bedroom_tv
+  view: yes
+  icon: mdi:hotel
+  name: Master Bedroom
+  entities:
+    - light.bedroom_light_level
+    - media_player.master_bedroom_tv
+    - media_player.spotify
 
 Kitchen:
+  view: yes
+  icon: mdi:fridge
+  name: Kitchen
   entities:
-    - media_player.picoreplayer1
+    - media_player.spotify
 
-Living Room:
+Family Room:
+  view: yes
+  icon: mdi:laptop-windows
+  name: Family Room
   entities:
     - media_player.livingroom_tv
-    - media_player.picoreplayer2
-
-Rooms:
-    view: yes
-    name: Rooms
-    entities:
-      - group.living_room
-      - group.master_bedroom
-      - group.kitchen
+    - media_player.spotify
 
 monitors_view:
-  name: Cameras
   view: yes
+  name: Cameras
+  icon: mdi:cctv
   entities:
     - group.cameras
     - camera.camfrontwindow
@@ -48,19 +50,14 @@ monitors_view:
     - switch.cambackwindow2_night_vision
     #- camera.camdehumidifier
 
-links_view:
-  name: Weblinks
-  view: yes
-  entities:
-    #- group.links_view
-    - sensor.ups_deliveries
-
 general:
   name: General
   entities:
     - sensor.date
     - sensor.time
     - sensor.moon
+    - sensor.ups_deliveries
+    - sensor.fedex_deliveries
 
 network:
   name: Network

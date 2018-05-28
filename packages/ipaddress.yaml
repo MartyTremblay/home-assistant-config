@@ -19,8 +19,8 @@ sensor:
       - 12
       - 18
     monitored_conditions:
-#      - download
-#      - upload
+      - download
+      - upload
       - ping
 
 # Report IP changes

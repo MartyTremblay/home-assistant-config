@@ -135,7 +135,7 @@ automation:
   - alias: Disarm the alarm HOME in morning
     trigger:
       platform: time
-      at: '06:00:00'
+      at: '05:45:00'
     condition:
       condition: and
       conditions:

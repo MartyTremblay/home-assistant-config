@@ -45,10 +45,12 @@ automation:
       from: 'off'
       to: 'on'
     action:
-      service: notify.pushbullet_notify
-      data:
-        message: "Nest is back Online!"
+      service: notify.all
+      data_template:
         title: "Nest is back Online!"
+        message: "Nest is back Online!"
+        data:
+          icon: "https://goo.gl/xeetdy"
 
   - alias: Nest is not online
     trigger:
@@ -57,10 +59,12 @@ automation:
       from: 'on'
       to: 'off'
     action:
-      service: notify.pushbullet_notify
-      data:
-        message: "Nest is not Online!"
-        title: "Nest is not Online!"
+      service: notify.all
+      data_template:
+        title: "Nest Offline!"
+        message: "Nest Offline!"
+        data:
+          icon: "https://goo.gl/xeetdy"
 
   # - alias: Basement Dehumidifier offline
   #   trigger:
@@ -70,7 +74,9 @@ automation:
   #       for:
   #         minutes: 1
   #   action:
-  #     service: notify.pushbullet_notify
-  #     data_template:
-  #       title: "The basement dehumidifier is offline!"
-  #       message: "The basement dehumidifier is offline!"
+        # service: notify.all
+        # data_template:
+        #   title: "The basement dehumidifier is offline!"
+        #   message: "The basement dehumidifier is offline!"
+        #   data:
+        #     icon: "https://goo.gl/xeetdy"

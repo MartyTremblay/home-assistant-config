@@ -11,12 +11,12 @@ sensor:
       - precip_type
       - precip_intensity
       - temperature
-  #    - dew_point
-  #    - wind_speed
-  #    - wind_bearing
-  #    - cloud_cover
+      - dew_point
+      - wind_speed
+      - wind_bearing
+      - cloud_cover
       - humidity
-  #    - nearest_storm_distance
+      - nearest_storm_distance
       - minutely_summary
   #    - pressure
   #    - visibility

@@ -25,6 +25,3 @@ binary_sensor.floorplan:
     - binary_sensor.fp_first_kitchen
     - binary_sensor.fp_first_family_room
     - binary_sensor.fp_first_hallway
-
-# group.all_lights:
-#     hidden: false

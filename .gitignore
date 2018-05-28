@@ -34,3 +34,7 @@ zwscene.xml
 .cloud/production_auth.json
 
 entity_registry.yaml
+
+.spotify-token-cache
+
+fedexdeliverymanager_cookies.pickle

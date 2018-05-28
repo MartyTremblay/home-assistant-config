@@ -9,18 +9,6 @@ sensor:
     display_options:
       - 'time'
       - 'date'
-      #- 'date_time'
-      #- 'time_date'
-      #- 'time_utc'
-      #- 'beat'
 
   # Moon tracking
   - platform: moon
-
-
-# logbook:
-#   exclude:
-#     domains:
-#       - sensor.date
-#       - sun
-#       - weblink

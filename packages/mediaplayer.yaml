@@ -4,36 +4,18 @@ sensor:
 
 media_player:
   - platform: samsungtv
-    name: Livingroom TV
+    name: Family Room TV
     host: 192.168.101.155
     mac: 0c:89:10:79:57:63
 
-  - platform: roku
-    name: Master Beadroom TV
-    host: 192.168.101.135
+  # - platform: roku
+  #   name: Master Beadroom TV
+  #   host: 192.168.101.135
 
   - platform: plex
     name: Plex Server
     host: 192.168.101.13
 
-  - platform: squeezebox
-    name: Logitech Media Server
-    host: 192.168.101.13
-    port: 9000
-
-  # - platform: gstreamer
-  #   name: 'TTS'
-  #   pipeline: 'audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapcast_tts'
-
-input_select:
-  music_playlist:
-    name: Playlist
-    options:
-    - Dinámica
-    - Más reproducidas
-    - Más valoradas
-    - Modernas (>2000)
-    - Modernas (>2006)
-    - Mazinger
-    initial: Dinámica
-    icon: mdi:library-music
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_secret
