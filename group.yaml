@@ -35,7 +35,10 @@ Family Room:
   icon: mdi:laptop-windows
   name: Family Room
   entities:
-    - media_player.livingroom_tv
+    - light.aeotec_zw111_nano_dimmer_level
+    - light.aeotec_zw111_nano_dimmer_level_2
+    - light.family_room_desk_light_level
+    - media_player.family_room_tv
     - media_player.spotify
 
 monitors_view:

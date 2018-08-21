@@ -2,14 +2,14 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret homeassistant_latitude
-  longitude: !secret homeassistant_longitude
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: !secret homeassistant_elevation
+  elevation: !secret home_elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: !secret homeassistant_time_zone
+  time_zone: !secret home_time_zone
   customize: !include customize.yaml
 
 
@@ -36,6 +36,7 @@ homeassistant:
     #floorplan: !include packages/floorplan.yaml
     delivery_tracking: !include packages/delivery_tracking.yaml
 
+
 http:
   #base_url: 192.168.101.13:8123
 #  api_password: !secret http_api_password
@@ -49,20 +50,36 @@ http:
 
 # Enables the frontend
 frontend:
-# Enables the configration UI
+  themes: !include packages/themes.yaml
+
 config:
 # Enable sun tracking
 sun:
 
 zwave:
   usb_path: /dev/ttyACM0
+  network_key: "0x26, 0x66, 0x54, 0xE0, 0xBB, 0x30, 0xCA, 0x48, 0x0E, 0xE3, 0xA3, 0x52, 0xFB, 0x33, 0x14, 0xC0"
 
 zone 1:
   name: Home
-  latitude: !secret homeassistant_latitude
-  longitude: !secret homeassistant_longitude
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   radius: 300
   icon: mdi:home
+
+zone 2:
+  name: Innovapost
+  latitude: !secret innovapost_latitude
+  longitude: !secret innovapost_longitude
+  radius: 300
+  icon: mdi:email
+
+zone 3:
+  name: Home
+  latitude: !secret navcanada_latitude
+  longitude: !secret navcanada_longitude
+  radius: 300
+  icon: mdi:airport
 
 # Discover some devices automatically
 discovery:

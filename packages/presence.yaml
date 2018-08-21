@@ -9,9 +9,13 @@ input_boolean:
     icon: mdi:cellphone-iphone
 
 device_tracker:
-  - platform: owntracks
-    max_gps_accuracy: 200
-    waypoints: True
+  #- platform: owntracks
+  #  max_gps_accuracy: 200
+  #  waypoints: True
+
+  - platform: google_maps
+    username: !secret google_maps_username
+    password: !secret google_maps_password
 
   - platform: unifi_direct
     host: 192.168.101.3
@@ -27,12 +31,12 @@ automation:
       state: 'on'
     trigger:
       - platform: state
-        entity_id: device_tracker.martyszuk1_wifi
+        entity_id: device_tracker.martysnokia7_wifi
         to: 'not_home'
         for:
           minutes: 10
       - platform: state
-        entity_id: device_tracker.martyszuk1_z1
+        entity_id: device_tracker.martysnokia7
         to: 'not_home'
         for:
           minutes: 10
@@ -54,7 +58,7 @@ automation:
       state: 'off'
     trigger:
       - platform: state
-        entity_id: device_tracker.martyszuk1_z1, device_tracker.martyszuk1_wifi
+        entity_id: device_tracker.martysnokia7, device_tracker.martysnokia7_wifi
         to: 'home'
     action:
       - service: homeassistant.turn_on

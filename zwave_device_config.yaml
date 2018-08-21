@@ -1,0 +1,3 @@
+sensor.aeotec_zw130_wallmote_quad_alarm_level:
+  ignored: true
+  polling_intensity: 0

@@ -38,3 +38,5 @@ entity_registry.yaml
 .spotify-token-cache
 
 fedexdeliverymanager_cookies.pickle
+*.cookies
+.storage/core.config_entries
