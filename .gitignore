@@ -40,3 +40,9 @@ entity_registry.yaml
 fedexdeliverymanager_cookies.pickle
 *.cookies
 .storage/core.config_entries
+.storage/auth
+*.homeassistant
+*.device_registry
+*.entity_registry
+.storage/onboarding
+*.cookie

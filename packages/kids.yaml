@@ -14,4 +14,4 @@ automation:
     action:
       - service: media_player.turn_off
         data:
-          entity_id: media_player.livingroom_tv
+          entity_id: media_player.family_room_tv

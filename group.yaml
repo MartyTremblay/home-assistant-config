@@ -48,6 +48,7 @@ monitors_view:
   entities:
     - group.cameras
     - camera.camfrontwindow
+    - camera.camfrontdoor
     - camera.cambackwindow
     - group.monitors_view
     - switch.cambackwindow2_night_vision
@@ -91,6 +92,9 @@ cameras:
     - switch.camfrontwindow_state
     - sensor.camfrontwindow_status
     - sensor.camfrontwindow_events
+    - switch.camfrontdoor_state
+    - sensor.camfrontdoor_status
+    - sensor.camfrontdoor_events
     - switch.cambackwindow_state
     - sensor.cambackwindow_status
     - sensor.cambackwindow_events
