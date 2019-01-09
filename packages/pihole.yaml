@@ -1,0 +1,2 @@
+sensor:
+  - platform: pi_hole

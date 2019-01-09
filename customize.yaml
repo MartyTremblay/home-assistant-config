@@ -1,27 +1,27 @@
 sensor.fixed_ups_battery_voltage:
   icon: mdi:power-plug
-
 sensor.hallway_thermostat_humidity:
   icon: mdi:water-percent
-
 sensor.speedtest_upload:
   icon: mdi:upload
-
 sensor.speedtest_download:
   icon: mdi:download
-
 sensor.Alarm_Status:
   icon: mdi:security
-
 binary_sensor.ups_online_status:
   icon: mdi:flash
-
 binary_sensor.floorplan:
   custom_ui_state_card: floorplan
   floorplan_image: floorplan/floorplan.svg
   entities:
-    - binary_sensor.fp_first_garage
-    - binary_sensor.fp_first_living_room
-    - binary_sensor.fp_first_kitchen
-    - binary_sensor.fp_first_family_room
-    - binary_sensor.fp_first_hallway
+  - binary_sensor.fp_first_garage
+  - binary_sensor.fp_first_living_room
+  - binary_sensor.fp_first_kitchen
+  - binary_sensor.fp_first_family_room
+  - binary_sensor.fp_first_hallway
+light.family_room_light_level:
+  friendly_name: Family Room Light
+light.master_bedroom_light_0:
+  friendly_name: Master Bedroom Light
+sensor.lcbo:
+  friendly_name: LCBO

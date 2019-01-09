@@ -170,6 +170,10 @@ automation:
         data:
             icon: "https://goo.gl/xeetdy"
             vibration: "0,65,706,86,657,95,668,100"
+      service: media_player.alexa_tts
+      data_template:
+        entity_id: "media_player.kitchen"
+        message: "A door has been left opened"
 
   - alias: Alarm triggered
     trigger:

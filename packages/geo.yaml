@@ -7,8 +7,6 @@ proximity:
   m_home:
     devices:
       - device_tracker.martyszuk1_z1
-    #ignored_zones:
-    #  - work
     zone: home
     tolerance: 50
     unit_of_measurement: km

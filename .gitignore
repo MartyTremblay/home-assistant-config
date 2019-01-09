@@ -46,3 +46,15 @@ fedexdeliverymanager_cookies.pickle
 *.entity_registry
 .storage/onboarding
 *.cookie
+*.DS_Store
+._custom_components
+._screencapture.png
+._secrets.yaml
+.storage/cloud
+.storage/core.restore_state
+__pycache__/locationsharinglib.cpython-36.pyc
+*.pickle
+/custom_components
+/deps
+packages/._sip_call.yaml
+packages/._themes.yaml

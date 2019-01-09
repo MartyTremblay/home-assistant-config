@@ -9,14 +9,10 @@ input_boolean:
     icon: mdi:cellphone-iphone
 
 device_tracker:
-  #- platform: owntracks
-  #  max_gps_accuracy: 200
-  #  waypoints: True
-
   - platform: google_maps
     username: !secret google_maps_username
     password: !secret google_maps_password
-
+    track_new_devices: true
   - platform: unifi_direct
     host: 192.168.101.3
     username: !secret unifi_username
@@ -43,6 +39,10 @@ automation:
     action:
       - service: homeassistant.turn_off
         entity_id: input_boolean.martyhome
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.kitchen"
+          message: "Marty has left home"
       - service: logbook.log
         data_template:
           name: "Marty away: "
@@ -63,6 +63,10 @@ automation:
     action:
       - service: homeassistant.turn_on
         entity_id: input_boolean.martyhome
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.kitchen"
+          message: "Marty has arrived home"
       - service: logbook.log
         data_template:
           name: "Marty home: "
@@ -91,6 +95,10 @@ automation:
     action:
       - service: homeassistant.turn_off
         entity_id: input_boolean.viktoriahome
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.kitchen"
+          message: "Viktoria has left home"
       - service: logbook.log
         data_template:
           name: "Viktoria away: "
@@ -111,6 +119,10 @@ automation:
     action:
       - service: homeassistant.turn_on
         entity_id: input_boolean.viktoriahome
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.kitchen"
+          message: "Viktoria has arrived home"
       - service: logbook.log
         data_template:
           name: "Viktoria home: "

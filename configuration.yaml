@@ -35,11 +35,15 @@ homeassistant:
     fitness: !include packages/fitness.yaml
     #floorplan: !include packages/floorplan.yaml
     delivery_tracking: !include packages/delivery_tracking.yaml
-
+    vehicules: !include packages/vehicules.yaml
+    crime: !include packages/crime.yaml
+    pihole: !include packages/pihole.yaml
+    uber: !include packages/uber.yaml
+    haveibeenpwned: !include packages/haveibeenpwned.yaml
 
 http:
   #base_url: 192.168.101.13:8123
-#  api_password: !secret http_api_password
+  api_password: !secret http_api_password
 #  ssl_certificate: /config/fullchain.pem
 #  ssl_key: /config/privkey.pem
   #use_x_forwarded_for: True
@@ -75,11 +79,25 @@ zone 2:
   icon: mdi:email
 
 zone 3:
-  name: Home
+  name: Nav Canada
   latitude: !secret navcanada_latitude
   longitude: !secret navcanada_longitude
   radius: 300
+  icon: mdi:office-building
+
+zone 4:
+  name: Nav Canada TSC
+  latitude: !secret navcanadatsc_latitude
+  longitude: !secret navcanadatsc_longitude
+  radius: 300
   icon: mdi:airport
+
+zone 5:
+  name: Fitness Lab
+  latitude: !secret fitness_lab_latitude
+  longitude: !secret fitness_lab_longitue
+  radius: 300
+  icon: mdi:run-fast
 
 # Discover some devices automatically
 discovery:
@@ -92,6 +110,7 @@ notify:
     device_ids: !secret join_device_ids
     device_names: ZUK Z1
     name: join
+
   - name: all
     platform: group
     services:
@@ -181,8 +200,6 @@ sensor:
         value_template: '{{ states.device_tracker.martyszuk1_z1.attributes.battery }}'
         friendly_name: Marty's Phone Battery
         unit_of_measurement: '%'
-
-  - platform: pi_hole
 
 google:
   client_id: !secret google_client_id

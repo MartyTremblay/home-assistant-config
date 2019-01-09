@@ -44,3 +44,11 @@ automation:
               vibration: "0,65,706,86,657,95,668,100"
       - service: media_player.media_pause
         entity_id: media_player.spotify
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.kitchen"
+          message: "Incoming call from: {{states('sensor.sip_call_caller')}}"
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.bedroom"
+          message: "Incoming call from: {{states('sensor.sip_call_caller')}}"

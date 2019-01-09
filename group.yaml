@@ -13,13 +13,21 @@ default_view:
     - group.sensors
     - camera.camfrontwindow
     - media_player.spotify
+    - sensor.gas_price_m
+    - sensor.gas_price_k
+    - sensor.home__work
+    - sensor.work__home
+    - sensor.steps
+    - sensor.lcbo
+    - sensor.crimes_in_my_area
+
 
 Master Bedroom:
   view: yes
   icon: mdi:hotel
   name: Master Bedroom
   entities:
-    - light.bedroom_light_level
+    - light.master_bedroom_light_0
     - media_player.master_bedroom_tv
     - media_player.spotify
 
@@ -29,15 +37,16 @@ Kitchen:
   name: Kitchen
   entities:
     - media_player.spotify
+    - media_player.kitchen
 
 Family Room:
   view: yes
   icon: mdi:laptop-windows
   name: Family Room
   entities:
-    - light.aeotec_zw111_nano_dimmer_level
-    - light.aeotec_zw111_nano_dimmer_level_2
-    - light.family_room_desk_light_level
+    - light.family_room_light_level
+    - light.desk_light_level
+    - light.floor_light_level
     - media_player.family_room_tv
     - media_player.spotify
 
@@ -123,14 +132,25 @@ sip_call:
     - sensor.call_status
 
 sensors:
-    name: Sensors
-    entities:
-      - binary_sensor.door_front
-      - binary_sensor.door_back
-      - binary_sensor.door_mudroom
-      - binary_sensor.door_patio
-      - binary_sensor.motion_garage
-      - binary_sensor.motion_hallway
-      - binary_sensor.motion_basement
-      - binary_sensor.sump_pump
-      - binary_sensor.smoke_alarm_2nd
+  name: Sensors
+  entities:
+    - binary_sensor.door_front
+    - binary_sensor.door_back
+    - binary_sensor.door_mudroom
+    - binary_sensor.door_patio
+    - binary_sensor.motion_garage
+    - binary_sensor.motion_hallway
+    - binary_sensor.motion_basement
+    - binary_sensor.sump_pump
+    - binary_sensor.smoke_alarm_2nd
+  name: Doors
+  entities:
+    - binary_sensor.door_front
+    - binary_sensor.door_back
+    - binary_sensor.door_mudroom
+    - binary_sensor.door_patio
+
+all_echos:
+  entities:
+    - media_player.kitchen
+    - media_player.family_room

@@ -6,6 +6,7 @@ media_player:
   - platform: samsungtv
     name: Family Room TV
     host: 192.168.101.155
+    #port: 8001
     mac: 0c:89:10:79:57:63
 
   # - platform: roku
@@ -19,3 +20,8 @@ media_player:
   - platform: spotify
     client_id: !secret spotify_client_id
     client_secret: !secret spotify_secret
+
+  - platform: alexa
+    email: !secret alexa_username
+    password: !secret alexa_password
+    url: !secret alexa_url

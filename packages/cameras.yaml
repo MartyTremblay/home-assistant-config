@@ -33,7 +33,7 @@ camera:
 
 sensor:
   - platform: zoneminder
-    include_archived: true
+    include_archived: false
 
 automation:
   - alias: 'Set night_vision off when sun rises'
