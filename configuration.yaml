@@ -40,6 +40,7 @@ homeassistant:
     pihole: !include packages/pihole.yaml
     uber: !include packages/uber.yaml
     haveibeenpwned: !include packages/haveibeenpwned.yaml
+    away: !include packages/away.yaml
 
 http:
   #base_url: 192.168.101.13:8123

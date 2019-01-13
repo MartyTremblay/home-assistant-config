@@ -11,15 +11,16 @@ default_view:
     - group.alarm
     - group.power
     - group.sensors
-    - camera.camfrontwindow
+    - camera.cam_front_window
     - media_player.spotify
     - sensor.gas_price_m
     - sensor.gas_price_k
-    - sensor.home__work
-    - sensor.work__home
+    - sensor.home_work
+    - sensor.work_home
     - sensor.steps
     - sensor.lcbo
     - sensor.crimes_in_my_area
+    - group.doors
 
 
 Master Bedroom:
@@ -56,11 +57,11 @@ monitors_view:
   icon: mdi:cctv
   entities:
     - group.cameras
-    - camera.camfrontwindow
-    - camera.camfrontdoor
-    - camera.cambackwindow
-    - group.monitors_view
-    - switch.cambackwindow2_night_vision
+    - camera.cam_front_window
+    - camera.cam_front_door
+    - camera.cam_back_window
+  #  - group.monitors_view
+    - switch.cam_backwindow2_night_vision
     #- camera.camdehumidifier
 
 general:
@@ -98,15 +99,15 @@ cameras:
   name: Cameras
   entities:
     - weblink.zoneminder
-    - switch.camfrontwindow_state
-    - sensor.camfrontwindow_status
-    - sensor.camfrontwindow_events
-    - switch.camfrontdoor_state
-    - sensor.camfrontdoor_status
-    - sensor.camfrontdoor_events
-    - switch.cambackwindow_state
-    - sensor.cambackwindow_status
-    - sensor.cambackwindow_events
+    - switch.cam_front_window_state
+    - sensor.cam_front_window_status
+    - sensor.cam_front_window_events
+    - switch.cam_front_door_state
+    - sensor.cam_front_door_status
+    - sensor.cam_front_door_events
+    - switch.cam_back_window_state
+    - sensor.cam_back_window_status
+    - sensor.cam_back_window_events
 
 climate:
   name: Climate
@@ -143,6 +144,8 @@ sensors:
     - binary_sensor.motion_basement
     - binary_sensor.sump_pump
     - binary_sensor.smoke_alarm_2nd
+
+doors:
   name: Doors
   entities:
     - binary_sensor.door_front

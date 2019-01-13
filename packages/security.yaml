@@ -163,17 +163,17 @@ automation:
             minutes: 1
             seconds: 00
     action:
-      service: notify.all
-      data_template:
-        title: "A door has been left opened"
-        message: "Front:{{states('binary_sensor.door_front')}} Back:{{states('binary_sensor.door_back')}} Mudroom:{{states('binary_sensor.door_mudroom')}} Patio:{{states('binary_sensor.door_patio')}} "
-        data:
-            icon: "https://goo.gl/xeetdy"
-            vibration: "0,65,706,86,657,95,668,100"
-      service: media_player.alexa_tts
-      data_template:
-        entity_id: "media_player.kitchen"
-        message: "A door has been left opened"
+      - service: notify.all
+        data_template:
+          title: "A door has been left opened"
+          message: "Front:{{states('binary_sensor.door_front')}} Back:{{states('binary_sensor.door_back')}} Mudroom:{{states('binary_sensor.door_mudroom')}} Patio:{{states('binary_sensor.door_patio')}} "
+          data:
+              icon: "https://goo.gl/xeetdy"
+              vibration: "0,65,706,86,657,95,668,100"
+      - service: media_player.alexa_tts
+        data_template:
+          entity_id: "media_player.kitchen"
+          message: "A door has been left opened"
 
   - alias: Alarm triggered
     trigger:
