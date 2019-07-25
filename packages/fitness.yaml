@@ -1,8 +1,0 @@
-sensor:
-  - platform: fitbit
-    clock_format: 24H
-    monitored_resources:
-      - "body/weight"
-      - "activities/steps"
-      - "devices/battery"
-      - "sleep/minutesAsleep"

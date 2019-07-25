@@ -1,5 +1,0 @@
-sensor:
-  - platform: uber
-    server_token: NyBW-Nf3TsTnCDSltXr6L6-9az3ztSD8-8dhG7LH
-    end_latitude: !secret innovapost_latitude
-    end_longitude: !secret innovapost_longitude
