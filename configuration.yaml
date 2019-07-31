@@ -40,17 +40,27 @@ homeassistant:
     # haveibeenpwned: !include packages/haveibeenpwned.yaml
     # away: !include packages/away.yaml
 
+config:
+
+sun:
+
+discovery:
+
+zeroconf:
+
+ios:
+
+map:
+
+group: !include group.yaml
+
+automation: !include automation.yaml
+
 http:
   # api_password: !secret http_api_password
 
-# Enables the frontend
 frontend:
   # themes: !include packages/themes.yaml
-
-config:
-
-# Enable sun tracking
-sun:
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -91,10 +101,6 @@ zwave:
 #   radius: 300
 #   icon: mdi:run-fast
 
-# Discover some devices automatically
-discovery:
-
-# Enables notifications
 notify:
   # - platform: joaoapps_join
   #   api_key: !secret join_api_key
@@ -117,19 +123,6 @@ notify:
 recorder:
   purge_interval: 1
   purge_keep_days: 31
-
-logger:
-  default: notset
-
-group: !include group.yaml
-
-automation: !include automation.yaml
-
-zeroconf:
-
-ios:
-
-map:
 
 cloud:
   alexa:
