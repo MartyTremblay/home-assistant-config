@@ -1,15 +1,10 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
-  # latitude: !secret home_latitude
-  # longitude: !secret home_longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  # elevation: !secret home_elevation
-  # metric for Metric, imperial for Imperial
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  # time_zone: !secret home_time_zone
+  time_zone: !secret home_time_zone
   customize: !include customize.yaml
 
   # packages:
@@ -61,6 +56,9 @@ http:
 
 frontend:
   # themes: !include packages/themes.yaml
+
+hacs:
+  token: !secret hacs_token
 
 zwave:
   usb_path: /dev/ttyACM0
