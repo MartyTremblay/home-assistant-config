@@ -39,17 +39,6 @@ homeassistant:
     # haveibeenpwned: !include packages/haveibeenpwned.yaml
     # away: !include packages/away.yaml
 
-config:
-
-sun:
-
-discovery:
-
-zeroconf:
-
-ios:
-
-map:
 
 group: !include group.yaml
 
@@ -60,9 +49,6 @@ http:
 
 frontend:
   # themes: !include packages/themes.yaml
-
-hacs:
-  token: !secret hacs_token
 
 zwave:
   usb_path: /dev/ttyACM0
