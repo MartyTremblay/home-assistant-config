@@ -42,14 +42,6 @@ group: !include group.yaml
 #   radius: 300
 #   icon: mdi:run-fast
 
-notify:
-  # - platform: joaoapps_join
-  #   api_key: !secret join_api_key
-  #   device_id: !secret join_device_id
-  #   device_ids: !secret join_device_ids
-  #   device_names: ZUK Z1
-  #   name: join
-
 recorder:
   purge_interval: 1
   purge_keep_days: 31
