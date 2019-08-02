@@ -1,58 +1,9 @@
 default_config:
 
 homeassistant:
-  name: Home
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  elevation: !secret home_elevation
-  unit_system: metric
-  time_zone: !secret home_time_zone
-  customize: !include customize.yaml
-
   packages: !include_dir_named integrations
 
-  # packages:
-    # homeassistant: !include packages/homeassistant.yaml
-    # ipaddress: !include packages/ipaddress.yaml
-    # datetime: !include packages/datetime.yaml
-    # mqtt: !include packages/mqtt.yaml
-    # sip_call: !include packages/sip_call.yaml
-    # presence: !include packages/presence.yaml
-    # geo: !include packages/geo.yaml
-    # security: !include packages/security.yaml
-    # climate: !include packages/climate.yaml
-    # power: !include packages/power.yaml
-    # cameras: !include packages/cameras.yaml
-    # weather: !include packages/weather.yaml
-    # workingdays: !include packages/workingdays.yaml
-    # calendars: !include packages/calendars.yaml
-    # mediaplayer: !include packages/mediaplayer.yaml
-    # squeezebox_alert: !include packages/squeezebox_alert.yaml
-    # kids: !include packages/kids.yaml
-    # fitness: !include packages/fitness.yaml
-    # floorplan: !include packages/floorplan.yaml
-    # delivery_tracking: !include packages/delivery_tracking.yaml
-    # vehicules: !include packages/vehicules.yaml
-    # crime: !include packages/crime.yaml
-    # pihole: !include packages/pihole.yaml
-    # uber: !include packages/uber.yaml
-    # haveibeenpwned: !include packages/haveibeenpwned.yaml
-    # away: !include packages/away.yaml
-
-
 group: !include group.yaml
-
-automation: !include automation.yaml
-
-http:
-  # api_password: !secret http_api_password
-
-frontend:
-  # themes: !include packages/themes.yaml
-
-zwave:
-  usb_path: /dev/ttyACM0
-  network_key: "0x26, 0x66, 0x54, 0xE0, 0xBB, 0x30, 0xCA, 0x48, 0x0E, 0xE3, 0xA3, 0x52, 0xFB, 0x33, 0x14, 0xC0"
 
 sensor:
   - platform: airthings_wave
