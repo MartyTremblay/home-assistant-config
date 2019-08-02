@@ -5,11 +5,7 @@ homeassistant:
 
 group: !include group.yaml
 
-sensor:
-  - platform: airthings_wave
-    mac: !secret airthings_wave_mac
-    name: 'Basement Airthings Wave'
-    scan_interval: 120
+
 
 # zone 1:
 #   name: Home
@@ -53,17 +49,6 @@ notify:
   #   device_ids: !secret join_device_ids
   #   device_names: ZUK Z1
   #   name: join
-
-  - name: all
-    platform: group
-    services:
-      # - service: join
-      - service: notify
-
-# joaoapps_join:
-#   - name: android
-#     device_id: group.android
-#     api_key: !secret join_api_key
 
 recorder:
   purge_interval: 1
