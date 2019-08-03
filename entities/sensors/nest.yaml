@@ -4,9 +4,3 @@ monitored_conditions:
 - 'target'
 - 'humidity'
 - 'operation_mode'
-# - platform: template
-  #   sensors:
-  #     basement_humidity:
-  #       value_template: '{{ states("image_processing.sevensegement_ocr_camdehumidifier") }}'
-  #       friendly_name: 'Basement Humidity'
-  #       unit_of_measurement: '%'
