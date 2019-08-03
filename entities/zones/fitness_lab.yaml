@@ -1,0 +1,5 @@
+name: Fitness Lab
+latitude: !secret fitness_lab_latitude
+longitude: !secret fitness_lab_longitue
+radius: 300
+icon: mdi:run-fast

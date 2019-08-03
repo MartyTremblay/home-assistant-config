@@ -1,0 +1,5 @@
+name: Nav Canada
+latitude: !secret navcanada_latitude
+longitude: !secret navcanada_longitude
+radius: 300
+icon: mdi:office-building
