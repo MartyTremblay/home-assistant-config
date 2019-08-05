@@ -1,0 +1,4 @@
+platform: fedex
+name: Fedex Deliveries
+username: !secret fedex_username
+password: !secret fedex_password
