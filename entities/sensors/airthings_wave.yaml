@@ -1,4 +1,0 @@
-# platform: airthings_wave
-# mac: !secret airthings_wave_mac
-# name: 'Basement Airthings Wave'
-# scan_interval: 120
