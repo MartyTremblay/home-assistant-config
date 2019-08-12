@@ -1,0 +1,2 @@
+platform: google_maps
+username: !secret google_maps_username
