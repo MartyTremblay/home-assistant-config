@@ -7,5 +7,5 @@ homeassistant:
   longitude: !secret home_longitude
   elevation: !secret home_elevation
   time_zone: !secret home_time_zone
-  customize: !include_dir_merge_named ../customizations
+  customize: !include_dir_merge_named customizations
   packages: !include_dir_named integrations
