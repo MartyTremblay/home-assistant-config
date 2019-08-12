@@ -1,4 +1,4 @@
-platform: alexa
+platform: alexa_media
 email: !secret alexa_username
 password: !secret alexa_password
 url: !secret alexa_url
