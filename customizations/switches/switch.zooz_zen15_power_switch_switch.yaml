@@ -1,0 +1,3 @@
+switch.zooz_zen15_power_switch_switch:
+  icon: mdi:electric-switch
+  friendly_name: Dehumidifier Switch
