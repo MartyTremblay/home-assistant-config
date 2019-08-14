@@ -1,4 +1,5 @@
-guests_home:
-name: Set for when guests are home
-initial: off
-icon: mdi:account-plus-outline
+input_boolean:
+  guests_home:
+    name: Set for when guests are home
+    initial: off
+    icon: mdi:account-plus-outline
