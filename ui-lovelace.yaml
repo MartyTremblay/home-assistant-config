@@ -1,12 +1,12 @@
 resources:
-  - url: /community_plugin/light-entity-row/light-entity-row.js
-    type: module
-  - url: /community_plugin/dual-gauge-card/dual-gauge-card.js
-    type: module
-  - url: /community_plugin/gauge-card/gauge-card.js
-    type: module
-  - url: /community_plugin/compact-custom-header/compact-custom-header.js
-    type: module
+  - type: module
+    url: /community_plugin/light-entity-row/light-entity-row.js
+  - type: module
+    url: /community_plugin/dual-gauge-card/dual-gauge-card.js
+  - type: module
+    url: /community_plugin/gauge-card/gauge-card.js
+  - type: module
+    url: /community_plugin/compact-custom-header/compact-custom-header.js
 title: Home
 views:
   - badges: []
@@ -20,10 +20,11 @@ views:
       - entity: media_player.master_bedroom_tv
         type: media-control
       - entities:
-          - switch.aeon_labs_zw130_wallmote_quad_switch
-          - switch.aeon_labs_zw111_nano_dimmer_switch
-          - switch.aeon_labs_zw111_nano_dimmer_switch_2
-          - switch.zooz_zen15_power_switch_switch
+          - entity: switch.aeon_labs_zw130_wallmote_quad_switch
+          - entity: switch.aeon_labs_zw111_nano_dimmer_switch
+          - entity: switch.aeon_labs_zw111_nano_dimmer_switch_2
+          - entity: switch.zooz_zen15_power_switch_switch
+          - entity: switch.leviton_dz15s_1bz_decora_smart_switch_switch
         title: Switch
         type: entities
       - entity: weather.home
@@ -34,20 +35,20 @@ views:
       - entity: sensor.zooz_zen15_power_switch_power
         graph: line
         type: sensor
-      - type: entities
+      - entities:
+          - entity: light.aeon_labs_dsc27103_micro_dimmer_2nd_edition_level
+            type: 'custom:light-entity-row'
+          - entity: light.aeon_labs_zw111_nano_dimmer_level
+            type: 'custom:light-entity-row'
+          - entity: light.aeon_labs_zw111_nano_dimmer_level_2
+            type: 'custom:light-entity-row'
+          - entity: light.leviton_dzpd3_2bw_decora_300w_plug_in_smart_dimmer_level
+            type: 'custom:light-entity-row'
         title: Lights
-        entities:
-          - type: 'custom:light-entity-row'
-            entity: light.aeon_labs_dsc27103_micro_dimmer_2nd_edition_level
-          - type: 'custom:light-entity-row'
-            entity: light.aeon_labs_zw111_nano_dimmer_level
-          - type: 'custom:light-entity-row'
-            entity: light.aeon_labs_zw111_nano_dimmer_level_2
-          - type: 'custom:light-entity-row'
-            entity: light.leviton_dzpd3_2bw_decora_300w_plug_in_smart_dimmer_level
-      - type: sensor
-        entity: sensor.basement_airthings_wave_radon_1_day_average
+        type: entities
+      - entity: sensor.basement_airthings_wave_radon_1_day_average
         graph: line
+        type: sensor
     panel: false
     path: default_view
     title: Home
