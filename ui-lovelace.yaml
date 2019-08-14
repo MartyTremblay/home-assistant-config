@@ -44,6 +44,8 @@ views:
             type: 'custom:light-entity-row'
           - entity: light.leviton_dzpd3_2bw_decora_300w_plug_in_smart_dimmer_level
             type: 'custom:light-entity-row'
+          - entity: light.garage_ceiling_light
+            type: 'custom:light-entity-row'
         title: Lights
         type: entities
       - entity: sensor.basement_airthings_wave_radon_1_day_average
