@@ -1,3 +1,4 @@
+# force a switch to become a light
 platform: switch
 entity_id: switch.leviton_dz15s_1bz_decora_smart_switch_switch
 name: "Garage Ceiling Light"

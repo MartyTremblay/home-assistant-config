@@ -7,34 +7,107 @@ resources:
     url: /community_plugin/gauge-card/gauge-card.js
   - type: module
     url: /community_plugin/compact-custom-header/compact-custom-header.js
+  - type: module
+    url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
 title: Home
 views:
   - badges: []
     cards:
-      - entity: alarm_control_panel.alarm_panel
-        type: alarm-panel
-      - entity: climate.hallway
-        type: thermostat
-      - entity: media_player.family_room_tv
-        type: media-control
-      - entity: media_player.master_bedroom_tv
-        type: media-control
-      - entities:
-          - entity: switch.aeon_labs_zw130_wallmote_quad_switch
-          - entity: switch.aeon_labs_zw111_nano_dimmer_switch
-          - entity: switch.aeon_labs_zw111_nano_dimmer_switch_2
-          - entity: switch.zooz_zen15_power_switch_switch
-          - entity: switch.leviton_dz15s_1bz_decora_smart_switch_switch
-        title: Switch
-        type: entities
       - entity: weather.home
         type: weather-forecast
-      - entity: sensor.basement_airthings_wave_humidity
-        graph: line
-        type: sensor
-      - entity: sensor.zooz_zen15_power_switch_power
-        graph: line
-        type: sensor
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:mini-graph-card'
+            name: Temperature
+            entities:
+              - entity: sensor.hallway_thermostat_temperature
+                name: Hallway
+              - entity: sensor.basement_airthings_wave_temperature
+                name: Basement
+            line_color:
+              - var(--primary-color)
+              - var(--primary-text-color)
+            line_width: 8
+            font_size: 75
+          - type: 'custom:mini-graph-card'
+            name: Humidity
+            entities:
+              - entity: sensor.hallway_thermostat_humidity
+                name: Hallway
+              - entity: sensor.basement_airthings_wave_humidity
+                name: Basement
+            line_color:
+              - var(--primary-color)
+              - var(--primary-text-color)
+            line_width: 8
+            font_size: 75
+      - entity: climate.hallway
+        type: thermostat
+      - entity: alarm_control_panel.alarm_panel
+        type: alarm-panel
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:mini-graph-card'
+            name: Dehumidifier Power
+            entities:
+              - sensor.zooz_zen15_power_switch_power
+            line_color: var(--primary-color)
+            line_width: 8
+            font_size: 75
+          - type: 'custom:mini-graph-card'
+            name: Basement Humidity
+            entities:
+              - sensor.basement_airthings_wave_humidity
+            line_color: var(--primary-text-color)
+            line_width: 8
+            font_size: 75
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:mini-graph-card'
+            name: Radon 1 Day Avg.
+            upper_bound: 150
+            lower_bound: 50
+            line_color: var(--primary-color)
+            line_width: 8
+            font_size: 75
+            entities:
+              - sensor.basement_airthings_wave_radon_1_day_average
+          - type: 'custom:mini-graph-card'
+            name: Raydon Long Term Avg.
+            upper_bound: 150
+            lower_bound: 50
+            line_color: var(--primary-text-color)
+            line_width: 8
+            font_size: 75
+            entities:
+              - sensor.basement_airthings_wave_radon_long_term_average
+      - entity: media_player.family_room_tv
+        type: media-control
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:mini-graph-card'
+            name: Download
+            upper_bound: 30
+            entities:
+              - sensor.speedtest_download
+            line_color: var(--primary-color)
+            line_width: 8
+            font_size: 75
+          - type: 'custom:mini-graph-card'
+            name: Upload
+            upper_bound: 5
+            entities:
+              - sensor.speedtest_upload
+            line_color: var(--primary-color)
+            line_width: 8
+            font_size: 75
+          - type: 'custom:mini-graph-card'
+            name: Ping
+            entities:
+              - sensor.speedtest_ping
+            line_color: var(--primary-text-color)
+            line_width: 8
+            font_size: 75
       - entities:
           - entity: light.aeon_labs_dsc27103_micro_dimmer_2nd_edition_level
             type: 'custom:light-entity-row'
@@ -48,9 +121,8 @@ views:
             type: 'custom:light-entity-row'
         title: Lights
         type: entities
-      - entity: sensor.basement_airthings_wave_radon_1_day_average
-        graph: line
-        type: sensor
+      - entity: media_player.master_bedroom_tv
+        type: media-control
     panel: false
     path: default_view
     title: Home
