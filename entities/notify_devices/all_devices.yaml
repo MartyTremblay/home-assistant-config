@@ -1,5 +1,5 @@
 platform: joaoapps_join
 api_key: !secret join_api_key
 device_ids: !secret join_device_ids
-device_names: PC, Juan's phone, Antonette's phone
+device_names: PC, Marty's phone, Viktoria's phone
 name: All
