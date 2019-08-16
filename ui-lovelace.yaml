@@ -1,3 +1,8 @@
+cch:
+  clock_am_pm: false
+  clock_date: true
+  hide_help: true
+  voice: clock
 resources:
   - type: module
     url: /community_plugin/light-entity-row/light-entity-row.js
@@ -9,6 +14,8 @@ resources:
     url: /community_plugin/compact-custom-header/compact-custom-header.js
   - type: module
     url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+  - type: js
+    url: /community_plugin/monster-card/monster-card.js
 title: Home
 views:
   - badges: []
@@ -51,10 +58,8 @@ views:
             name: Ping
             type: 'custom:mini-graph-card'
         type: horizontal-stack
-      - type: vertical-stack
-        cards:
-          - type: horizontal-stack
-            cards:
+      - cards:
+          - cards:
               - entities:
                   - entity: sensor.hallway_thermostat_temperature
                     name: Hallway
@@ -79,8 +84,8 @@ views:
                 line_width: 8
                 name: Humidity
                 type: 'custom:mini-graph-card'
-          - type: horizontal-stack
-            cards:
+            type: horizontal-stack
+          - cards:
               - entities:
                   - sensor.zooz_zen15_power_switch_power
                 font_size: 75
@@ -95,8 +100,8 @@ views:
                 line_width: 8
                 name: Basement Humidity
                 type: 'custom:mini-graph-card'
-          - type: horizontal-stack
-            cards:
+            type: horizontal-stack
+          - cards:
               - entities:
                   - sensor.basement_airthings_wave_radon_1_day_average
                 font_size: 75
@@ -115,20 +120,44 @@ views:
                 name: Raydon Long Term Avg.
                 type: 'custom:mini-graph-card'
                 upper_bound: 150
+            type: horizontal-stack
+        type: vertical-stack
+      - cards:
+          - entity: climate.hallway
+            type: thermostat
+          - entity: weather.home
+            type: weather-forecast
+        type: vertical-stack
       - type: vertical-stack
         cards:
-          - type: thermostat
-            entity: climate.hallway
-          - type: weather-forecast
-            entity: weather.home
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: input_boolean.guests_home
-            show_header_toggle: false
+          - card: null
+            type: horizontal-stack
+            cards:
+              - card:
+                  type: glance
+                  show_state: true
+                filter:
+                  include:
+                    - domain: person
+                    - entity_id: device_tracker.occupants
+                type: 'custom:monster-card'
+              - entities:
+                  - entity: input_boolean.guests_home
+                    show_header_toggle: false
+                    name: Guest(s)
+                type: entities
           - entity: alarm_control_panel.alarm_panel
             type: alarm-panel
+          - card:
+              type: glance
+              show_state: false
+            filter:
+              include:
+                - entity_id: '*motion*'
+                - entity_id: '*door*'
+                - entity_id: '*pump*'
+                - entity_id: '*smoke*'
+            type: 'custom:monster-card'
     panel: false
     path: default_view
     title: Home
