@@ -1,4 +1,4 @@
   guests_home:
-    name: Set for when guests are home
+    name: Guests Home
     initial: off
     icon: mdi:account-plus
