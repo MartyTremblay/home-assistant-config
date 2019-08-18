@@ -1,4 +1,4 @@
   vacation_mode:
     name: Vacation Mode
     initial: off
-    icon: mdi:palm-tree
+    icon: mdi:airplane-takeoff
