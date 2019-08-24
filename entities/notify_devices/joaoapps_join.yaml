@@ -1,4 +1,4 @@
 platform: joaoapps_join
 api_key: !secret join_api_key
-device_id: !secret join_device_ids
+device_id: !secret join_device_id
 name: All
