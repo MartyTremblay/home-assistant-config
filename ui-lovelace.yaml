@@ -41,7 +41,7 @@ views:
             line_width: 8
             name: Download
             type: 'custom:mini-graph-card'
-            upper_bound: 30
+            upper_bound: 80
           - entities:
               - sensor.speedtest_upload
             font_size: 75
@@ -49,7 +49,7 @@ views:
             line_width: 8
             name: Upload
             type: 'custom:mini-graph-card'
-            upper_bound: 5
+            upper_bound: 12
           - entities:
               - sensor.speedtest_ping
             font_size: 75
@@ -128,14 +128,12 @@ views:
           - entity: weather.home
             type: weather-forecast
         type: vertical-stack
-      - type: vertical-stack
-        cards:
+      - cards:
           - card: null
-            type: horizontal-stack
             cards:
               - card:
-                  type: glance
                   show_state: true
+                  type: glance
                 filter:
                   include:
                     - domain: person
@@ -143,14 +141,18 @@ views:
                 type: 'custom:monster-card'
               - entities:
                   - entity: input_boolean.guests_home
-                    show_header_toggle: false
                     name: Guest(s)
+                    show_header_toggle: false
+                  - entity: input_boolean.vacation_mode
+                    name: Vacation
+                    show_header_toggle: false
                 type: entities
+            type: horizontal-stack
           - entity: alarm_control_panel.alarm_panel
             type: alarm-panel
           - card:
-              type: glance
               show_state: false
+              type: glance
             filter:
               include:
                 - entity_id: '*motion*'
@@ -158,6 +160,7 @@ views:
                 - entity_id: '*pump*'
                 - entity_id: '*smoke*'
             type: 'custom:monster-card'
+        type: vertical-stack
     panel: false
     path: default_view
     title: Home
