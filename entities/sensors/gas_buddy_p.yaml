@@ -1,0 +1,7 @@
+platform: rest
+scan_interval: 3600
+resource: !secret gasbuddy_resource_p
+method: GET
+name: Gas Price P
+value_template: '{{value_json.fuels[0].prices[0].price}}'
+unit_of_measurement: '$/lit'
