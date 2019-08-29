@@ -1,18 +1,18 @@
-- platform: rest
+platform: rest
   scan_interval: 3600
   resource: !secret gasbuddy_resource_m
   method: GET
   name: Gas Price M
   value_template: '{{value_json.fuels[0].prices[0].price}}'
   unit_of_measurement: '$/lit'
-- platform: rest
+platform: rest
   scan_interval: 3600
   resource: !secret gasbuddy_resource_k
   method: GET
   name: Gas Price K
   value_template: '{{value_json.fuels[0].prices[0].price}}'
   unit_of_measurement: '$/lit'
-- platform: rest
+platform: rest
   scan_interval: 3600
   resource: !secret gasbuddy_resource_p
   method: GET
