@@ -1,4 +1,1 @@
-camera:
-platform: generic
-name: front
-stream_source: http://192.168.101.7:8081
+camera: !include_dir_list ../entities/device_trackers
