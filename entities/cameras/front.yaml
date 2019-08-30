@@ -1,4 +1,4 @@
-platform: generic
+platform: mjpeg
 name: front
-stream_source: http://192.168.101.7:8081
+stream_source: http://192.168.101.58:8080/live
 still_image_url: http://192.168.101.7:8123/api/hassio_ingress/whPkl96qLHb7mIgYQfNfJh8BbZTonZ62uci0vTGwMLQ/picture/1/current/
