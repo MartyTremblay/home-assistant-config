@@ -1,1 +1,1 @@
-camera: !include_dir_list ../entities/device_trackers
+camera: !include_dir_list ../entities/cameras
