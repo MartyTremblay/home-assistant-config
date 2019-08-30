@@ -1,0 +1,4 @@
+camera:
+- platform: generic
+    name: front
+    stream_source: http://192.168.101.7:8081
