@@ -1,6 +1,7 @@
 cch:
   clock_am_pm: false
   clock_date: true
+  clock_format: '24'
   hide_help: true
   voice: clock
 resources:
@@ -18,8 +19,7 @@ resources:
     url: /community_plugin/monster-card/monster-card.js
 title: Home
 views:
-  - badges: []
-    cards:
+  - cards:
       - entities:
           - entity: light.aeon_labs_dsc27103_micro_dimmer_2nd_edition_level
             type: 'custom:light-entity-row'
@@ -161,16 +161,37 @@ views:
                 - entity_id: '*smoke*'
             type: 'custom:monster-card'
         type: vertical-stack
+      - card:
+          show_state: true
+          type: glance
+        filter:
+          include:
+            - entity_id: sensor.gas_price_*
+        type: 'custom:monster-card'
+    badges: []
     panel: false
     path: default_view
     title: Home
-  - badges: []
-    cards:
+    icon: 'mdi:home'
+  - cards:
       - entity: media_player.spotify
         type: media-control
       - entity: media_player.master_bedroom_tv
         type: media-control
       - entity: media_player.family_room_tv
         type: media-control
+    badges: []
     path: media
     title: Media
+    icon: 'mdi:music'
+  - cards:
+      - camera_view: live
+        entity: camera.front_door
+        type: picture-entity
+      - camera_view: live
+        entity: camera.front
+        type: picture-entity
+    badges: []
+    title: Camera
+    path: camera
+    icon: 'mdi:cctv'
