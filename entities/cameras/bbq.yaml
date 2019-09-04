@@ -1,0 +1,3 @@
+platform: mjpeg
+name: bbq
+mjpeg_url: http://192.168.101.145:8080/video
