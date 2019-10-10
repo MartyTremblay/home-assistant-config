@@ -1,4 +1,0 @@
-platform: ups
-name: UPS Deliveries
-username: !secret ups_username
-password: !secret ups_password
