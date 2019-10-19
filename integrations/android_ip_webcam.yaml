@@ -2,8 +2,15 @@ android_ip_webcam:
   name: front-control
   host: 192.168.101.145
   sensors:
+    - audio_connections
     - battery_level
     - battery_temp
     - battery_voltage
+    - light
+    - motion
+    - pressure
+    - proximity
+    - sound
+    - video_connections
   switches:
     - night_vision
