@@ -1,0 +1,5 @@
+platform: mjpeg
+name: cam1
+mjpeg_url: rtsp://192.168.101.124/live
+username: !secret camera_username
+password: !secret camera_password
