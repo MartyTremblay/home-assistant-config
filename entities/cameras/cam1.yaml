@@ -1,5 +1,5 @@
-platform: ffmpeg
+platform: generic
 name: cam1
-input: rtsp://192.168.101.124/live
-#username: !secret camera_username
-#password: !secret camera_password
+stream_source: rtsp://192.168.101.124/live
+username: !secret camera_username
+password: !secret camera_password
