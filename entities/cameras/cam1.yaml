@@ -1,5 +1,6 @@
 platform: generic
 name: cam1
+still_image_url: http://192.168.1.116/cgi-bin/snapshot.cgi?channel=1
 stream_source: rtsp://192.168.101.124/live
 username: !secret camera_username
 password: !secret camera_password
