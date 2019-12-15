@@ -1,3 +1,7 @@
-# platform: mjpeg
-# name: bbq
-# mjpeg_url: http://192.168.101.145:8080/video
+platform: generic
+name: cam2
+still_image_url: http://192.168.101.125:554/live
+stream_source: rtsp://192.168.101.125:554/live
+username: !secret camera_username
+password: !secret camera_password
+verify_ssl: false
