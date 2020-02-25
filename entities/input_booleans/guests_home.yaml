@@ -1,0 +1,4 @@
+  guests_home:
+    name: Guests Home
+    initial: off
+    icon: mdi:account-plus

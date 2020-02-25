@@ -1,0 +1,5 @@
+#platform: samsungtv
+#name: Family Room TV
+#host: !secret samsungtv_host
+#mac: !secret samsungtv_mac
+#port: 8001

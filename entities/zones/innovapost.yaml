@@ -1,0 +1,5 @@
+name: Innovapost
+latitude: !secret innovapost_latitude
+longitude: !secret innovapost_longitude
+radius: 300
+icon: mdi:email

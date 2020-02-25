@@ -1,0 +1,5 @@
+platform: crimereports
+name: Crimes in my area
+radius: 18000
+latitude: !secret home_latitude
+longitude: !secret home_longitude

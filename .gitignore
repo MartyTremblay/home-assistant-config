@@ -58,3 +58,4 @@ __pycache__/locationsharinglib.cpython-36.pyc
 /deps
 packages/._sip_call.yaml
 packages/._themes.yaml
+.vscode/settings.json

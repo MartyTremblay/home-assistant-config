@@ -1,0 +1,13 @@
+alias: Nest is back online
+trigger:
+  platform: state
+  entity_id: binary_sensor.hallway_thermostat_online
+  from: 'off'
+  to: 'on'
+action:
+  service: notify.all
+  data_template:
+    title: "Nest is back Online!"
+    message: "Nest is back Online!"
+    data:
+      icon: "https://goo.gl/xeetdy"

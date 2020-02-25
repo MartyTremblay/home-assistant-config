@@ -1,0 +1,8 @@
+platform: generic
+name: cam1
+still_image_url: http://192.168.101.124:554/live
+stream_source: !secret cam1_creds
+#rtsp://192.168.101.124:554/live
+#username: !secret camera_username
+#password: !secret camera_password
+verify_ssl: false

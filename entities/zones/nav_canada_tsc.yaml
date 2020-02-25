@@ -1,0 +1,5 @@
+name: Nav Canada TSC
+latitude: !secret navcanada_tsc_latitude
+longitude: !secret navcanada_tsc_longitude
+radius: 300
+icon: mdi:airport

@@ -1,0 +1,13 @@
+alias: Nest is offline
+trigger:
+  platform: state
+  entity_id: binary_sensor.hallway_thermostat_online
+  from: 'on'
+  to: 'off'
+action:
+  service: notify.all
+  data_template:
+    title: "Nest Offline!"
+    message: "Nest Offline!"
+    data:
+      icon: "https://goo.gl/xeetdy"
