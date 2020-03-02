@@ -1,5 +1,5 @@
 hacs:
   token: !secret hacs_token
-  appdaemon: true
+  appdaemon: false
   python_script: true
   theme: true
