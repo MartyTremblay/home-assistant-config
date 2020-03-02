@@ -1,48 +1,48 @@
 [
     {
-        "id": "d598b4c0.0049b8",
+        "id": "49cef67d.db9168",
         "type": "tab",
         "label": "Nest is offline",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "35b1f3a.6791a0c",
+        "id": "dc91cb3e.a83d68",
         "type": "tab",
-        "label": "Basement Humidity",
+        "label": "Environmental",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "a23d4a71.7c2918",
+        "id": "7b33efdd.5dfc1",
         "type": "tab",
         "label": "Security",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "6bab119f.6fe31",
+        "id": "b728fe21.5de91",
         "type": "tab",
         "label": "Presence",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "daf7f77b.da21e8",
-        "type": "tab",
-        "label": "Backup",
-        "disabled": true,
-        "info": ""
-    },
-    {
-        "id": "2a18a835.be65f8",
+        "id": "5d315e32.6167e",
         "type": "tab",
         "label": "Kids",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "617446f1.569ee8",
+        "id": "2080d456.54e53c",
+        "type": "tab",
+        "label": "Systems",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "aa3f14b.9dc9de8",
         "type": "subflow",
         "name": "Store Light State",
         "info": "",
@@ -53,7 +53,7 @@
                 "y": 32,
                 "wires": [
                     {
-                        "id": "c80379d4.2c13e8"
+                        "id": "c93746a5.4aefd8"
                     }
                 ]
             }
@@ -64,7 +64,7 @@
                 "y": 192,
                 "wires": [
                     {
-                        "id": "a21569d8.e42d08",
+                        "id": "4f6af0cd.4d577",
                         "port": 0
                     }
                 ]
@@ -73,7 +73,7 @@
         "env": []
     },
     {
-        "id": "4db59bca.977844",
+        "id": "ebec1a05.364f28",
         "type": "subflow",
         "name": "Store all states",
         "info": "",
@@ -84,10 +84,10 @@
                 "y": 32,
                 "wires": [
                     {
-                        "id": "a69cbbfb.98ce78"
+                        "id": "f3f9e9fe.1ed1d8"
                     },
                     {
-                        "id": "7469802d.f8a92"
+                        "id": "9f813db2.07675"
                     }
                 ]
             }
@@ -98,7 +98,7 @@
                 "y": 224,
                 "wires": [
                     {
-                        "id": "c33f8112.5826b",
+                        "id": "294b6250.83f4be",
                         "port": 0
                     }
                 ]
@@ -107,7 +107,7 @@
         "env": []
     },
     {
-        "id": "ee0b73c4.6cee1",
+        "id": "97dc732c.f5042",
         "type": "subflow",
         "name": "Restore Light States",
         "info": "",
@@ -118,7 +118,7 @@
                 "y": 64,
                 "wires": [
                     {
-                        "id": "9bd926d8.946e68"
+                        "id": "8718bf10.5c718"
                     }
                 ]
             }
@@ -129,7 +129,7 @@
                 "y": 128,
                 "wires": [
                     {
-                        "id": "57ae9426.e208ac",
+                        "id": "bd0c2408.182678",
                         "port": 0
                     }
                 ]
@@ -138,7 +138,7 @@
         "env": []
     },
     {
-        "id": "54ba6302.e135fc",
+        "id": "e00e7c68.2bb51",
         "type": "subflow",
         "name": "Restore All States",
         "info": "",
@@ -148,7 +148,7 @@
         "env": []
     },
     {
-        "id": "70d9bda2.4985b4",
+        "id": "7f50d496.0afc3c",
         "type": "subflow",
         "name": "Announce Everywhere",
         "info": "",
@@ -159,10 +159,10 @@
                 "y": 64,
                 "wires": [
                     {
-                        "id": "ab15f55c.3a97f8"
+                        "id": "afdc1f85.b4641"
                     },
                     {
-                        "id": "65af1cee.9fec54"
+                        "id": "54092dfc.d3deb4"
                     }
                 ]
             }
@@ -173,11 +173,11 @@
                 "y": 64,
                 "wires": [
                     {
-                        "id": "65af1cee.9fec54",
+                        "id": "54092dfc.d3deb4",
                         "port": 0
                     },
                     {
-                        "id": "ab15f55c.3a97f8",
+                        "id": "afdc1f85.b4641",
                         "port": 0
                     }
                 ]
@@ -197,13 +197,13 @@
         ]
     },
     {
-        "id": "7d594d96.81fc64",
+        "id": "303b585e.fbf2d8",
         "type": "server",
         "z": "",
         "name": "Home Assistant"
     },
     {
-        "id": "a26cc28f.64946",
+        "id": "db630764.b22748",
         "type": "ui_base",
         "z": "",
         "theme": {
@@ -300,18 +300,29 @@
         }
     },
     {
-        "id": "3cd86138.a8061e",
+        "id": "80f35e92.853ea",
         "type": "ui_tab",
         "name": "Tab 1",
         "icon": "dashboard",
         "order": 1
     },
     {
-        "id": "e07e391f.24ba38",
+        "id": "7935c445.d22aec",
         "type": "trigger-state",
-        "z": "d598b4c0.0049b8",
+        "z": "49cef67d.db9168",
         "name": "Nest is offline",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "automation.nest_is_offline",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -325,23 +336,34 @@
         "y": 160,
         "wires": [
             [
-                "5b48a2d1.fd896c"
+                "95e5275.b10bfd8"
             ],
             []
         ]
     },
     {
-        "id": "c207f855.c02c58",
+        "id": "4ae6bd66.f5cfd4",
         "type": "poll-state",
-        "z": "35b1f3a.6791a0c",
+        "z": "dc91cb3e.a83d68",
         "name": "Basement Humidity ",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "updateinterval": "60",
         "updateIntervalUnits": "seconds",
-        "outputinitially": false,
+        "outputinitially": true,
         "outputonchanged": true,
-        "entity_id": "sensor.basement_airthings_wave_humidity",
+        "entity_id": "sensor.98_07_2d_4a_97_5c_humidity",
         "state_type": "num",
         "halt_if": "",
         "halt_if_type": "num",
@@ -351,17 +373,18 @@
         "y": 96,
         "wires": [
             [
-                "a9aa7c9a.a87e7"
+                "8984bb83.4e8d28"
             ]
         ]
     },
     {
-        "id": "d908e062.c2e9",
+        "id": "20e2a64.b88745a",
         "type": "api-call-service",
-        "z": "35b1f3a.6791a0c",
+        "z": "dc91cb3e.a83d68",
         "name": "Turn off dehumidifier",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
         "entityId": "switch.zooz_zen15_power_switch_switch",
@@ -378,9 +401,9 @@
         ]
     },
     {
-        "id": "a9aa7c9a.a87e7",
+        "id": "8984bb83.4e8d28",
         "type": "switch",
-        "z": "35b1f3a.6791a0c",
+        "z": "dc91cb3e.a83d68",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -403,20 +426,21 @@
         "y": 96,
         "wires": [
             [
-                "88be0c18.7c32"
+                "d986c0a4.3ea28"
             ],
             [
-                "d908e062.c2e9"
+                "20e2a64.b88745a"
             ]
         ]
     },
     {
-        "id": "88be0c18.7c32",
+        "id": "d986c0a4.3ea28",
         "type": "api-call-service",
-        "z": "35b1f3a.6791a0c",
+        "z": "dc91cb3e.a83d68",
         "name": "Turn on dehumidifier",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_on",
         "entityId": "switch.zooz_zen15_power_switch_switch",
@@ -433,12 +457,13 @@
         ]
     },
     {
-        "id": "88b30d59.b3418",
+        "id": "cb431336.b73d3",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Arm Alarm",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "alarm_control_panel",
         "service": "alarm_arm_home",
         "entityId": "alarm_control_panel.alarm_panel",
@@ -448,19 +473,20 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 934,
-        "y": 512,
+        "x": 930,
+        "y": 580,
         "wires": [
             []
         ]
     },
     {
-        "id": "438fb59.235724c",
+        "id": "56a25c89.786a34",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Disarm Alarm",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "alarm_control_panel",
         "service": "alarm_disarm",
         "entityId": "alarm_control_panel.alarm_panel",
@@ -470,18 +496,29 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 944,
-        "y": 672,
+        "x": 940,
+        "y": 700,
         "wires": [
             []
         ]
     },
     {
-        "id": "f45a56d6.1d79e8",
+        "id": "a2d89a7e.d05da8",
         "type": "trigger-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Motion in garage",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "binary_sensor.motion_garage",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -495,16 +532,16 @@
         "y": 864,
         "wires": [
             [
-                "f1f7bcfa.bda7f",
-                "1840c5ff.5386ca"
+                "ff054a17.00e898",
+                "7e6f5447.e6e69c"
             ],
             []
         ]
     },
     {
-        "id": "f1f7bcfa.bda7f",
+        "id": "ff054a17.00e898",
         "type": "stoptimer",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "duration": "10",
         "units": "Minute",
         "payloadtype": "num",
@@ -514,18 +551,19 @@
         "y": 832,
         "wires": [
             [
-                "3f282a16.94b8b6"
+                "d8f716b3.619978"
             ],
             []
         ]
     },
     {
-        "id": "1840c5ff.5386ca",
+        "id": "7e6f5447.e6e69c",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Turn on garage lights",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
         "service": "turn_on",
         "entityId": "light.garage_ceiling_light",
@@ -542,12 +580,13 @@
         ]
     },
     {
-        "id": "3f282a16.94b8b6",
+        "id": "d8f716b3.619978",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Turn off garage lights",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
         "service": "turn_off",
         "entityId": "light.garage_ceiling_light",
@@ -564,11 +603,22 @@
         ]
     },
     {
-        "id": "d4e5ba4a.07b5a8",
+        "id": "9ca7b274.e2a04",
         "type": "trigger-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Alarm triggered!",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "alarm_control_panel.alarm_panel",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -582,6 +632,16 @@
                 "comparatorType": "is",
                 "comparatorValueDatatype": "str",
                 "comparatorValue": "triggered"
+            },
+            {
+                "id": "oh7nv3fs97o",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "previous_state",
+                "propertyValue": "old_state.state",
+                "comparatorType": "is_not",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "triggered"
             }
         ],
         "constraintsmustmatch": "all",
@@ -589,20 +649,20 @@
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "str",
-        "x": 112,
+        "x": 120,
         "y": 320,
         "wires": [
             [
-                "ad1ad3b9.a41d",
-                "bd0692a9.a6bc9"
+                "dbeba93f.9a7438",
+                "5499f9a1.82eba8"
             ],
             []
         ]
     },
     {
-        "id": "ad1ad3b9.a41d",
+        "id": "dbeba93f.9a7438",
         "type": "stoptimer",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "duration": "1",
         "units": "Hour",
         "payloadtype": "num",
@@ -612,18 +672,19 @@
         "y": 288,
         "wires": [
             [
-                "13802905.25da87"
+                "225b02ff.fabdae"
             ],
             []
         ]
     },
     {
-        "id": "34116449.b13fdc",
+        "id": "c219370a.e80668",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Turn on all lights",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
         "service": "turn_on",
         "entityId": "group.all_lights",
@@ -640,9 +701,9 @@
         ]
     },
     {
-        "id": "19e6f623.bc9d2a",
+        "id": "8631ab40.0041d8",
         "type": "inject",
-        "z": "54ba6302.e135fc",
+        "z": "e00e7c68.2bb51",
         "name": "Restore all states",
         "topic": "",
         "payload": "",
@@ -655,14 +716,14 @@
         "y": 64,
         "wires": [
             [
-                "678746ce.85d478"
+                "e127fd4a.3d5e9"
             ]
         ]
     },
     {
-        "id": "678746ce.85d478",
+        "id": "e127fd4a.3d5e9",
         "type": "change",
-        "z": "54ba6302.e135fc",
+        "z": "e00e7c68.2bb51",
         "name": "Get Saved States",
         "rules": [
             {
@@ -682,14 +743,14 @@
         "y": 64,
         "wires": [
             [
-                "cf0ca0c7.ca85c"
+                "26fa4020.92771"
             ]
         ]
     },
     {
-        "id": "cb47796a.82a5d8",
+        "id": "c801115e.66e82",
         "type": "debug",
-        "z": "54ba6302.e135fc",
+        "z": "e00e7c68.2bb51",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -702,9 +763,9 @@
         "wires": []
     },
     {
-        "id": "cf0ca0c7.ca85c",
+        "id": "26fa4020.92771",
         "type": "split",
-        "z": "54ba6302.e135fc",
+        "z": "e00e7c68.2bb51",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -716,17 +777,18 @@
         "y": 64,
         "wires": [
             [
-                "65d85ec3.c1329"
+                "5b83ef6b.960ec"
             ]
         ]
     },
     {
-        "id": "65d85ec3.c1329",
+        "id": "5b83ef6b.960ec",
         "type": "api-call-service",
-        "z": "54ba6302.e135fc",
+        "z": "e00e7c68.2bb51",
         "name": "Restore State",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "",
         "service": "",
         "entityId": "",
@@ -740,14 +802,14 @@
         "y": 64,
         "wires": [
             [
-                "cb47796a.82a5d8"
+                "c801115e.66e82"
             ]
         ]
     },
     {
-        "id": "2b8e3103.89a6ae",
+        "id": "72a76a20.4b5014",
         "type": "debug",
-        "z": "617446f1.569ee8",
+        "z": "aa3f14b.9dc9de8",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -759,9 +821,9 @@
         "wires": []
     },
     {
-        "id": "a21569d8.e42d08",
+        "id": "4f6af0cd.4d577",
         "type": "change",
-        "z": "617446f1.569ee8",
+        "z": "aa3f14b.9dc9de8",
         "name": "",
         "rules": [
             {
@@ -781,14 +843,14 @@
         "y": 128,
         "wires": [
             [
-                "2b8e3103.89a6ae"
+                "72a76a20.4b5014"
             ]
         ]
     },
     {
-        "id": "4a74c588.953eac",
+        "id": "9edd8946.813d38",
         "type": "join",
-        "z": "617446f1.569ee8",
+        "z": "aa3f14b.9dc9de8",
         "name": "",
         "mode": "custom",
         "build": "array",
@@ -809,14 +871,14 @@
         "y": 128,
         "wires": [
             [
-                "a21569d8.e42d08"
+                "4f6af0cd.4d577"
             ]
         ]
     },
     {
-        "id": "6b8da708.6d7148",
+        "id": "56091aa.a9a11e4",
         "type": "function",
-        "z": "617446f1.569ee8",
+        "z": "aa3f14b.9dc9de8",
         "name": "transform data",
         "func": "const payload = {};\npayload.domain = msg.payload.entity_id.split('.')[0];\npayload.service = `turn_${msg.payload.state}`;\npayload.data = { entity_id: msg.payload.entity_id };\n\n// create a blank message object with out new payload\nmsg = { payload: payload };\nreturn msg;",
         "outputs": 1,
@@ -825,15 +887,15 @@
         "y": 128,
         "wires": [
             [
-                "4a74c588.953eac"
+                "9edd8946.813d38"
             ]
         ]
     },
     {
-        "id": "c80379d4.2c13e8",
+        "id": "c93746a5.4aefd8",
         "type": "ha-get-entities",
-        "z": "617446f1.569ee8",
-        "server": "7d594d96.81fc64",
+        "z": "aa3f14b.9dc9de8",
+        "server": "303b585e.fbf2d8",
         "name": "Get Lights",
         "rules": [
             {
@@ -858,14 +920,14 @@
         "y": 128,
         "wires": [
             [
-                "6b8da708.6d7148"
+                "56091aa.a9a11e4"
             ]
         ]
     },
     {
-        "id": "e4dc5c8e.c0caf",
+        "id": "2c7c8fc1.2a011",
         "type": "inject",
-        "z": "617446f1.569ee8",
+        "z": "aa3f14b.9dc9de8",
         "name": "Store light states",
         "topic": "",
         "payload": "",
@@ -878,14 +940,14 @@
         "y": 128,
         "wires": [
             [
-                "c80379d4.2c13e8"
+                "c93746a5.4aefd8"
             ]
         ]
     },
     {
-        "id": "131d2280.7105be",
+        "id": "2c95f594.9006ba",
         "type": "inject",
-        "z": "ee0b73c4.6cee1",
+        "z": "97dc732c.f5042",
         "name": "Restore light states",
         "topic": "",
         "payload": "",
@@ -898,14 +960,14 @@
         "y": 128,
         "wires": [
             [
-                "9bd926d8.946e68"
+                "8718bf10.5c718"
             ]
         ]
     },
     {
-        "id": "9bd926d8.946e68",
+        "id": "8718bf10.5c718",
         "type": "change",
-        "z": "ee0b73c4.6cee1",
+        "z": "97dc732c.f5042",
         "name": "Get Saved States",
         "rules": [
             {
@@ -925,14 +987,14 @@
         "y": 128,
         "wires": [
             [
-                "e09803be.f611d"
+                "39fe5d25.ac8652"
             ]
         ]
     },
     {
-        "id": "e09803be.f611d",
+        "id": "39fe5d25.ac8652",
         "type": "split",
-        "z": "ee0b73c4.6cee1",
+        "z": "97dc732c.f5042",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -944,17 +1006,18 @@
         "y": 128,
         "wires": [
             [
-                "57ae9426.e208ac"
+                "bd0c2408.182678"
             ]
         ]
     },
     {
-        "id": "57ae9426.e208ac",
+        "id": "bd0c2408.182678",
         "type": "api-call-service",
-        "z": "ee0b73c4.6cee1",
+        "z": "97dc732c.f5042",
         "name": "Restore State",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "",
         "service": "",
         "entityId": "",
@@ -971,24 +1034,24 @@
         ]
     },
     {
-        "id": "bd0692a9.a6bc9",
-        "type": "subflow:617446f1.569ee8",
-        "z": "a23d4a71.7c2918",
+        "id": "5499f9a1.82eba8",
+        "type": "subflow:aa3f14b.9dc9de8",
+        "z": "7b33efdd.5dfc1",
         "name": "",
         "env": [],
         "x": 378,
         "y": 352,
         "wires": [
             [
-                "34116449.b13fdc",
-                "15fafe7f.bb0f42"
+                "c219370a.e80668",
+                "d7759dd8.e2d65"
             ]
         ]
     },
     {
-        "id": "2f6aa3d2.5abefc",
+        "id": "13cb93f5.a8a97c",
         "type": "inject",
-        "z": "4db59bca.977844",
+        "z": "ebec1a05.364f28",
         "name": "Store all states",
         "topic": "",
         "payload": "",
@@ -1001,16 +1064,16 @@
         "y": 160,
         "wires": [
             [
-                "7469802d.f8a92",
-                "a69cbbfb.98ce78"
+                "9f813db2.07675",
+                "f3f9e9fe.1ed1d8"
             ]
         ]
     },
     {
-        "id": "7469802d.f8a92",
+        "id": "9f813db2.07675",
         "type": "ha-get-entities",
-        "z": "4db59bca.977844",
-        "server": "7d594d96.81fc64",
+        "z": "ebec1a05.364f28",
+        "server": "303b585e.fbf2d8",
         "name": "Get Switches",
         "rules": [
             {
@@ -1035,15 +1098,15 @@
         "y": 160,
         "wires": [
             [
-                "e1669867.462f28"
+                "9f75495.b3308b8"
             ]
         ]
     },
     {
-        "id": "a69cbbfb.98ce78",
+        "id": "f3f9e9fe.1ed1d8",
         "type": "ha-get-entities",
-        "z": "4db59bca.977844",
-        "server": "7d594d96.81fc64",
+        "z": "ebec1a05.364f28",
+        "server": "303b585e.fbf2d8",
         "name": "Get Lights",
         "rules": [
             {
@@ -1068,14 +1131,14 @@
         "y": 96,
         "wires": [
             [
-                "e1669867.462f28"
+                "9f75495.b3308b8"
             ]
         ]
     },
     {
-        "id": "e1669867.462f28",
+        "id": "9f75495.b3308b8",
         "type": "function",
-        "z": "4db59bca.977844",
+        "z": "ebec1a05.364f28",
         "name": "transform data",
         "func": "const payload = {};\npayload.domain = msg.payload.entity_id.split('.')[0];\npayload.service = `turn_${msg.payload.state}`;\npayload.data = { entity_id: msg.payload.entity_id };\n\n// create a blank message object with out new payload\nmsg = { payload: payload };\nreturn msg;",
         "outputs": 1,
@@ -1084,14 +1147,14 @@
         "y": 160,
         "wires": [
             [
-                "2fe7e76f.002a38"
+                "7a030700.a18bc8"
             ]
         ]
     },
     {
-        "id": "2fe7e76f.002a38",
+        "id": "7a030700.a18bc8",
         "type": "join",
-        "z": "4db59bca.977844",
+        "z": "ebec1a05.364f28",
         "name": "",
         "mode": "custom",
         "build": "array",
@@ -1112,14 +1175,14 @@
         "y": 160,
         "wires": [
             [
-                "c33f8112.5826b"
+                "294b6250.83f4be"
             ]
         ]
     },
     {
-        "id": "65d5f067.f0369",
+        "id": "749ec20f.60b22c",
         "type": "debug",
-        "z": "4db59bca.977844",
+        "z": "ebec1a05.364f28",
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -1131,9 +1194,9 @@
         "wires": []
     },
     {
-        "id": "c33f8112.5826b",
+        "id": "294b6250.83f4be",
         "type": "change",
-        "z": "4db59bca.977844",
+        "z": "ebec1a05.364f28",
         "name": "",
         "rules": [
             {
@@ -1153,14 +1216,14 @@
         "y": 160,
         "wires": [
             [
-                "65d5f067.f0369"
+                "749ec20f.60b22c"
             ]
         ]
     },
     {
-        "id": "13802905.25da87",
-        "type": "subflow:ee0b73c4.6cee1",
-        "z": "a23d4a71.7c2918",
+        "id": "225b02ff.fabdae",
+        "type": "subflow:97dc732c.f5042",
+        "z": "7b33efdd.5dfc1",
         "name": "",
         "env": [],
         "x": 964,
@@ -1170,28 +1233,9 @@
         ]
     },
     {
-        "id": "6d145488.aa280c",
-        "type": "credentials",
-        "z": "a23d4a71.7c2918",
-        "name": "Code",
-        "props": [
-            {
-                "value": "alarm_code",
-                "type": "msg"
-            }
-        ],
-        "x": 786,
-        "y": 512,
-        "wires": [
-            [
-                "88b30d59.b3418"
-            ]
-        ]
-    },
-    {
-        "id": "f6d21bf8.6eaf98",
+        "id": "e34d66b2.cb6b18",
         "type": "inject",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Bedtime",
         "topic": "",
         "payload": "",
@@ -1200,18 +1244,18 @@
         "crontab": "00 23 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 124,
-        "y": 512,
+        "x": 120,
+        "y": 580,
         "wires": [
             [
-                "e0c8f46.4dbee08"
+                "75d9c48d.f41b5c"
             ]
         ]
     },
     {
-        "id": "4f7d201b.31258",
+        "id": "760d441a.8ce71c",
         "type": "inject",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Wakeup",
         "topic": "",
         "payload": "",
@@ -1220,20 +1264,31 @@
         "crontab": "30 05 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 124,
-        "y": 672,
+        "x": 120,
+        "y": 700,
         "wires": [
             [
-                "a2d76635.afdfd8"
+                "ce576cef.2f5b"
             ]
         ]
     },
     {
-        "id": "831e3525.b15fd8",
+        "id": "456063a0.fab6fc",
         "type": "trigger-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Everyone has left",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "device_tracker.occupants",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -1254,21 +1309,21 @@
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "str",
-        "x": 122,
-        "y": 96,
+        "x": 130,
+        "y": 100,
         "wires": [
             [
-                "bdb21de.c3c97e"
+                "b98c2d39.593c3"
             ],
             []
         ]
     },
     {
-        "id": "e0c8f46.4dbee08",
+        "id": "75d9c48d.f41b5c",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Occupants are home",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "home",
@@ -1282,22 +1337,23 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 388,
-        "y": 512,
+        "x": 384,
+        "y": 580,
         "wires": [
             [
-                "2400a766.1b15b8"
+                "2e67f20f.f7889e"
             ],
             []
         ]
     },
     {
-        "id": "d0bc85ac.4f47d8",
+        "id": "ccf02df8.c634f",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Arm alarm away",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "alarm_control_panel",
         "service": "alarm_arm_away",
         "entityId": "alarm_control_panel.alarm_panel",
@@ -1314,11 +1370,11 @@
         ]
     },
     {
-        "id": "a2d76635.afdfd8",
+        "id": "ce576cef.2f5b",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Occupants are home",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "home",
@@ -1332,21 +1388,21 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 388,
-        "y": 672,
+        "x": 384,
+        "y": 700,
         "wires": [
             [
-                "fccdc85b.af2118"
+                "e872bbd5.c38488"
             ],
             []
         ]
     },
     {
-        "id": "fccdc85b.af2118",
+        "id": "e872bbd5.c38488",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Is alarm armed?",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "armed_home",
@@ -1360,21 +1416,32 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 624,
-        "y": 672,
+        "x": 620,
+        "y": 700,
         "wires": [
             [
-                "69ae4ce4.6a3fe4"
+                "59de1870.def048"
             ],
             []
         ]
     },
     {
-        "id": "d8485b88.bddfc8",
+        "id": "a83ff51c.8c2218",
         "type": "trigger-state",
-        "z": "d598b4c0.0049b8",
+        "z": "49cef67d.db9168",
         "name": "Nest is back online",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "automation.nest_is_back_online",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -1388,15 +1455,15 @@
         "y": 256,
         "wires": [
             [
-                "3651929a.ffb9ce"
+                "bd7f00dd.7a7b8"
             ],
             []
         ]
     },
     {
-        "id": "3cef5455.4ca54c",
+        "id": "81caeb83.8d3f98",
         "type": "comment",
-        "z": "35b1f3a.6791a0c",
+        "z": "dc91cb3e.a83d68",
         "name": "Humidity hits >= 55% or <= 50",
         "info": "",
         "x": 568,
@@ -1404,11 +1471,11 @@
         "wires": []
     },
     {
-        "id": "2400a766.1b15b8",
+        "id": "2e67f20f.f7889e",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Is alarm armed?",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "armed",
@@ -1422,20 +1489,20 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 624,
-        "y": 512,
+        "x": 620,
+        "y": 580,
         "wires": [
             [],
             [
-                "6d145488.aa280c"
+                "98416527.09beb8"
             ]
         ]
     },
     {
-        "id": "c541312c.f4f5a",
+        "id": "330595a.36fdb6a",
         "type": "ha-get-entities",
-        "z": "6bab119f.6fe31",
-        "server": "7d594d96.81fc64",
+        "z": "b728fe21.5de91",
+        "server": "303b585e.fbf2d8",
         "name": "Get people that are home",
         "rules": [
             {
@@ -1460,14 +1527,14 @@
         "y": 192,
         "wires": [
             [
-                "81f910eb.a42b8"
+                "4a3a465e.d78608"
             ]
         ]
     },
     {
-        "id": "544f58ed.62dcd8",
+        "id": "4687e6d8.5a2e68",
         "type": "inject",
-        "z": "6bab119f.6fe31",
+        "z": "b728fe21.5de91",
         "name": "",
         "topic": "",
         "payload": "",
@@ -1480,16 +1547,16 @@
         "y": 128,
         "wires": [
             [
-                "ee20e400.8247b8"
+                "54efc82.ed74838"
             ]
         ]
     },
     {
-        "id": "ee20e400.8247b8",
+        "id": "54efc82.ed74838",
         "type": "api-current-state",
-        "z": "6bab119f.6fe31",
+        "z": "b728fe21.5de91",
         "name": "Are guests home",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "true",
@@ -1507,20 +1574,21 @@
         "y": 128,
         "wires": [
             [
-                "c2f81898.aa2918"
+                "3365a6c1.951e4a"
             ],
             [
-                "c541312c.f4f5a"
+                "330595a.36fdb6a"
             ]
         ]
     },
     {
-        "id": "8d28fbd0.28af38",
+        "id": "564f322b.b5c3fc",
         "type": "api-call-service",
-        "z": "6bab119f.6fe31",
+        "z": "b728fe21.5de91",
         "name": "Set occupants not home",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "device_tracker",
         "service": "see",
         "entityId": "",
@@ -1537,12 +1605,13 @@
         ]
     },
     {
-        "id": "c2f81898.aa2918",
+        "id": "3365a6c1.951e4a",
         "type": "api-call-service",
-        "z": "6bab119f.6fe31",
+        "z": "b728fe21.5de91",
         "name": "Set occupants home",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "device_tracker",
         "service": "see",
         "entityId": "",
@@ -1559,9 +1628,9 @@
         ]
     },
     {
-        "id": "81f910eb.a42b8",
+        "id": "4a3a465e.d78608",
         "type": "switch",
-        "z": "6bab119f.6fe31",
+        "z": "b728fe21.5de91",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -1580,292 +1649,30 @@
         "y": 192,
         "wires": [
             [
-                "c2f81898.aa2918"
+                "3365a6c1.951e4a"
             ],
             [
-                "8d28fbd0.28af38"
+                "564f322b.b5c3fc"
             ]
         ]
     },
     {
-        "id": "528ae71.f182018",
-        "type": "inject",
-        "z": "daf7f77b.da21e8",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 124,
-        "y": 256,
-        "wires": [
-            [
-                "4247ff34.4c5a9"
-            ]
-        ]
-    },
-    {
-        "id": "4247ff34.4c5a9",
-        "type": "api-current-state",
-        "z": "daf7f77b.da21e8",
-        "name": "Are guests home",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "true",
-        "halt_if_type": "bool",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.guests_home",
-        "state_type": "habool",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 346,
-        "y": 256,
-        "wires": [
-            [
-                "46877004.897e5"
-            ],
-            [
-                "464ce085.d28ea",
-                "b230df66.446e4"
-            ]
-        ]
-    },
-    {
-        "id": "46877004.897e5",
-        "type": "api-call-service",
-        "z": "daf7f77b.da21e8",
-        "name": "Set occupants home",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "service_domain": "device_tracker",
-        "service": "see",
-        "entityId": "",
-        "data": "{\"dev_id\":\"occupants\",\"location_name\":\"home\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "payload",
-        "output_location_type": "msg",
-        "mustacheAltTags": false,
-        "x": 1444,
-        "y": 256,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "464ce085.d28ea",
-        "type": "api-current-state",
-        "z": "daf7f77b.da21e8",
-        "name": "Is Viktoria home",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "person.viktoria",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 592,
-        "y": 320,
-        "wires": [
-            [
-                "807888b5.42beb8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "b230df66.446e4",
-        "type": "api-current-state",
-        "z": "daf7f77b.da21e8",
-        "name": "Is Marty home",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "person.marty",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 592,
-        "y": 192,
-        "wires": [
-            [
-                "80ffea81.5bf928"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "9af000dd.7d9a5",
-        "type": "api-current-state",
-        "z": "daf7f77b.da21e8",
-        "name": "Everyone Home?",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "not_home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": true,
-        "entity_id": "person.viktoria",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1114,
-        "y": 96,
-        "wires": [
-            [],
-            [
-                "46877004.897e5"
-            ]
-        ]
-    },
-    {
-        "id": "40e97ed1.1280d",
-        "type": "api-current-state",
-        "z": "daf7f77b.da21e8",
-        "name": "Everyone Home?",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "not_home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": true,
-        "entity_id": "person.marty",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1114,
-        "y": 416,
-        "wires": [
-            [],
-            [
-                "46877004.897e5"
-            ]
-        ]
-    },
-    {
-        "id": "807888b5.42beb8",
-        "type": "switch",
-        "z": "daf7f77b.da21e8",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "away",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "home",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 818,
-        "y": 336,
-        "wires": [
-            [
-                "e5b0adca.89ee8"
-            ],
-            [
-                "40e97ed1.1280d"
-            ]
-        ]
-    },
-    {
-        "id": "80ffea81.5bf928",
-        "type": "switch",
-        "z": "daf7f77b.da21e8",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "home",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "away",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 818,
-        "y": 160,
-        "wires": [
-            [
-                "9af000dd.7d9a5"
-            ],
-            [
-                "e5b0adca.89ee8"
-            ]
-        ]
-    },
-    {
-        "id": "e5b0adca.89ee8",
-        "type": "api-call-service",
-        "z": "daf7f77b.da21e8",
-        "name": "Set occupants not home",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "service_domain": "device_tracker",
-        "service": "see",
-        "entityId": "",
-        "data": "{\"dev_id\":\"occupants\",\"location_name\":\"not_home\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "payload",
-        "output_location_type": "msg",
-        "mustacheAltTags": false,
-        "x": 1134,
-        "y": 224,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a4665b27.96f778",
+        "id": "1be08a13.aa6b16",
         "type": "trigger-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Someone has arrived",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "device_tracker.occupants",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -1886,22 +1693,23 @@
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "str",
-        "x": 132,
-        "y": 192,
+        "x": 140,
+        "y": 200,
         "wires": [
             [
-                "a775a8f3.7951b8"
+                "743b30b8.310c"
             ],
             []
         ]
     },
     {
-        "id": "54dd1bd2.414cc4",
+        "id": "dc121229.466b3",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Disarm alarm",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "alarm_control_panel",
         "service": "alarm_disarm",
         "entityId": "alarm_control_panel.alarm_panel",
@@ -1918,11 +1726,11 @@
         ]
     },
     {
-        "id": "996a4e81.5c23a",
+        "id": "15265fa6.94224",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Is alarm armed?",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "armed,armed_home",
@@ -1944,10 +1752,10 @@
         ]
     },
     {
-        "id": "63b90a37.1c7df4",
+        "id": "b9f1fce1.d1b9e",
         "type": "ha-get-entities",
-        "z": "a23d4a71.7c2918",
-        "server": "7d594d96.81fc64",
+        "z": "7b33efdd.5dfc1",
+        "server": "303b585e.fbf2d8",
         "name": "",
         "rules": [
             {
@@ -1966,14 +1774,14 @@
         "y": 1248,
         "wires": [
             [
-                "6f1f2a66.a808d4"
+                "fec0e281.38335"
             ]
         ]
     },
     {
-        "id": "3fad9a56.ed1d76",
+        "id": "7aa3b57.f3f264c",
         "type": "delay",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "",
         "pauseType": "random",
         "timeout": "5",
@@ -1989,17 +1797,18 @@
         "y": 1248,
         "wires": [
             [
-                "5eb0901c.a5604"
+                "fc8e1a0b.ccf088"
             ]
         ]
     },
     {
-        "id": "6f1f2a66.a808d4",
+        "id": "fec0e281.38335",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Turn on Light",
-        "server": "7d594d96.81fc64",
-        "version": "1",
+        "server": "303b585e.fbf2d8",
+        "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
         "service": "turn_on",
         "entityId": "{{payload.entity_id}}",
@@ -2013,17 +1822,18 @@
         "y": 1248,
         "wires": [
             [
-                "3fad9a56.ed1d76"
+                "7aa3b57.f3f264c"
             ]
         ]
     },
     {
-        "id": "5eb0901c.a5604",
+        "id": "fc8e1a0b.ccf088",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Turn off Light",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "light",
         "service": "turn_off",
         "entityId": "{{payload.entity_id}}",
@@ -2040,27 +1850,11 @@
         ]
     },
     {
-        "id": "8f13d802.bb6318",
-        "type": "sun events",
-        "z": "a23d4a71.7c2918",
-        "testmode": false,
-        "verbose": true,
-        "topic": "",
-        "name": "",
-        "x": 92,
-        "y": 1248,
-        "wires": [
-            [
-                "d70f2d59.e5fe"
-            ]
-        ]
-    },
-    {
-        "id": "82192f41.e53c6",
+        "id": "db16fd7c.e706b",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Vacation Mode",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "on",
@@ -2078,15 +1872,15 @@
         "y": 1248,
         "wires": [
             [
-                "63b90a37.1c7df4"
+                "b9f1fce1.d1b9e"
             ],
             []
         ]
     },
     {
-        "id": "d70f2d59.e5fe",
+        "id": "710c7668.55d658",
         "type": "switch",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -2114,27 +1908,28 @@
         "y": 1248,
         "wires": [
             [
-                "82192f41.e53c6"
+                "db16fd7c.e706b"
             ],
             [
-                "82192f41.e53c6"
+                "db16fd7c.e706b"
             ],
             [
-                "82192f41.e53c6"
+                "db16fd7c.e706b"
             ]
         ]
     },
     {
-        "id": "65af1cee.9fec54",
+        "id": "54092dfc.d3deb4",
         "type": "api-call-service",
-        "z": "70d9bda2.4985b4",
+        "z": "7f50d496.0afc3c",
         "name": "Announce on Alexa",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "notify",
         "service": "alexa_media",
         "entityId": "",
-        "data": "{\t   \"message\": $env('MESSAGE'),\t   \"data\": {\t        \"type\": \"tts\"\t    },\t   \"target\": [\t       \"media_player.kitchen\",\t       \"media_player.family_room\"    \t   \t   ]\t}",
+        "data": "{\t   \"message\": $env('MESSAGE'),\t   \"data\": {\t        \"type\": \"tts\"\t    },\t   \"target\": [\t       \"media_player.kitchen\",\t       \"media_player.family_room\",    \t       \"media_player.living_room\"  \t   ]\t}",
         "dataType": "jsonata",
         "mergecontext": "",
         "output_location": "payload",
@@ -2147,11 +1942,11 @@
         ]
     },
     {
-        "id": "bdb21de.c3c97e",
+        "id": "b98c2d39.593c3",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Vacation Mode",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "on",
@@ -2169,20 +1964,21 @@
         "y": 96,
         "wires": [
             [
-                "d7a29886.64a498"
+                "ba1b94c6.3387d8"
             ],
             [
-                "59eff6c0.e03c18"
+                "8133315a.2aebc"
             ]
         ]
     },
     {
-        "id": "22548229.33cb2e",
+        "id": "f6e9ee36.e2464",
         "type": "api-call-service",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Arm alarm home",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "alarm_control_panel",
         "service": "alarm_arm_home",
         "entityId": "alarm_control_panel.alarm_panel",
@@ -2199,9 +1995,9 @@
         ]
     },
     {
-        "id": "a5546cbc.ec611",
+        "id": "e901454c.e04248",
         "type": "stoptimer",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "duration": "15",
         "units": "Second",
         "payloadtype": "num",
@@ -2211,17 +2007,17 @@
         "y": 416,
         "wires": [
             [
-                "59b5a9fb.16e038"
+                "78d558cf.032398"
             ],
             []
         ]
     },
     {
-        "id": "59b5a9fb.16e038",
+        "id": "78d558cf.032398",
         "type": "api-current-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Still triggered?",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
         "outputs": 2,
         "halt_if": "triggered",
@@ -2239,15 +2035,15 @@
         "y": 480,
         "wires": [
             [
-                "15fafe7f.bb0f42"
+                "d7759dd8.e2d65"
             ],
             []
         ]
     },
     {
-        "id": "61c01596.05873c",
+        "id": "a8d63e72.5bffc",
         "type": "switch",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "Has timeout expired?",
         "property": "payload",
         "propertyType": "msg",
@@ -2265,45 +2061,42 @@
         "y": 1056,
         "wires": [
             [
-                "d7cc5168.b881d"
+                "dabac61c.7e0d58"
             ]
         ]
     },
     {
-        "id": "58a9bcf2.8bd764",
-        "type": "mytimeout",
-        "z": "a23d4a71.7c2918",
-        "name": "Countdown",
-        "outtopic": "msg.entity",
-        "outsafe": "started",
-        "outwarning": "expired",
-        "outunsafe": "stopped",
-        "warning": "1",
-        "timer": "30",
-        "debug": false,
-        "ndebug": false,
-        "ignoreCase": false,
-        "repeat": false,
-        "again": false,
-        "x": 358,
-        "y": 1056,
-        "wires": [
-            [
-                "61c01596.05873c"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "385e5ed.ae25aa2",
+        "id": "15f97f0f.69ee01",
         "type": "trigger-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "A door has opened",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "binary_sensor.door_",
         "entityidfiltertype": "substring",
         "debugenabled": false,
-        "constraints": [],
+        "constraints": [
+            {
+                "id": "unjzzmbb2j",
+                "targetType": "entity_id",
+                "targetValue": "alarm_control_panel.alarm_panel",
+                "propertyType": "current_state",
+                "propertyValue": "new_state.state",
+                "comparatorType": "is_not",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "triggered"
+            }
+        ],
         "constraintsmustmatch": "all",
         "outputs": 2,
         "customoutputs": [],
@@ -2313,91 +2106,15 @@
         "y": 1056,
         "wires": [
             [
-                "58a9bcf2.8bd764"
+                "3a10fbd4.edd984"
             ],
             []
         ]
     },
     {
-        "id": "a775a8f3.7951b8",
-        "type": "credentials",
-        "z": "a23d4a71.7c2918",
-        "name": "Code",
-        "props": [
-            {
-                "value": "alarm_code",
-                "type": "msg"
-            }
-        ],
-        "x": 786,
-        "y": 192,
-        "wires": [
-            [
-                "54dd1bd2.414cc4"
-            ]
-        ]
-    },
-    {
-        "id": "69ae4ce4.6a3fe4",
-        "type": "credentials",
-        "z": "a23d4a71.7c2918",
-        "name": "Code",
-        "props": [
-            {
-                "value": "alarm_code",
-                "type": "msg"
-            }
-        ],
-        "x": 786,
-        "y": 672,
-        "wires": [
-            [
-                "438fb59.235724c"
-            ]
-        ]
-    },
-    {
-        "id": "59eff6c0.e03c18",
-        "type": "credentials",
-        "z": "a23d4a71.7c2918",
-        "name": "Code",
-        "props": [
-            {
-                "value": "alarm_code",
-                "type": "msg"
-            }
-        ],
-        "x": 786,
-        "y": 128,
-        "wires": [
-            [
-                "22548229.33cb2e"
-            ]
-        ]
-    },
-    {
-        "id": "d7a29886.64a498",
-        "type": "credentials",
-        "z": "a23d4a71.7c2918",
-        "name": "Code",
-        "props": [
-            {
-                "value": "alarm_code",
-                "type": "msg"
-            }
-        ],
-        "x": 786,
-        "y": 64,
-        "wires": [
-            [
-                "d0bc85ac.4f47d8"
-            ]
-        ]
-    },
-    {
-        "id": "15fafe7f.bb0f42",
-        "type": "subflow:70d9bda2.4985b4",
-        "z": "a23d4a71.7c2918",
+        "id": "d7759dd8.e2d65",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "7b33efdd.5dfc1",
         "name": "Announce Everywhere",
         "env": [
             {
@@ -2415,19 +2132,20 @@
         "y": 416,
         "wires": [
             [
-                "a5546cbc.ec611"
+                "e901454c.e04248"
             ]
         ]
     },
     {
-        "id": "ab15f55c.3a97f8",
+        "id": "afdc1f85.b4641",
         "type": "api-call-service",
-        "z": "70d9bda2.4985b4",
-        "name": "Announce on Join",
-        "server": "7d594d96.81fc64",
+        "z": "7f50d496.0afc3c",
+        "name": "Announce on Mobile",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "notify",
-        "service": "all",
+        "service": "mobile_app_nokia_7_plus",
         "entityId": "",
         "data": "{\t   \"message\": $env('MESSAGE'),\t   \"title\": $env('TITLE'),\t   \"data\": {\t       \"icon\": \"https://goo.gl/xeetdy\",\t       \"smallicon\": \"https://goo.gl/xeetdy\",\t       \"vibration\": \"0,65,706,86,657,95,668,100\",\t       \"image\": \"https://www.home-assistant.io/images/favicon-192x192-full.png\",\t       \"url\": \"https://home-assistant.io\",\t       \"notification_id\": \"hass-notification\",\t       \"tts\": $env('MESSAGE'),\t       \"tts_language\": \"english\"\t   }\t}",
         "dataType": "jsonata",
@@ -2435,16 +2153,16 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": true,
-        "x": 218,
+        "x": 228,
         "y": 128,
         "wires": [
             []
         ]
     },
     {
-        "id": "5e5da08e.d2aa2",
+        "id": "3d2f708b.d06de",
         "type": "inject",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "",
         "topic": "",
         "payload": "",
@@ -2457,14 +2175,14 @@
         "y": 1440,
         "wires": [
             [
-                "34e1992c.1b5256"
+                "e9b9b8f6.ab8358"
             ]
         ]
     },
     {
-        "id": "34e1992c.1b5256",
-        "type": "subflow:70d9bda2.4985b4",
-        "z": "a23d4a71.7c2918",
+        "id": "e9b9b8f6.ab8358",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "7b33efdd.5dfc1",
         "name": "",
         "env": [
             {
@@ -2485,9 +2203,9 @@
         ]
     },
     {
-        "id": "d7cc5168.b881d",
-        "type": "subflow:70d9bda2.4985b4",
-        "z": "a23d4a71.7c2918",
+        "id": "dabac61c.7e0d58",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "7b33efdd.5dfc1",
         "name": "Announce Everywhere",
         "env": [
             {
@@ -2505,14 +2223,14 @@
         "y": 1056,
         "wires": [
             [
-                "58a9bcf2.8bd764"
+                "3a10fbd4.edd984"
             ]
         ]
     },
     {
-        "id": "5b48a2d1.fd896c",
-        "type": "subflow:70d9bda2.4985b4",
-        "z": "d598b4c0.0049b8",
+        "id": "95e5275.b10bfd8",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "49cef67d.db9168",
         "name": "Announce Everywhere - Nest is offline",
         "env": [
             {
@@ -2528,9 +2246,9 @@
         ]
     },
     {
-        "id": "3651929a.ffb9ce",
-        "type": "subflow:70d9bda2.4985b4",
-        "z": "d598b4c0.0049b8",
+        "id": "bd7f00dd.7a7b8",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "49cef67d.db9168",
         "name": "Announce Everywhere - Nest is back online",
         "env": [
             {
@@ -2546,9 +2264,9 @@
         ]
     },
     {
-        "id": "b0fa6a62.f62da8",
+        "id": "e514575.d24a7a8",
         "type": "inject",
-        "z": "2a18a835.be65f8",
+        "z": "5d315e32.6167e",
         "name": "Maksim, it's time to leave for the bus",
         "topic": "",
         "payload": "",
@@ -2561,40 +2279,18 @@
         "y": 192,
         "wires": [
             [
-                "d4b644ca.548788",
-                "3bdeb60e.57576a"
+                "206cb89c.40a8c8"
             ]
         ]
     },
     {
-        "id": "d4b644ca.548788",
+        "id": "206cb89c.40a8c8",
         "type": "api-call-service",
-        "z": "2a18a835.be65f8",
-        "name": "Turn off TV",
-        "server": "7d594d96.81fc64",
-        "version": 1,
-        "service_domain": "media_player",
-        "service": "turn_off",
-        "entityId": "media_player.family_room_tv",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 646,
-        "y": 192,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3bdeb60e.57576a",
-        "type": "api-call-service",
-        "z": "2a18a835.be65f8",
+        "z": "5d315e32.6167e",
         "name": "Announce on Alexa",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "notify",
         "service": "alexa_media",
         "entityId": "",
@@ -2604,16 +2300,16 @@
         "output_location": "payload",
         "output_location_type": "msg",
         "mustacheAltTags": true,
-        "x": 666,
-        "y": 256,
+        "x": 650,
+        "y": 200,
         "wires": [
             []
         ]
     },
     {
-        "id": "17f63504.626d4b",
+        "id": "7613e00c.861c9",
         "type": "inject",
-        "z": "2a18a835.be65f8",
+        "z": "5d315e32.6167e",
         "name": "Luka and Nika, it's time to leave for the bus",
         "topic": "",
         "payload": "",
@@ -2626,21 +2322,22 @@
         "y": 384,
         "wires": [
             [
-                "3c9ee227.ae2c4e",
-                "b3006d31.1e5ee"
+                "a553b1e6.b430f",
+                "55fd0d0e.246dc4"
             ]
         ]
     },
     {
-        "id": "3c9ee227.ae2c4e",
+        "id": "a553b1e6.b430f",
         "type": "api-call-service",
-        "z": "2a18a835.be65f8",
+        "z": "5d315e32.6167e",
         "name": "Turn off TV",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "media_player",
         "service": "turn_off",
-        "entityId": "media_player.family_room_tv",
+        "entityId": "media_player.samsung_un55f6300",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
@@ -2654,12 +2351,13 @@
         ]
     },
     {
-        "id": "b3006d31.1e5ee",
+        "id": "55fd0d0e.246dc4",
         "type": "api-call-service",
-        "z": "2a18a835.be65f8",
+        "z": "5d315e32.6167e",
         "name": "Announce on Alexa",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
         "version": 1,
+        "debugenabled": false,
         "service_domain": "notify",
         "service": "alexa_media",
         "entityId": "",
@@ -2676,11 +2374,22 @@
         ]
     },
     {
-        "id": "7181924b.e1102c",
+        "id": "cd8e787a.73eb28",
         "type": "trigger-state",
-        "z": "a23d4a71.7c2918",
+        "z": "7b33efdd.5dfc1",
         "name": "",
-        "server": "7d594d96.81fc64",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityid": "alarm_control_panel.alarm_panel",
         "entityidfiltertype": "exact",
         "debugenabled": false,
@@ -2706,6 +2415,457 @@
         "wires": [
             [],
             []
+        ]
+    },
+    {
+        "id": "98416527.09beb8",
+        "type": "credentials",
+        "z": "7b33efdd.5dfc1",
+        "name": "Code",
+        "props": [
+            {
+                "value": "alarm_code",
+                "type": "msg"
+            }
+        ],
+        "x": 782,
+        "y": 580,
+        "wires": [
+            [
+                "cb431336.b73d3"
+            ]
+        ]
+    },
+    {
+        "id": "743b30b8.310c",
+        "type": "credentials",
+        "z": "7b33efdd.5dfc1",
+        "name": "Code",
+        "props": [
+            {
+                "value": "alarm_code",
+                "type": "msg"
+            }
+        ],
+        "x": 786,
+        "y": 192,
+        "wires": [
+            [
+                "dc121229.466b3"
+            ]
+        ]
+    },
+    {
+        "id": "59de1870.def048",
+        "type": "credentials",
+        "z": "7b33efdd.5dfc1",
+        "name": "Code",
+        "props": [
+            {
+                "value": "alarm_code",
+                "type": "msg"
+            }
+        ],
+        "x": 782,
+        "y": 700,
+        "wires": [
+            [
+                "56a25c89.786a34"
+            ]
+        ]
+    },
+    {
+        "id": "8133315a.2aebc",
+        "type": "credentials",
+        "z": "7b33efdd.5dfc1",
+        "name": "Code",
+        "props": [
+            {
+                "value": "alarm_code",
+                "type": "msg"
+            }
+        ],
+        "x": 786,
+        "y": 128,
+        "wires": [
+            [
+                "f6e9ee36.e2464"
+            ]
+        ]
+    },
+    {
+        "id": "ba1b94c6.3387d8",
+        "type": "credentials",
+        "z": "7b33efdd.5dfc1",
+        "name": "Code",
+        "props": [
+            {
+                "value": "alarm_code",
+                "type": "msg"
+            }
+        ],
+        "x": 786,
+        "y": 64,
+        "wires": [
+            [
+                "ccf02df8.c634f"
+            ]
+        ]
+    },
+    {
+        "id": "3a10fbd4.edd984",
+        "type": "mytimeout",
+        "z": "7b33efdd.5dfc1",
+        "name": "Countdown",
+        "outtopic": "msg.entity",
+        "outsafe": "started",
+        "outwarning": "expired",
+        "outunsafe": "stopped",
+        "warning": "1",
+        "timer": "30",
+        "debug": false,
+        "ndebug": false,
+        "ignoreCase": false,
+        "repeat": false,
+        "again": false,
+        "x": 358,
+        "y": 1056,
+        "wires": [
+            [
+                "a8d63e72.5bffc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a2551e4c.90e8c",
+        "type": "trigger-state",
+        "z": "2080d456.54e53c",
+        "name": "Power Outtage Detected",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "alarm_control_panel.alarm_panel",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "id": "63dif33o9bw",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "property",
+                "propertyValue": "new_state.attributes.ac_power",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "bool",
+                "comparatorValue": "false"
+            },
+            {
+                "id": "36rze66nrvu",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "property",
+                "propertyValue": "old_state.attributes.ac_power",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "bool",
+                "comparatorValue": "true"
+            }
+        ],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "4b94133b.dd57cc",
+                "35e46c77.75a3e4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4b94133b.dd57cc",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "2080d456.54e53c",
+        "name": "Announce Everywhere",
+        "env": [
+            {
+                "name": "MESSAGE",
+                "value": "It appears that there's a power outtage",
+                "type": "str"
+            },
+            {
+                "name": "TITLE",
+                "value": "Power Outtage",
+                "type": "str"
+            }
+        ],
+        "x": 700,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "496bcdd9.66dee4",
+        "type": "trigger-state",
+        "z": "2080d456.54e53c",
+        "name": "Security System Battery Low",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "alarm_control_panel.alarm_panel",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "id": "at0ovn0k198",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "property",
+                "propertyValue": "new_state.attributes.battery_low",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "bool",
+                "comparatorValue": "true"
+            }
+        ],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "b09d9b20.952838",
+                "54d64089.1ab"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "da436647.07efa8",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "2080d456.54e53c",
+        "name": "Announce Everywhere",
+        "env": [
+            {
+                "name": "MESSAGE",
+                "value": "It appears that the power outtage has ended",
+                "type": "str"
+            },
+            {
+                "name": "TITLE",
+                "value": "Power Outtage Ended",
+                "type": "str"
+            }
+        ],
+        "x": 700,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54d64089.1ab",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "2080d456.54e53c",
+        "name": "Announce Everywhere",
+        "env": [
+            {
+                "name": "MESSAGE",
+                "value": "The security system's battery is reading low",
+                "type": "str"
+            },
+            {
+                "name": "TITLE",
+                "value": "The Security System's Battery is Low",
+                "type": "str"
+            }
+        ],
+        "x": 700,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35e46c77.75a3e4",
+        "type": "ha-wait-until",
+        "z": "2080d456.54e53c",
+        "name": "Power restored",
+        "server": "303b585e.fbf2d8",
+        "outputs": 1,
+        "entityId": "alarm_control_panel.alarm_panel",
+        "property": "attributes.ac_power",
+        "comparator": "is",
+        "value": "true",
+        "valueType": "bool",
+        "timeout": 0,
+        "timeoutUnits": "seconds",
+        "entityLocation": "",
+        "entityLocationType": "msg",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "x": 440,
+        "y": 100,
+        "wires": [
+            [
+                "da436647.07efa8"
+            ]
+        ]
+    },
+    {
+        "id": "b09d9b20.952838",
+        "type": "ha-wait-until",
+        "z": "2080d456.54e53c",
+        "name": "Bettery Level Normal",
+        "server": "303b585e.fbf2d8",
+        "outputs": 1,
+        "entityId": "alarm_control_panel.alarm_panel",
+        "property": "attributes.battery_low",
+        "comparator": "is",
+        "value": "false",
+        "valueType": "bool",
+        "timeout": 0,
+        "timeoutUnits": "seconds",
+        "entityLocation": "",
+        "entityLocationType": "msg",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "e9cca6e.e675b58"
+            ]
+        ]
+    },
+    {
+        "id": "e9cca6e.e675b58",
+        "type": "subflow:7f50d496.0afc3c",
+        "z": "2080d456.54e53c",
+        "name": "Announce Everywhere",
+        "env": [
+            {
+                "name": "MESSAGE",
+                "value": "The security system's battery is back to normal",
+                "type": "str"
+            },
+            {
+                "name": "TITLE",
+                "value": "The Security System's Battery is Back to Normal",
+                "type": "str"
+            }
+        ],
+        "x": 700,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "398880bb.aa508",
+        "type": "trigger-state",
+        "z": "7b33efdd.5dfc1",
+        "name": "Alarm cancelled",
+        "server": "303b585e.fbf2d8",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "alarm_control_panel.alarm_panel",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "id": "e9zg2ndkv3",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "previous_state",
+                "propertyValue": "old_state.state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "triggered"
+            },
+            {
+                "id": "csxkuxec1eo",
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "propertyValue": "new_state.state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "disarmed"
+            }
+        ],
+        "constraintsmustmatch": "all",
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 120,
+        "y": 460,
+        "wires": [
+            [
+                "41d5e31e.37243c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "41d5e31e.37243c",
+        "type": "subflow:97dc732c.f5042",
+        "z": "7b33efdd.5dfc1",
+        "name": "",
+        "x": 380,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99f9db37.d44b68",
+        "type": "sun events",
+        "z": "7b33efdd.5dfc1",
+        "testmode": false,
+        "verbose": true,
+        "topic": "",
+        "name": "",
+        "x": 92,
+        "y": 1248,
+        "wires": [
+            [
+                "710c7668.55d658"
+            ]
         ]
     }
 ]

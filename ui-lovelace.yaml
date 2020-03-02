@@ -1,9 +1,13 @@
+background: var(--background-image)
 cch:
   clock_am_pm: false
   clock_date: true
   clock_format: '24'
   hide_help: true
   voice: clock
+custom_header:
+  compact_mode: true
+  hide_help: true
 resources:
   - type: module
     url: /community_plugin/light-entity-row/light-entity-row.js
@@ -12,123 +16,42 @@ resources:
   - type: module
     url: /community_plugin/gauge-card/gauge-card.js
   - type: module
-    url: /community_plugin/compact-custom-header/compact-custom-header.js
+    url: /community_plugin/custom-header/custom-header.js
   - type: module
     url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
-  - type: js
-    url: /community_plugin/monster-card/monster-card.js
+  - type: module
+    url: /community_plugin/lovelace-auto-entities/auto-entities.js
 title: Home
 views:
-  - cards:
-      - entities:
-          - entity: light.aeon_labs_dsc27103_micro_dimmer_2nd_edition_level
-            type: 'custom:light-entity-row'
-          - entity: light.aeon_labs_zw111_nano_dimmer_level
-            type: 'custom:light-entity-row'
-          - entity: light.aeon_labs_zw111_nano_dimmer_level_2
-            type: 'custom:light-entity-row'
-          - entity: light.leviton_dzpd3_2bw_decora_300w_plug_in_smart_dimmer_level
-            type: 'custom:light-entity-row'
-          - entity: light.garage_ceiling_light
-            type: 'custom:light-entity-row'
-        title: Lights
-        type: entities
+  - badges: []
+    cards:
       - cards:
-          - entities:
-              - sensor.speedtest_download
-            font_size: 75
-            line_color: var(--primary-color)
-            line_width: 8
-            name: Download
-            type: 'custom:mini-graph-card'
-            upper_bound: 80
-          - entities:
-              - sensor.speedtest_upload
-            font_size: 75
-            line_color: var(--primary-color)
-            line_width: 8
-            name: Upload
-            type: 'custom:mini-graph-card'
-            upper_bound: 12
-          - entities:
-              - sensor.speedtest_ping
-            font_size: 75
-            line_color: var(--primary-text-color)
-            line_width: 8
-            name: Ping
-            type: 'custom:mini-graph-card'
-        type: horizontal-stack
-      - cards:
-          - cards:
-              - entities:
-                  - entity: sensor.hallway_thermostat_temperature
-                    name: Hallway
-                  - entity: sensor.basement_airthings_wave_temperature
-                    name: Basement
-                font_size: 75
-                line_color:
-                  - var(--primary-color)
-                  - var(--primary-text-color)
-                line_width: 8
-                name: Temperature
-                type: 'custom:mini-graph-card'
-              - entities:
-                  - entity: sensor.hallway_thermostat_humidity
-                    name: Hallway
-                  - entity: sensor.basement_airthings_wave_humidity
-                    name: Basement
-                font_size: 75
-                line_color:
-                  - var(--primary-color)
-                  - var(--primary-text-color)
-                line_width: 8
-                name: Humidity
-                type: 'custom:mini-graph-card'
-            type: horizontal-stack
-          - cards:
-              - entities:
-                  - sensor.zooz_zen15_power_switch_power
-                font_size: 75
-                line_color: var(--primary-color)
-                line_width: 8
-                name: Dehumidifier Power
-                type: 'custom:mini-graph-card'
-              - entities:
-                  - sensor.basement_airthings_wave_humidity
-                font_size: 75
-                line_color: var(--primary-text-color)
-                line_width: 8
-                name: Basement Humidity
-                type: 'custom:mini-graph-card'
-            type: horizontal-stack
-          - cards:
-              - entities:
-                  - sensor.basement_airthings_wave_radon_1_day_average
-                font_size: 75
-                line_color: var(--primary-color)
-                line_width: 8
-                lower_bound: 50
-                name: Radon 1 Day Avg.
-                type: 'custom:mini-graph-card'
-                upper_bound: 150
-              - entities:
-                  - sensor.basement_airthings_wave_radon_long_term_average
-                font_size: 75
-                line_color: var(--primary-text-color)
-                line_width: 8
-                lower_bound: 50
-                name: Raydon Long Term Avg.
-                type: 'custom:mini-graph-card'
-                upper_bound: 150
-            type: horizontal-stack
-        type: vertical-stack
-      - cards:
-          - entity: climate.hallway
-            type: thermostat
-          - entity: weather.home
-            type: weather-forecast
-        type: vertical-stack
-      - cards:
+          - card: null
+            double_tap_action:
+              action: call-service
+              service: alarm_control_panel.alarm_disarm
+              service_data:
+                code: 0528
+                entity_id: alarm_control_panel.alarm_panel
+            entity: alarm_control_panel.alarm_panel
+            icon: 'mdi:shield-home'
+            hold_action:
+              action: call-service
+              service: alarm_control_panel.alarm_arm_away
+              service_data:
+                code: 0528
+                entity_id: alarm_control_panel.alarm_panel
+            name: Security System
+            show_icon: true
+            show_name: true
+            tap_action:
+              action: call-service
+              service: alarm_control_panel.alarm_arm_home
+              service_data:
+                code: 0528
+                entity_id: alarm_control_panel.alarm_panel
+            theme: default
+            type: entity-button
           - card: null
             cards:
               - card:
@@ -138,7 +61,233 @@ views:
                   include:
                     - domain: person
                     - entity_id: device_tracker.occupants
-                type: 'custom:monster-card'
+                footer:
+                  image: >-
+                    https://lh3.googleusercontent.com/proxy/uSv3wpXNZJCzvf5vgPLD1OIpK201ylccsyNovehEpD0dEzCOH09-u8LRpeNlg1RfnPEIMLehaPwL4Y3wpLtN7IiMbwDzmm3RY_6XGwxUq9UMO0ze0NyAK1IrSQ
+                  type: picture
+                type: 'custom:auto-entities'
+              - entities:
+                  - entity: input_boolean.guests_home
+                    name: Guest(s)
+                    show_header_toggle: false
+                  - entity: input_boolean.vacation_mode
+                    name: Vacation
+                    show_header_toggle: false
+                type: entities
+            type: horizontal-stack
+        type: vertical-stack
+      - entities:
+          - entity: light.aeon_labs_dsc27103_micro_dimmer_2nd_edition_level
+            hideColorTemp: true
+            type: 'custom:light-entity-row'
+          - entity: light.aeon_labs_zw111_nano_dimmer_level
+            hideColorTemp: true
+            type: 'custom:light-entity-row'
+          - entity: light.aeon_labs_zw111_nano_dimmer_level_2
+            hideColorTemp: true
+            type: 'custom:light-entity-row'
+          - entity: light.leviton_dzpd3_2bw_decora_300w_plug_in_smart_dimmer_level
+            hideColorTemp: true
+            type: 'custom:light-entity-row'
+          - entity: light.garage_ceiling_light
+            hideColorTemp: true
+            type: 'custom:light-entity-row'
+        title: Lights
+        type: entities
+      - cards:
+          - cards:
+              - entities:
+                  - entity: sensor.98_07_2d_4a_97_5c_temperature
+                    index: 0
+                    name: Basement Temp
+                font_size: 75
+                line_color:
+                  - var(--primary-color)
+                  - var(--primary-text-color)
+                line_width: 8
+                name: Basement
+                type: 'custom:mini-graph-card'
+              - entities:
+                  - entity: sensor.98_07_2d_4a_97_5c_humidity
+                    index: 0
+                    name: Basement Humidity
+                font_size: 75
+                line_color:
+                  - var(--primary-color)
+                  - var(--primary-text-color)
+                line_width: 8
+                name: Basement Humidity
+                type: 'custom:mini-graph-card'
+            type: horizontal-stack
+          - cards:
+              - entities:
+                  - entity: sensor.zooz_zen15_power_switch_power
+                    index: 0
+                font_size: 75
+                line_color: var(--primary-color)
+                line_width: 8
+                name: Dehumidifier Power
+                type: 'custom:mini-graph-card'
+            type: horizontal-stack
+          - cards:
+              - entities:
+                  - entity: sensor.98_07_2d_4a_97_5c_radon_1day_avg
+                    index: 0
+                font_size: 75
+                line_color: var(--primary-color)
+                line_width: 8
+                lower_bound: 0
+                name: Radon 1 Day Avg.
+                type: 'custom:mini-graph-card'
+                upper_bound: 150
+              - entities:
+                  - entity: sensor.98_07_2d_4a_97_5c_radon_longterm_avg
+                    index: 0
+                font_size: 75
+                line_color: var(--primary-text-color)
+                line_width: 8
+                lower_bound: 0
+                name: Raydon Long Term Avg.
+                type: 'custom:mini-graph-card'
+                upper_bound: 150
+            type: horizontal-stack
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: sensor.speedtest_download
+                index: 0
+            font_size: 75
+            line_color: var(--primary-color)
+            line_width: 8
+            name: Download
+            type: 'custom:mini-graph-card'
+            upper_bound: 80
+          - entities:
+              - entity: sensor.speedtest_upload
+                index: 0
+            font_size: 75
+            line_color: var(--primary-color)
+            line_width: 8
+            name: Upload
+            type: 'custom:mini-graph-card'
+            upper_bound: 12
+          - entities:
+              - entity: sensor.speedtest_ping
+                index: 0
+            font_size: 75
+            line_color: var(--primary-text-color)
+            line_width: 8
+            name: Ping
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - cards:
+          - entity: weather.home
+            type: weather-forecast
+        type: vertical-stack
+      - card:
+          show_state: true
+          type: glance
+        filter:
+          include:
+            - entity_id: sensor.gas_price_*
+        type: 'custom:auto-entities'
+      - aspect_ratio: 50%
+        camera_image: camera.cam1
+        camera_view: live
+        entity: camera.cam1
+        image: 'https://www.home-assistant.io/images/merchandise/shirt-frontpage.png'
+        name: Front Door
+        show_state: false
+        type: picture-entity
+    icon: 'mdi:home'
+    panel: false
+    path: default_view
+    title: Home
+  - badges: []
+    cards:
+      - entity: media_player.master_bedroom_tv
+        type: media-control
+      - entity: media_player.samsung_un55f6300
+        type: media-control
+      - entity: media_player.spotify_retro_hunter
+        type: media-control
+      - entities:
+          - sensor.hl_l5200dw_black_toner_remaining
+          - sensor.hl_l5200dw_drum_remaining_life
+          - sensor.hl_l5200dw_fuser_remaining_life
+          - sensor.hl_l5200dw_laser_remaining_life
+          - sensor.hl_l5200dw_page_counter
+          - sensor.hl_l5200dw_pf_kit_1_remaining_life
+          - sensor.hl_l5200dw_pf_kit_mp_remaining_life
+          - sensor.hl_l5200dw_status
+          - sensor.hl_l5200dw_uptime
+        type: entities
+    icon: 'mdi:music'
+    path: media
+    title: Media
+  - badges: []
+    cards:
+      - camera_view: live
+        entity: camera.front_door
+        type: picture-entity
+      - camera_view: live
+        entity: camera.front
+        type: picture-entity
+      - aspect_ratio: 50%
+        camera_image: camera.cam1
+        camera_view: live
+        entity: camera.cam1
+        image: 'https://www.home-assistant.io/images/merchandise/shirt-frontpage.png'
+        name: Front Door
+        type: picture-entity
+      - aspect_ratio: 50%
+        camera_view: live
+        entity: camera.cam2
+        image: 'https://www.home-assistant.io/images/merchandise/shirt-frontpage.png'
+        name: BBQ
+        type: picture-entity
+    icon: 'mdi:cctv'
+    path: camera
+    title: Camera
+  - badges: []
+    cards:
+      - cards:
+          - card: null
+            double_tap_action:
+              action: call-service
+              service: alarm_control_panel.alarm_disarm
+              service_data:
+                code: 0528
+                entity_id: alarm_control_panel.alarm_panel
+            entity: alarm_control_panel.alarm_panel
+            hold_action:
+              action: call-service
+              service: alarm_control_panel.alarm_arm_away
+              service_data:
+                code: 0528
+                entity_id: alarm_control_panel.alarm_panel
+            icon: 'mdi:shield-home'
+            name: Security System
+            show_icon: true
+            show_name: true
+            tap_action:
+              action: call-service
+              service: alarm_control_panel.alarm_arm_home
+              service_data:
+                code: 0528
+                entity_id: alarm_control_panel.alarm_panel
+            theme: default
+            type: entity-button
+          - card: null
+            cards:
+              - card:
+                  show_state: true
+                  type: glance
+                filter:
+                  include:
+                    - domain: person
+                    - entity_id: device_tracker.occupants
+                type: 'custom:auto-entities'
               - entities:
                   - entity: input_boolean.guests_home
                     name: Guest(s)
@@ -159,39 +308,8 @@ views:
                 - entity_id: '*door*'
                 - entity_id: '*pump*'
                 - entity_id: '*smoke*'
-            type: 'custom:monster-card'
+            type: 'custom:auto-entities'
         type: vertical-stack
-      - card:
-          show_state: true
-          type: glance
-        filter:
-          include:
-            - entity_id: sensor.gas_price_*
-        type: 'custom:monster-card'
-    badges: []
-    panel: false
-    path: default_view
-    title: Home
-    icon: 'mdi:home'
-  - cards:
-      - entity: media_player.spotify
-        type: media-control
-      - entity: media_player.master_bedroom_tv
-        type: media-control
-      - entity: media_player.family_room_tv
-        type: media-control
-    badges: []
-    path: media
-    title: Media
-    icon: 'mdi:music'
-  - cards:
-      - camera_view: live
-        entity: camera.front_door
-        type: picture-entity
-      - camera_view: live
-        entity: camera.front
-        type: picture-entity
-    badges: []
-    title: Camera
-    path: camera
-    icon: 'mdi:cctv'
+    icon: 'mdi:shield'
+    path: security
+    title: Security
