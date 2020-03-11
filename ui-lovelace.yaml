@@ -34,13 +34,13 @@ views:
                 code: 0528
                 entity_id: alarm_control_panel.alarm_panel
             entity: alarm_control_panel.alarm_panel
-            icon: 'mdi:shield-home'
             hold_action:
               action: call-service
               service: alarm_control_panel.alarm_arm_away
               service_data:
                 code: 0528
                 entity_id: alarm_control_panel.alarm_panel
+            icon: 'mdi:shield-home'
             name: Security System
             show_icon: true
             show_name: true
@@ -61,10 +61,6 @@ views:
                   include:
                     - domain: person
                     - entity_id: device_tracker.occupants
-                footer:
-                  image: >-
-                    https://lh3.googleusercontent.com/proxy/uSv3wpXNZJCzvf5vgPLD1OIpK201ylccsyNovehEpD0dEzCOH09-u8LRpeNlg1RfnPEIMLehaPwL4Y3wpLtN7IiMbwDzmm3RY_6XGwxUq9UMO0ze0NyAK1IrSQ
-                  type: picture
                 type: 'custom:auto-entities'
               - entities:
                   - entity: input_boolean.guests_home
@@ -211,24 +207,13 @@ views:
         type: media-control
       - entity: media_player.spotify_retro_hunter
         type: media-control
-      - entities:
-          - sensor.hl_l5200dw_black_toner_remaining
-          - sensor.hl_l5200dw_drum_remaining_life
-          - sensor.hl_l5200dw_fuser_remaining_life
-          - sensor.hl_l5200dw_laser_remaining_life
-          - sensor.hl_l5200dw_page_counter
-          - sensor.hl_l5200dw_pf_kit_1_remaining_life
-          - sensor.hl_l5200dw_pf_kit_mp_remaining_life
-          - sensor.hl_l5200dw_status
-          - sensor.hl_l5200dw_uptime
-        type: entities
     icon: 'mdi:music'
     path: media
     title: Media
   - badges: []
     cards:
       - camera_view: live
-        entity: camera.front_doorway
+        entity: camera.front_door
         type: picture-entity
       - camera_view: live
         entity: camera.front
@@ -304,12 +289,35 @@ views:
               type: glance
             filter:
               include:
-                - entity_id: '*motion*'
-                - entity_id: '*door*'
-                - entity_id: '*pump*'
-                - entity_id: '*smoke*'
+                - entity_id: binary_sensor.motion_*
+                - entity_id: binary_sensor.door_*
+                - entity_id: binary_sensor.pump*
+                - entity_id: binary_sensor.smoke*
             type: 'custom:auto-entities'
         type: vertical-stack
     icon: 'mdi:shield'
     path: security
     title: Security
+  - badges: []
+    cards:
+      - entities:
+          - sensor.hl_l5200dw_black_toner_remaining
+          - sensor.hl_l5200dw_drum_remaining_life
+          - sensor.hl_l5200dw_fuser_remaining_life
+          - sensor.hl_l5200dw_laser_remaining_life
+          - sensor.hl_l5200dw_page_counter
+          - sensor.hl_l5200dw_pf_kit_1_remaining_life
+          - sensor.hl_l5200dw_pf_kit_mp_remaining_life
+          - sensor.hl_l5200dw_status
+          - sensor.hl_l5200dw_uptime
+        type: entities
+      - entities:
+          - entity: sensor.canada_coronavirus_confirmed
+          - entity: sensor.canada_coronavirus_current
+          - entity: sensor.canada_coronavirus_deaths
+          - entity: sensor.canada_coronavirus_recovered
+        title: Coronavirus
+        type: glance
+    icon: 'mdi:dog'
+    path: environmental
+    title: Environmental
