@@ -6,7 +6,7 @@ alarmdecoder:
   panel_display: on
   zones:
     02:
-      name: 'Sump Pump'
+      name: 'Pump Sump'
       type: 'moisture'
     03:
       name: 'Motion Garage'
