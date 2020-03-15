@@ -1,34 +1,39 @@
-alarmdecoder:
-  device:
-    type: socket
-    host: 192.168.101.17
-    port: 10000
-  panel_display: on
-  zones:
-    02:
-      name: 'Pump Sump'
-      type: 'moisture'
-    03:
-      name: 'Motion Garage'
-      type: 'motion'
-    09:
-      name: 'Smoke Alarm 2nd'
-      type: 'smoke'
-    10:
-      name: 'Door Back'
-      type: 'door'
-    11:
-      name: 'Door Mudroom'
-      type: 'door'
-    12:
-      name: 'Motion Hallway'
-      type: 'motion'
-    13:
-      name: 'Door Front'
-      type: 'door'
-    14:
-      name: 'Door Patio'
-      type: 'door'
-    15:
-      name: 'Motion Basement'
-      type: 'motion'
+alarmdecoder:                                                                                                                                                                                                   
+  device:                                                                                                                                                                                                       
+    type: socket                                                                                                                                                                                                
+    host: 192.168.101.17                                                                                                                                                                                        
+    port: 10000                                                                                                                                                                                                 
+  panel_display: on                                                                                                                                                                                             
+  zones:                                                                                                                                                                                                        
+    02:                                                                                                                                                                                                         
+      name: 'Pump Sump'                                                                                                                                                                                         
+      type: 'moisture'                                                                                                                                                                                          
+    03:                                                                                                                                                                                                         
+      name: 'Motion Garage'                                                                                                                                                                                     
+      type: 'motion'                                                                                                                                                                                            
+    09:                                                                                                                                                                                                         
+      name: 'Smoke Alarm 2nd'                                                                                                                                                                                   
+      type: 'smoke'                                                                                                                                                                                             
+    10:                                                                                                                                                                                                         
+      name: 'Door Back'                                                                                                                                                                                         
+      type: 'door'                                                                                                                                                                                              
+      rfid: '0216358'                                                                                                                                                                                           
+    11:                                                                                                                                                                                                         
+      name: 'Door Mudroom'                                                                                                                                                                                      
+      type: 'door'                                                                                                                                                                                              
+      rfid: '0972583'                                                                                                                                                                                           
+    12:                                                                                                                                                                                                         
+      name: 'Motion Hallway'                                                                                                                                                                                    
+      type: 'motion'                                                                                                                                                                                            
+      rfid: '0182084'                                                                                                                                                                                           
+    13:                                                                                                                                                                                                         
+      name: 'Door Front'                                                                                                                                                                                        
+      type: 'door'                                                                                                                                                                                              
+    14:                                                                                                                                                                                                         
+      name: 'Door Patio'                                                                                                                                                                                        
+      type: 'door'                                                                                                                                                                                              
+      rfid: '0820390'                                                                                                                                                                                           
+    15:                                                                                                                                                                                                         
+      name: 'Motion Basement'                                                                                                                                                                                   
+      type: 'motion'                                                                                                                                                                                            
+      rfid: '0000674'
