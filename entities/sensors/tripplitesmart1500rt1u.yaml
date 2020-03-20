@@ -1,0 +1,11 @@
+platform: nut
+name: "TRIPP LITE SMART1500RT1U"
+host: !secret nut_host
+username: !secret nut_username
+password: !secret nut_password
+resources:
+  - outlet.1.desc
+  - outlet.2.desc
+  - ups.status
+  - ups.temperature
+  - input.voltage
