@@ -1,12 +1,11 @@
-sensor:
-  - platform: nut
-    name: "CyberPower 1500"
-    host: !secret nut_host
-    username: !secret nut_username
-    password: !secret nut_password
-    resources:
-      - battery.charge
-      - battery.runtime
-      - ups.load
-      - ups.status
-      - input.voltage
+platform: nut
+name: "CyberPower 1500"
+host: !secret nut_host
+username: !secret nut_username
+password: !secret nut_password
+resources:
+  - battery.charge
+  - battery.runtime
+  - ups.load
+  - ups.status
+  - input.voltage
