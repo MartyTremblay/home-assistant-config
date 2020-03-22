@@ -1,4 +1,3 @@
-background: var(--background-image)
 cch:
   clock_am_pm: false
   clock_date: true
@@ -8,19 +7,6 @@ cch:
 custom_header:
   compact_mode: true
   hide_help: true
-resources:
-  - type: module
-    url: /community_plugin/light-entity-row/light-entity-row.js
-  - type: module
-    url: /community_plugin/dual-gauge-card/dual-gauge-card.js
-  - type: module
-    url: /community_plugin/gauge-card/gauge-card.js
-  - type: module
-    url: /community_plugin/custom-header/custom-header.js
-  - type: module
-    url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
-  - type: module
-    url: /community_plugin/lovelace-auto-entities/auto-entities.js
 title: Home
 views:
   - badges: []
@@ -65,11 +51,25 @@ views:
               - entities:
                   - entity: input_boolean.guests_home
                     name: Guest(s)
-                    show_header_toggle: false
                   - entity: input_boolean.vacation_mode
                     name: Vacation
-                    show_header_toggle: false
+                show_header_toggle: false
                 type: entities
+            type: horizontal-stack
+          - card: null
+            cards:
+              - aspect_ratio: '1'
+                cards: null
+                default_zoom: 17
+                entities:
+                  - entity: person.marty_tremblay
+                type: map
+              - aspect_ratio: '1'
+                cards: null
+                default_zoom: 17
+                entities:
+                  - entity: person.viktoria
+                type: map
             type: horizontal-stack
         type: vertical-stack
       - entities:
@@ -92,25 +92,37 @@ views:
         type: entities
       - cards:
           - cards:
-              - entities:
+              - color_thresholds:
+                  - color: var(--error-color)
+                    value: 12
+                  - color: var(--primary-text-color)
+                    value: 20
+                  - color: var(--primary-color)
+                    value: 22
+                  - color: var(--error-color)
+                    value: 24
+                entities:
                   - entity: sensor.98_07_2d_4a_97_5c_temperature
                     index: 0
                     name: Basement Temp
                 font_size: 75
-                line_color:
-                  - var(--primary-color)
-                  - var(--primary-text-color)
                 line_width: 8
                 name: Basement
                 type: 'custom:mini-graph-card'
-              - entities:
+              - color_thresholds:
+                  - color: var(--error-color)
+                    value: 20
+                  - color: var(--primary-text-color)
+                    value: 30
+                  - color: var(--primary-color)
+                    value: 50
+                  - color: var(--error-color)
+                    value: 55
+                entities:
                   - entity: sensor.98_07_2d_4a_97_5c_humidity
                     index: 0
                     name: Basement Humidity
                 font_size: 75
-                line_color:
-                  - var(--primary-color)
-                  - var(--primary-text-color)
                 line_width: 8
                 name: Basement Humidity
                 type: 'custom:mini-graph-card'
@@ -121,26 +133,34 @@ views:
                     index: 0
                 font_size: 75
                 line_color: var(--primary-color)
-                line_width: 8
+                line_width: 4
                 name: Dehumidifier Power
                 type: 'custom:mini-graph-card'
             type: horizontal-stack
           - cards:
-              - entities:
+              - color_thresholds:
+                  - color: var(--primary-color)
+                    value: 99
+                  - color: var(--error-color)
+                    value: 100
+                entities:
                   - entity: sensor.98_07_2d_4a_97_5c_radon_1day_avg
                     index: 0
                 font_size: 75
-                line_color: var(--primary-color)
                 line_width: 8
                 lower_bound: 0
                 name: Radon 1 Day Avg.
                 type: 'custom:mini-graph-card'
                 upper_bound: 150
-              - entities:
+              - color_thresholds:
+                  - color: var(--primary-color)
+                    value: 99
+                  - color: var(--error-color)
+                    value: 100
+                entities:
                   - entity: sensor.98_07_2d_4a_97_5c_radon_longterm_avg
                     index: 0
                 font_size: 75
-                line_color: var(--primary-text-color)
                 line_width: 8
                 lower_bound: 0
                 name: Raydon Long Term Avg.
@@ -203,7 +223,7 @@ views:
     cards:
       - entity: media_player.master_bedroom_tv
         type: media-control
-      - entity: media_player.samsung_un55f6300
+      - entity: media_player.family_room_tv
         type: media-control
       - entity: media_player.spotify_retro_hunter
         type: media-control
@@ -212,12 +232,6 @@ views:
     title: Media
   - badges: []
     cards:
-      - camera_view: live
-        entity: camera.front_door
-        type: picture-entity
-      - camera_view: live
-        entity: camera.front
-        type: picture-entity
       - aspect_ratio: 50%
         camera_image: camera.cam1
         camera_view: live
@@ -276,10 +290,9 @@ views:
               - entities:
                   - entity: input_boolean.guests_home
                     name: Guest(s)
-                    show_header_toggle: false
                   - entity: input_boolean.vacation_mode
                     name: Vacation
-                    show_header_toggle: false
+                show_header_toggle: false
                 type: entities
             type: horizontal-stack
           - entity: alarm_control_panel.alarm_panel
@@ -310,14 +323,28 @@ views:
           - sensor.hl_l5200dw_pf_kit_mp_remaining_life
           - sensor.hl_l5200dw_status
           - sensor.hl_l5200dw_uptime
+        title: Brother Printer
         type: entities
       - entities:
           - entity: sensor.canada_coronavirus_confirmed
           - entity: sensor.canada_coronavirus_current
           - entity: sensor.canada_coronavirus_deaths
           - entity: sensor.canada_coronavirus_recovered
-        title: Coronavirus
-        type: glance
-    icon: 'mdi:dog'
+        title: COVID-19
+        type: entities
+      - entities:
+          - entity: sensor.cyberpower_1500_status_data
+          - entity: sensor.cyberpower_1500_battery_charge
+          - entity: sensor.cyberpower_1500_load
+          - entity: sensor.cyberpower_1500_battery_runtime
+          - entity: sensor.cyberpower_1500_input_voltage
+        title: CyberPower 1500 UPS
+        type: entities
+      - entities:
+          - entity: sensor.tripp_lite_smart1500rt1u_status_data
+          - entity: sensor.tripp_lite_smart1500rt1u_input_voltage
+        title: Tripp Lite Smart UPS
+        type: entities
+    icon: 'mdi:check-network'
     path: environmental
     title: Environmental
