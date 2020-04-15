@@ -1,5 +1,6 @@
 platform: nut
-name: "CyberPower1500"
+name: "CyberPower 1500"
+alias: "CyberPower1500"
 host: !secret nut_host
 username: !secret nut_username
 password: !secret nut_password
@@ -9,3 +10,44 @@ resources:
   - ups.load
   - ups.status
   - input.voltage
+
+# battery.charge: 100
+# battery.charge.low: 10
+# battery.charge.warning: 20
+# battery.mfr.date: CPS
+# battery.runtime: 9150
+# battery.runtime.low: 300
+# battery.type: PbAcid
+# battery.voltage: 24.0
+# battery.voltage.nominal: 24
+# device.mfr: CPS
+# device.model: CP1500PFCLCD
+# device.serial: 000000000000
+# device.type: ups
+# driver.name: usbhid-ups
+# driver.parameter.pollfreq: 30
+# driver.parameter.pollinterval: 2
+# driver.parameter.port: auto
+# driver.parameter.synchronous: no
+# driver.version: 3.8.0-3259-g81f05ada5a
+# driver.version.data: CyberPower HID 0.4
+# driver.version.internal: 0.41
+# input.transfer.high: 139
+# input.transfer.low: 88
+# input.voltage: 121.0
+# input.voltage.nominal: 120
+# output.voltage: 137.0
+# ups.beeper.status: enabled
+# ups.delay.shutdown: 20
+# ups.delay.start: 30
+# ups.load: 3
+# ups.mfr: CPS
+# ups.model: CP1500PFCLCD
+# ups.productid: 0501
+# ups.realpower.nominal: 900
+# ups.serial: 000000000000
+# ups.status: OL
+# ups.test.result: No test initiated
+# ups.timer.shutdown: -60
+# ups.timer.start: -60
+# ups.vendorid: 0764

@@ -1,9 +1,53 @@
 platform: nut
-name: "TRIPPLITESMART1500RT1U"
+name: "TRIPP LITE SMART 1500RT1U"
+alias: "TRIPPLITESMART1500RT1U"
 host: !secret nut_host
 username: !secret nut_username
 password: !secret nut_password
 resources:
   - ups.status
-  - ups.temperature
   - input.voltage
+  - battery.voltage
+
+# battery.voltage: 13.70
+# battery.voltage.nominal: 12
+# device.mfr: Tripp Lite
+# device.model: TRIPP LITE SMART500RT1U
+# device.type: ups
+# driver.name: tripplite_usb
+# driver.parameter.pollinterval: 2
+# driver.parameter.port: auto
+# driver.parameter.synchronous: no
+# driver.parameter.vendorid: 09ae*
+# driver.version: 3.8.0-3259-g81f05ada5a
+# driver.version.internal: 0.29
+# input.voltage: 119
+# input.voltage.maximum: 126
+# input.voltage.minimum:  53
+# input.voltage.nominal: 120
+# outlet.1.desc: Load 1
+# outlet.1.id: 1
+# outlet.1.switch: 1
+# outlet.1.switchable: 1
+# outlet.2.desc: Load 2
+# outlet.2.id: 2
+# outlet.2.switchable: 0
+# ups.debug.D: 00 77 00 89 0d 00 00 '.w.....'
+# ups.debug.L: 06 00 06 07 58 58 0d '....XX.'
+# ups.debug.load_banks: 1
+# ups.debug.M: 00 35 00 7e 0d 00 00 '.5.....'
+# ups.debug.P: 30 30 35 30 30 58 0d '00500X.'
+# ups.debug.S: 01 04 00 00 64 00 0d '....d..'
+# ups.debug.T: 20 00 02 58 01 58 0d '...X.X.'
+# ups.debug.V: 02 00 0c 01 58 58 0d '....XX.'
+# ups.delay.shutdown: 64
+# ups.firmware: F29AF.C
+# ups.firmware.aux: protocol 3005
+# ups.id: 65535
+# ups.mfr: Tripp Lite
+# ups.model: TRIPP LITE SMART500RT1U
+# ups.power.nominal: 500
+# ups.productid: 0001
+# ups.status: OL
+# ups.temperature: 0
+# ups.vendorid: 09ae
