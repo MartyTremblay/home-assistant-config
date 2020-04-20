@@ -8,4 +8,17 @@ homeassistant:
   elevation: !secret home_elevation
   time_zone: !secret home_time_zone
   customize: !include_dir_merge_named customizations
-  packages: !include_dir_named integrations
+  packages: !include_dir_named integration
+
+remote_homeassistant:
+  instances:
+  - host: 192.168.101.4
+    access_token: !secret ha2_token
+    entity_prefix: "ha2_"
+    include:
+      entities:
+      - sensor.98_07_2d_4a_97_5c_illuminance
+      - sensor.98_07_2d_4a_97_5c_humidity
+      - sensor.98_07_2d_4a_97_5c_temperature
+      - sensor.98_07_2d_4a_97_5c_radon_1day_avg
+      - sensor.98_07_2d_4a_97_5c_radon_longterm_avg
