@@ -1,4 +1,0 @@
-joaoapps_join:
-  name: Join Devices
-  device_id: Nokia 7 Plus
-  api_key: !secret join_api_key
